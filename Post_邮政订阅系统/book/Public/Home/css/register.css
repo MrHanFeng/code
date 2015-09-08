@@ -1,0 +1,585 @@
+@charset "utf-8";
+
+body {
+	width: 100%;
+	font-size: 12px;
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.tl {
+	text-align: left;
+}
+
+.clear {
+	clear: both;
+}
+
+.bod {
+	border: #e6e7e7 solid 1px;
+	overflow: hidden;
+}
+
+a {
+	color: #5e5c5d;
+	cursor: pointer;
+}
+
+a:link {
+	color: #5e5c5d;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a:visited {
+	color: #5e5c5d;
+	cursor: pointer;
+}
+
+a:hover {
+	color: #5e5c5d;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+a:active {
+	color: #5e5c5d;
+	cursor: pointer;
+}
+
+a.a_white {
+	color: #FFF;
+	clip: inherit;
+	cursor: pointer;
+}
+
+a.a_white:link {
+	color: #FFF;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a.a_white:visited {
+	color: #FFF;
+	cursor: pointer;
+}
+
+a.a_white:hover {
+	color: #FFF;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+a.a_white:active {
+	color: #FFF;
+	cursor: pointer;
+}
+
+a.a_red {
+	color: #b70101;
+	cursor: pointer;
+}
+
+a.a_red:link {
+	color: #b70101;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a.a_red:visited {
+	color: #b70101;
+}
+
+a.a_red:hover {
+	color: #b70101;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+a.a_red:active {
+	color: #b70101;
+	cursor: pointer;
+}
+
+.red {
+	color: #ff0101;
+}
+
+.green {
+	color: #058535;
+}
+
+.yello {
+	color: #d1930d;
+}
+
+.sz_h {
+	color: #666666;
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+.Gray {
+	color: #999;
+}
+
+li {
+	list-style: none;
+}
+
+input,lable,img {
+	vertical-align: middle;
+}
+
+.w_400 {
+	width: 400px;
+}
+
+.m_t_10 {
+	margin-top: 10px;
+}
+
+.m_t_20 {
+	margin-top: 20px;
+}
+
+.m_b_20 {
+	margin-bottom: 20px;
+}
+
+img {
+	display: inline;
+	overflow: hidden;
+}
+
+font {
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+.grzx_top {
+	background: #f3f3f3;
+	height: 30px;
+	line-height: 30px;
+	width: 100%;
+}
+
+.grzx_top a {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.grzx_top_c {
+	width: 980px;
+	margin: auto;
+}
+
+.cp_top {
+	background: #018151;
+	height: 34px;
+	overflow: hidden;
+}
+
+.cp_top_c {
+	width: 980px;
+	margin: auto;
+	line-height: 34px;
+	color: #FFF;
+}
+
+.cp_top_c span {
+	width: 400px;
+}
+
+.cp_top_c a {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.logo {
+	height: 70px;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	width: 980px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*注册页*/
+.zc_c {
+	width: 980px;
+	margin: auto;
+}
+
+.zc_c .bod {
+	padding: 30px 0px 30px 20px;
+	overflow: hidden;
+}
+
+.zc_ul {
+	width: 600px;
+	float: left;
+	overflow: hidden;
+	margin-top: 10px;
+	display: block;
+}
+
+.zc_ul li {
+	height: 25px;
+	line-height: 25px;
+	clear: both;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	clear: both;
+}
+
+.zc_ul li span {
+	width: 90px;
+	text-align: right;
+	display: block;
+	float: left;
+	font-size: 14px;
+	color: #8d8d8d;
+	padding-right: 10px;
+}
+
+.zc_ul li select,.zc_ul li input,.zc_ul li label {
+	float: left;
+}
+
+.zc_ul li select {
+	height: 30px;
+	width: 150px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-right: 3px;
+}
+
+.ts {
+	float: left;
+	display: block;
+}
+
+.zc_ul .ts span.red {
+	width: 20px;
+	color: #ff0101;
+	font-size: 12px;
+}
+
+.zc_ul .ts span.green {
+	width: 160px;
+	color: #058535;
+	text-align: left;
+	font-size: 12px;
+}
+
+.zc_ul input {
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	/*color: #d2d0d0;*/
+	width: 235px;
+	border: #dddddd solid 1px;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+.zc_ul input.yzm {
+	width: 80px;
+}
+
+.zc_ul input.yhm {
+	background: url(../../img/register/zc_10.gif) no-repeat;
+	width: 265px;
+	border: none;
+	padding-right: 30px;
+	height: 36px;
+}
+
+.zc_ul input.mm {
+	background: url(../../img/register/zc_13.gif) no-repeat;
+	width: 265px;
+	border: none;
+	padding-right: 30px;
+	height: 36px;
+}
+
+.footer {
+	width: 980px;
+	margin: auto;
+	text-align: center;
+	color: #656363;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.footer p {
+	line-height: 24px;
+}
+
+/*登录页css*/
+.dl {
+	height: 540px;
+	width: 950px;
+	position: absolute;
+	top: 50%;
+	margin-top: -310px;
+	left: 50%;
+	margin-left: -475px;
+}
+
+.dlk {
+	width: 938px;
+	margin: auto;
+	height: 320px;
+	border: #f0f1f1 solid 6px;
+}
+
+.dlk_l {
+	width: 541px;
+	float: left;
+}
+
+.dlk_r {
+	background: url(../../img/register/login_06.gif) no-repeat top;
+	width: 335px;
+	height: 268px;
+	float: right;
+	border: #dcddde solid 1px;
+	padding-top: 50px;
+	padding-left: 15px;
+	padding-right: 45px;
+}
+
+.dlk_r .zc_ul input.yhm {
+	background: url(../../img/register/login_10.gif) no-repeat;
+	width: 227px;
+	border: none;
+	padding-right: 30px;
+	height: 36px;
+}
+
+.dlk_r .zc_ul li {
+	line-height: 30px;
+	height: 30px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.dlk_r .zc_ul input.mm {
+	background: url(../../img/register/login_13.gif) no-repeat;
+	width: 227px;
+	border: none;
+	padding-right: 30px;
+	height: 36px;
+}
+
+.dlk_r p {
+	text-align: right;
+	color: #8c8c8c;
+	font-size: 12px;
+	font-weight: bold;
+	position: relative;
+	top: 5px;
+}
+
+.an {
+	/*padding-top: 35px;*/
+	padding-bottom: 35px;
+	margin-left: 67px;
+}
+
+.fy {
+	width: 800px;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+OL LI {
+	MARGIN: 8px
+}
+
+#con {
+	FONT-SIZE: 12px;
+	MARGIN: 0px auto;
+	WIDTH: 800px
+}
+
+#tags {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	PADDING-BOTTOM: 0px;
+	MARGIN: 0px 0px 0px 10px;
+	WIDTH: 400px;
+	PADDING-TOP: 0px;
+	HEIGHT: 25px
+}
+
+#tags LI {
+	BACKGROUND: url(../../img/register/tagleft.gif) no-repeat left bottom;
+	FLOAT: left;
+	MARGIN-RIGHT: 4px;
+	LIST-STYLE-TYPE: none;
+	HEIGHT: 25px
+}
+
+#tags LI A {
+	PADDING-RIGHT: 10px;
+	PADDING-LEFT: 10px;
+	BACKGROUND: url(../../img/register/tagright.gif) no-repeat right bottom;
+	FLOAT: left;
+	PADDING-BOTTOM: 0px;
+	COLOR: #333;
+	LINE-HEIGHT: 25px;
+	PADDING-TOP: 0px;
+	HEIGHT: 25px;
+	TEXT-DECORATION: none
+}
+
+#tags LI.emptyTag {
+	BACKGROUND: none transparent scroll repeat 0% 0%;
+	WIDTH: 4px
+}
+
+#tags LI.selectTag {
+	BACKGROUND-POSITION: left top;
+	MARGIN-top: -6px;
+	POSITION: relative;
+	HEIGHT: 31px
+}
+
+#tags LI.selectTag A {
+	BACKGROUND-POSITION: right top;
+	COLOR: #000;
+	LINE-HEIGHT: 31px;
+	HEIGHT: 31px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+}
+
+#tagContent {
+	BORDER-RIGHT: #aecbd4 0px solid;
+	PADDING-RIGHT: 0px;
+	BORDER-TOP: #aecbd4 0px solid;
+	PADDING-LEFT: 0px;
+	PADDING-BOTTOM: 0px;
+	BORDER-LEFT: #aecbd4 0px solid;
+	PADDING-TOP: 0px;
+	BORDER-BOTTOM: #aecbd4 0px solid;
+	BACKGROUND-COLOR: #fff
+}
+
+.tagContent {
+	PADDING-RIGHT: 0px;
+	DISPLAY: none;
+	PADDING-LEFT: 0px;
+	BACKGROUND: url(../../img/register/bg.gif) repeat-x;
+	PADDING-BOTTOM: 0px;
+	WIDTH: 800px;
+	COLOR: #474747;
+	PADDING-TOP: 0px;
+}
+
+#tagContent DIV.selectTag {
+	DISPLAY: block
+}
+
+.zc_c #con {
+	FONT-SIZE: 12px;
+	MARGIN: 0px;
+	WIDTH: 950px
+}
+
+.zc_c #tags {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 50px;
+	PADDING-BOTTOM: 0px;
+	MARGIN: 0px 0px 0px 0px;
+	WIDTH: 890px;
+	PADDING-TOP: 0px;
+	HEIGHT: 38px;
+	border-bottom: #d8d8d8 solid 1px;
+}
+
+.zc_c #tags LI {
+	BACKGROUND: url(../img//zcbj.gif) no-repeat left bottom;
+	FLOAT: left;
+	MARGIN-RIGHT: 10px;
+	LIST-STYLE-TYPE: none;
+	HEIGHT: 38px;
+	width: 163px;
+}
+
+.zc_c #tags LI A {
+	PADDING-RIGHT: 10px;
+	PADDING-LEFT: 60px;
+	BACKGROUND: none;
+	FLOAT: left;
+	PADDING-BOTTOM: 0px;
+	COLOR: #333;
+	LINE-HEIGHT: 38px;
+	PADDING-TOP: 0px;
+	HEIGHT: 38px;
+	TEXT-DECORATION: none;
+	width: 103px;
+}
+
+.zc_c #tags LI.emptyTag {
+	BACKGROUND: none transparent scroll repeat 0% 0%;
+	WIDTH: 4px
+}
+
+.zc_c #tags LI.selectTag {
+	BACKGROUND-POSITION: left top;
+	MARGIN-top: 0px;
+	POSITION: relative;
+	HEIGHT: 38px
+}
+
+.zc_c #tags LI.selectTag A {
+	BACKGROUND-POSITION: right top;
+	COLOR: #000;
+	LINE-HEIGHT: 36px;
+	HEIGHT: 40px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+}
+
+.zc_c #tagContent {
+	BORDER-RIGHT: #aecbd4 0px solid;
+	PADDING-RIGHT: 0px;
+	BORDER-TOP: #aecbd4 0px solid;
+	PADDING-LEFT: 0px;
+	PADDING-BOTTOM: 0px;
+	BORDER-LEFT: #aecbd4 0px solid;
+	PADDING-TOP: 0px;
+	BORDER-BOTTOM: #aecbd4 0px solid;
+	BACKGROUND-COLOR: #fff
+}
+
+.zc_c .tagContent {
+	PADDING-RIGHT: 0px;
+	DISPLAY: none;
+	PADDING-LEFT: 0px;
+	BACKGROUND: url(../../img/register/bg.gif) repeat-x;
+	PADDING-BOTTOM: 0px;
+	WIDTH: 800px;
+	COLOR: #474747;
+	PADDING-TOP: 0px;
+}
+
+.zc_c #tagContent DIV.selectTag {
+	DISPLAY: block
+}

@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>class</title>
+	<link rel="stylesheet" href="__PUBLIC__/bs/css/bootstrap.min.css">
+	<script src="__PUBLIC__/bs/js/jquery.min.js"></script>
+	<script src="__PUBLIC__/bs/js/bootstrap.min.js"></script>
+	<style>
+		th,td{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<a href="" class='btn btn-default'>查看新闻</a>
+				<div class="container" style="width:400px;">
+				<form action="__URL__/search" method="post" class="form-inline" role="form">
+				<div class="form-group">
+                  <input type="text" class="form-control" placeholder="请输入新闻标题" name="title">
+				</div>
+				<div class="form-group">
+                  <input type="submit" class="btn btn-info"  value="搜索">
+				</div>
+			    </form>
+			    </div>
+			</div>
+			<table class='table table-striped table-bordered'>
+				<tr>
+					<th>新闻标题</th>
+					<th>新闻类型</th>
+					<th>发布时间</th>					
+					<th>修改</th>
+					<th>删除</th>
+				</tr>
+				<volist name='rows' id='row'>
+					<tr>
+						<td><{$row['ktitle']}></td>
+						<td>
+							<?php
+								$arr = explode("_",$row['nchann_id']);
+								if($arr[1]==null)
+								{
+                                    $sqlchann="select * from chann where id=$arr[0]";
+                                    $rstchann=mysql_query($sqlchann);
+                                    $rowchann=mysql_fetch_assoc($rstchann);
+                                    echo $rowchann["name"];
+								}else{
+									$sqlsubchann="select * from subchann where id=$arr[1]";
+                                    $rstsubchann=mysql_query($sqlsubchann);
+                                    $rowsubchann=mysql_fetch_assoc($rstsubchann);
+                                    echo $rowsubchann["name"];
+								}
+							?>
+						</td>
+						<td><{$row['ktimes']|date="Y-m-d H:i:s",###}></td>
+						<td><a href="__URL__/edit/id/<{$row['kid']}>/link/<{$row['nlink']}>"><img src="../Public/images/edit.png"></a></td>
+						<td><a onclick='return confirm("您确定删除吗?")' href="__URL__/delete/id/<{$row['kid']}>"><img src="../Public/images/del.png"></a></td>
+					</tr>
+				</volist>	
+			</table>
+			<div class="panel-footer">
+			 <{$show}>
+			</div>
+		</div>
+	</div>	
+</body>
+</html>

@@ -1,0 +1,42 @@
+.captify {
+	position: relative;
+	overflow: hidden;
+	width: 130px;
+}
+
+.captify .heading,.captify .caption {
+	position: absolute;
+	background: #000;
+	height: 50px;
+	width: 120px;
+	opacity: 0.6;
+	filter:alpha(opacity=60);  
+}
+
+.captify .heading {
+	top: -50px;
+}
+
+.captify .caption {
+	bottom: -100px;
+	left: 4px;
+}
+
+.captify .heading span {
+	color: #26c3e5;
+	top: -50px;
+	font-weight: bold;
+	display: block;
+	padding: 5px 0 0 10px;
+}
+
+.captify .caption span {
+	overflow:hidden; 
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	color: #fff;
+	font-size: 12px;
+	display: block;
+	text-align:center;
+	line-height: 24px;
+}

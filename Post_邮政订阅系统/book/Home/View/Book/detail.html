@@ -1,0 +1,1349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0079)http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=1-236&tv=0101 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>中北邮政报刊订阅网</title>
+
+<link href="{$smarty.const.CSS_URL}base.css" rel="stylesheet" type="text/css">
+<link href="{$smarty.const.CSS_URL}detail.css" rel="stylesheet" type="text/css">
+<link type="text/css" rel="stylesheet" href="{$smarty.const.CSS_URL}jquery-ui.css">
+<script type="text/javascript" src="{$smarty.const.JS_URL}jquery-1.9.1.js"></script>
+<script type="text/javascript" src="{$smarty.const.JS_URL}jquery-ui.js"></script>
+<script type="text/javascript" src="{$smarty.const.JS_URL}index.js"></script>
+<link href="{$smarty.const.CSS_URL}bdsstyle.css" rel="stylesheet" type="text/css"><script src="{$smarty.const.JS_URL}logger.js">
+	
+</script></head>
+<body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0107)http://bk.11185.cn/index.do;JSESSIONID_PUB=4jS0VX1Lyv5Gp30YgvVJMngJfJhRgvqrL5xhQQ1QlHXkrpxSpyZ2!-1869903175 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>中北邮政报刊订阅网</title>
+
+<link href="{$smarty.const.CSS_URL}base.css" rel="stylesheet" type="text/css">
+<link href="{$smarty.const.CSS_URL}index.css" rel="stylesheet" type="text/css">
+<link href="{$smarty.const.CSS_URL}captify.css" rel="stylesheet" type="text/css">
+<link type="text/css" rel="stylesheet" href="{$smarty.const.CSS_URL}jquery-ui.css">
+<script type="text/javascript" src="{$smarty.const.JS_URL}jquery-1.9.1.js"></script>
+<script type="text/javascript" src="{$smarty.const.JS_URL}jquery-ui.js"></script>
+<script type="text/javascript" src="{$smarty.const.JS_URL}base.js"></script>
+<script type="text/javascript" src="{$smarty.const.JS_URL}index.js"></script>
+<script type="text/javascript" src="{$smarty.const.JS_URL}jquery.easing.1.3.js"></script>
+ {literal}
+<script type="text/javascript">
+jQuery.noConflict();
+/* 返回页面顶部JS效果  */
+jQuery(document).ready(function($){
+	$(window).bind("scroll",function(){ 
+		var a=$("#sidepanel");
+		var b=document.body.scrollTop||document.documentElement.scrollTop;0==b?a.hide():a.show();
+	});
+	$("#nav").find(".menu li:first").addClass("on");
+	//图片蒙版
+	$('.captify').hover(
+		function() {
+			$(this).children('div:last').stop(false,true).animate({bottom:6},{duration:200, easing: 'easeOutQuart'});
+		},
+		function() {
+			$(this).children('div:last').stop(false,true).animate({bottom:-100},{duration:200, easing: 'easeOutQuart'});
+		}
+	);
+	$("#p_rank li:gt(7)").hide();
+	$("#h_rank li:gt(7)").hide();
+
+});
+</script>
+ {/literal}
+</head>
+
+<body>
+
+	<!-- 返回页面顶部 -->
+	<div style="right: 2px; display: none;" id="sidepanel" class="hide">
+		<a href="http://bk.11185.cn/index.do;JSESSIONID_PUB=4jS0VX1Lyv5Gp30YgvVJMngJfJhRgvqrL5xhQQ1QlHXkrpxSpyZ2!-1869903175#" class="gotop"></a>
+	</div>
+	
+	<!-- 快捷导航 -->
+	<div id="shortcut">
+		
+<div class="w">
+	<ul class="fl lh">
+    	<li class="fore1 ld">
+    		<b></b>
+    		<a href="javascript:addToFavorite()" rel="nofollow">收藏中国邮政报刊订阅网</a>
+    	</li>
+	</ul>
+	<ul class="fr lh">
+		<li id="loginbar" class="fore1">您好，欢迎使用中国邮政报刊订阅网！<span>[<a href="http://bk.11185.cn/logon.do?method=registerLogon" target="_blank">用户登录</a>&nbsp;<a href="http://bk.11185.cn/stat/statlogon.do?method=statuserlogon" target="_blank">报刊社登录</a>]<a href="http://it.11185.cn/chinapostintegrate/toRegister.a?origin=0&registerType=1">[免费注册]</a></span></li>
+		
+		<li id="mobile-subscibe" class="ld">
+			<s></s>
+			<a target="_blank" href="http://app.11185.cn/apps-dl/"><i></i>手机订阅</a>
+		</li>
+		<li id="special_order" class="ld">
+			<s></s>
+			<a href="http://bk.11185.cn/order/voucher.do?method=enter" style="color:red;"><i></i>专用单订阅</a>
+		</li>
+        <li id="other-service" class="ld menu">
+        	<s></s>
+		<a href="http://bk.11185.cn/logon.do?method=mycount">我的报刊</a>
+        </li>
+	</ul>
+	<span class="cls"></span>
+</div>	
+<!-- 网站顶部使用的快捷方式，包含：登录、注册、分类信息等 -->
+
+	</div>
+	<!-- 模糊查询 -->
+	<div id="header" class="w clearfix">
+ {literal}
+<script type="text/javascript">
+	/* 删除左右两端的空格 */
+	function trim(str){ 
+		return str.replace(/(^\s*)|(\s*$)/g, "");
+	}
+	/* 判断对象是否为空 */
+	function isNullOrEmpty(strVal) {
+		if (strVal == '' || strVal == null || strVal == undefined) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	/* 验证浏览器内核  */
+	function checkBrowserCore() {
+		var Sys = {};
+		var ua = navigator.userAgent.toLowerCase();
+		var s;
+		(s = ua.match(/msie ([\d.]+)/)) ? Sys.trident = s[1] : (s = ua
+				.match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1] : (s = ua
+				.match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] : (s = ua
+				.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] : (s = ua
+				.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
+		return Sys;
+	}
+
+	/* 过滤空格 */
+	function ignoreSpaces(string) {
+		var temp = "";
+		string = '' + string;
+		splitstring = string.split(" ");
+		for (var i = 0; i < splitstring.length; i++)
+			temp += splitstring[i];
+		return temp;
+	}
+	
+	/* 模糊查询方法 */
+	function search(searchKey) {
+		var searchVal = "";
+		if(searchKey==null){
+			searchVal = jQuery("#searchKey").val();
+		}else{
+			searchVal = jQuery(searchKey).val();
+		}
+		if(trim(searchVal)=="可按照报刊名称或邮发代号查询" || isNullOrEmpty(trim(searchVal))){
+			return;
+		}
+		jQuery("#fuzzySearchForm").submit();
+	}
+	function keyMove(keyCode) {
+		if (keyCode == 40) {
+			var sel_li = jQuery('#shelper').find('li.item-selected');
+			if (sel_li.length == 0) {
+				jQuery("#shelper li:eq(0)").addClass('item-selected');
+				jQuery("#searchKey").focus().val(
+						jQuery("#shelper li:eq(0)").children('div.search-item')
+								.text());
+
+			} else if ("s_9" == sel_li.attr('id')) {
+				jQuery("#shelper li:eq(9)").removeClass('item-selected');
+				jQuery("#shelper li:eq(0)").addClass('item-selected');
+				jQuery("#searchKey").focus().val(
+						jQuery("#shelper li:eq(0)").children('div.search-item')
+								.text());
+			} else {
+				sel_li.removeClass('item-selected');
+				sel_li.next().addClass('item-selected');
+				jQuery("#searchKey").focus().val(
+						sel_li.next().children('div.search-item').text());
+			}
+		} else if (keyCode == 38) {
+			var sel_li = jQuery('#shelper').find('li.item-selected');
+			if (sel_li.length == 0) {
+				jQuery("#shelper li:eq(9)").addClass('item-selected');
+				jQuery("#searchKey").focus().val(
+						jQuery("#shelper li:eq(9)").children('div.search-item')
+								.text());
+			} else if ("s_0" == sel_li.attr('id')) {
+				jQuery("#shelper li:eq(0)").removeClass('item-selected');
+				jQuery("#shelper li:eq(9)").addClass('item-selected');
+				jQuery("#searchKey").focus().val(
+						jQuery("#shelper li:eq(9)").children('div.search-item')
+								.text());
+			} else {
+				sel_li.removeClass('item-selected');
+				sel_li.prev().addClass('item-selected');
+				jQuery("#searchKey").focus().val(
+						sel_li.prev().children('div.search-item').text());
+			}
+		}
+	}
+	
+	function removeCarttips(obj){
+		var index = jQuery(obj).attr("idx");
+		jQuery.getJSON("http://bk.11185.cn:80/index/cart.do?method=removeCartTips",{"index":index},function(data){
+			if(data==null|| data==""){
+				jQuery("#carttips dl dd").html("").append("<div class='prompt'><div class='nogoods'><b></b>您的购物车中还没有报刊，赶紧添加吧！</div></div>");
+				jQuery("#shopping-amount").text(0);
+			}else{
+				jQuery("#carttips dl dd").html("").append("<div id='carttips-content'><div class='smt'><h4 class='fl'>最近购买报刊</h4></div><div class='smc'><ul id='mcart-mz'></ul></div><div class='smb ar'></div></div>");
+				var count = 0,total=0.00;
+				jQuery.each(data,function(i,item){
+					var imgPath = item.pblsPressImage.imageName;
+					if(imgPath==null){
+						imgPath="/correcting/style/images/no_photo.jpg";
+					}else{
+						imgPath="/media/upload"+imgPath;
+					}
+					count = count + parseInt(item.itemCount);
+					total = total + parseFloat(item.subscribeRefPrice)*item.itemCount;
+					jQuery("#mcart-mz").append("<li><div class='p-img fl'><a href='http://bk.11185.cn:80/index/detail.do?method=getCataDetail&year="+item.year+"&pressCode="+item.oldPressCode+"' target='_blank'><img src='"+imgPath+"' alt='"+item.pressName+"' height='50' width='50'></a></div><div class='p-name fl'><span></span><a href='http://bk.11185.cn:80/index/detail.do?method=getCataDetail&year="+item.year+"&pressCode="+item.oldPressCode+"' title='"+item.pressName+"' target='_blank'>"+item.pressName+"</a></div><div class='p-detail fr ar'><span class='p-price'><strong>￥"+item.subscribeRefPrice+"</strong>×"+item.itemCount+"</span><br><a class='delete' idx='"+i+"'href='javascript:void(0);' onclick='removeCarttips(this)'>删除</a></div></li>")
+				});
+				//alert(count+","+total+","+$("#mcart-mz").html());
+
+				jQuery("#carttips-content div.smb").html("").append("共<b>"+count+"</b>件商品　共计<strong>￥"+Number(total).toFixed(2)+"</strong><br><a href='http://bk.11185.cn:80/index/cart.do?method=cartList' title='去购物车结算' id='btn-payforgoods'>去购物车结算</a>");
+				jQuery("#shopping-amount").text(count);
+			}
+		});
+	}
+	function loadCarttips(){
+		jQuery.getJSON('http://bk.11185.cn:80/index/cart.do?method=cartTips',null, function(data) {
+			if(data==null|| data==""){
+				jQuery("#carttips dl dd").html("").append("<div class='prompt'><div class='nogoods'><b></b>您的购物车中还没有报刊，赶紧添加吧！</div></div>");
+			}else{
+				jQuery("#carttips dl dd").html("").append("<div id='carttips-content'><div class='smt'><h4 class='fl'>最近购买报刊</h4></div><div class='smc'><ul id='mcart-mz'></ul></div><div class='smb ar'></div></div>");
+				var count = 0,total=0.00;
+				jQuery.each(data,function(i,item){
+					var imgPath = item.pblsPressImage.imageName;
+					if(imgPath==null){
+						imgPath="/correcting/style/images/no_photo.jpg";
+					}else{
+						imgPath="/media/upload"+imgPath
+					}
+					count = count + parseInt(item.itemCount);
+					total = total + parseFloat(item.subscribeRefPrice)*item.itemCount;
+					jQuery("#mcart-mz").append("<li><div class='p-img fl'><a href='http://bk.11185.cn:80/index/detail.do?method=getCataDetail&year="+item.year+"&pressCode="+item.oldPressCode+"' target='_blank'><img src='"+imgPath+"' alt='"+item.pressName+"' height='50' width='50'></a></div><div class='p-name fl'><span></span><a href='http://bk.11185.cn:80/index/detail.do?method=getCataDetail&year="+item.year+"&pressCode="+item.oldPressCode+"' title='"+item.pressName+"' target='_blank'>"+item.pressName+"</a></div><div class='p-detail fr ar'><span class='p-price'><strong>￥"+item.subscribeRefPrice+"</strong>×"+item.itemCount+"</span><br><a class='delete' idx='"+i+"'href='javascript:void(0);' onclick='removeCarttips(this)'>删除</a></div></li>")
+				});
+				//alert(count+","+total+","+$("#mcart-mz").html());
+
+				jQuery("#carttips-content div.smb").html("").append("共<b>"+count+"</b>件商品　共计<strong>￥"+Number(total).toFixed(2)+"</strong><br><a href='http://bk.11185.cn:80/index/cart.do?method=cartList' title='去购物车结算' id='btn-payforgoods'>去购物车结算</a>");
+				jQuery("#shopping-amount").text(count);
+			}
+		});
+	}
+	/* 点击关闭按钮调用方法 */
+	function hideTip() {
+		jQuery("#shelper").hide();
+	}
+
+	/* 选择查询列表某一项后调用方法 */
+	function clickItem(item) {
+		jQuery("#searchKey").focus().val(
+				jQuery(item).children('div.search-item').text());
+		hideTip();
+	}
+	jQuery(document).ready(function($){
+		$("body").bind('click',function(){
+			hideTip();
+		});
+		$("#searchKey").keyup(function(event) {
+			var currKey=event.keyCode;
+			//currKey=String.fromCharCode(event.keyCode)||String.fromCharCode(event.which); // 处理firefox兼容问题
+			var searchValue = ignoreSpaces($(this).val());
+			var url = "/index/fuzzy.do?method=fuzzySearch";
+			if (currKey == 38 || currKey == 40 || currKey == 13) {
+				//alert(currKey);
+				keyMove(currKey);
+				return;
+			}
+			if (searchValue != "") {
+				$.getJSON( url, { 'searchValue' : searchValue }, function(data) {
+					$("#shelper").html(""); // 清空ul内容
+					$.each( data, function(i, item) {
+						if(i<10){
+							$("#shelper").append("<li title='" + item[0] + "' id='s_" + i + "'onmouseover='javascript:$(\"#shelper\").find(\"li.item-selected\").removeClass(\"item-selected\");' onclick='clickItem(this)'><div class='search-item'>" + item[0] + "</div><div class='search-count'>" + item[1] + "&nbsp;(" + item[2] + ")</div></li>"); 
+						}
+					});
+					$("#shelper").append("<li class='close' onclick='hideTip()'>关闭</li>"); $("#shelper").show(); 
+				});
+			}
+		});
+		loadCarttips();
+		$("#carttips dl").hover(function(){
+			$(this).addClass("hover");
+			loadCarttips();
+		},function(){
+			$(this).removeClass("hover");
+		});
+	});
+
+</script>
+<style>
+.gwc {
+    background: none repeat scroll 0 0 #F7F7F7;
+    border: 1px solid #EFEFEF;
+    height: 12px;
+    line-height: 12px;
+    margin-top: 10px;
+    padding: 5px 10px 10px 10px;
+}
+
+</style>
+		<div class="logo">
+			<a hidefocus="true" href="http://bk.11185.cn/"> 
+				<img width="325" height="75" alt="报刊订阅" src="{$smarty.const.IMG_URL}logo.jpg">
+			</a>
+		</div>
+    <div class="search">
+  		<form action="http://bk.11185.cn/index/catalogSearch.do" method="get" id="fuzzySearchForm">
+			<input type="hidden" name="method" value="findCatalog">
+			<input id="searchKey" name="searchKey" class="query" onKeyDown="javascript:if(event.keyCode==13) search(this);" value="可按照报刊名称或邮发代号查询" onBlur="if(value==&#39;&#39;){value=&#39;可按照报刊名称或邮发代号查询&#39;}" onFocus="if(value==&#39;可按照报刊名称或邮发代号查询&#39;){value=&#39;&#39;}">
+            <input type="button" class="search_button" onClick="search()">
+            <ul id="shelper" class="hide" style="display: none;">
+			</ul>
+      	</form>
+	 {/literal}	
+	<!--	<div class="gwc fr">
+		<a target="_blank" href="http://bk.11185.cn:80/index/cart.do?method=getCartList">
+	<img width="20" height="16" src="/correcting/style/images/cartlogo.gif">
+	<span>购物车<font color="red" id="cartListSize">1</font>件
+		</span></a>
+	</div>-->
+		<div class="hot"><strong>热门搜索:</strong>
+			<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=1-38" target="_blank">参考消息</a>  
+			<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=54-17" target="_blank">读者</a>   
+			<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=82-921" target="_blank">财经</a>
+		</div>
+	</div>
+	<div id="carttips">
+		<dl class="">
+			<dt class="ld">
+				<s></s>
+				<span class="shopping">
+					<span id="shopping-amount">1</span>
+				</span>
+				<a href="http://bk.11185.cn/index/cart.do?method=cartList" id="settleup-url">购物车</a>
+				<b></b> 
+			</dt>
+			<dd><div id="carttips-content"><div class="smt"><h4 class="fl">最近购买报刊</h4></div><div class="smc"><ul id="mcart-mz"><li><div class="p-img fl"><a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&year=2015&pressCode=82-512" target="_blank"><img src="{$smarty.const.IMG_URL}20140905093847_1.jpg" alt="电脑爱好者" height="50" width="50"></a></div><div class="p-name fl"><span></span><a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&year=2015&pressCode=82-512" title="电脑爱好者" target="_blank">电脑爱好者</a></div><div class="p-detail fr ar"><span class="p-price"><strong>￥8</strong>×1</span><br><a class="delete" idx="0" href="javascript:void(0);" onClick="removeCarttips(this)">删除</a></div></li></ul></div><div class="smb ar">共<b>1</b>件商品　共计<strong>￥8.00</strong><br><a href="http://bk.11185.cn/index/cart.do?method=cartList" title="去购物车结算" id="btn-payforgoods">去购物车结算</a></div></div></dd>
+		</dl>
+	</div>
+
+	</div>
+	<!-- 导航菜单 -->
+	<div style="width:990px; margin:0 auto;">
+		<div id="nav" class="clearfix">
+			
+<ul class="menu">
+	<li class="on"><a href="Index.php">首页</a></li>
+	<li><a href="Hotsale.php">畅销报刊</a></li>
+	<li><a href="Campus.php">优秀校园报刊</a></li>
+	<li><a href="Recommend.php">海南省报刊推荐</a></li>
+	<li style="float: right"><img src="{$smarty.const.IMG_URL}phone.jpg" border="0" style="margin-right:10px;"></li>
+</ul>
+<!--
+<script>
+	(function(){
+		var url = window.location.href;
+		var navId = url.split("&")[1];
+		if(undefined!=navId && undefined!=navId.split("=")[1]){
+			alert();
+			$(".menu li").addClass("on").siblings().removeClass("on");
+		}
+	})(jQuery);
+</script>-->
+		</div>
+	</div>
+
+	<div class="w mt10 pb10 clearfix">
+		<div class="left">
+			<!-- 购买商品关联 -->
+	 {literal}		
+
+<script type="text/javascript">
+	$(function() {
+		$.getJSON('/index/detail.do?method=findRelateProduct', {'pressCode' : '1-236','year':''}, function(data) {
+			if (data == null || data == "") {
+				$("#relate_product").hide();
+			} else {
+				$("#relate_product div.mc ul").html(""); // 清空ul内容
+				// 将不同分类的畅销推荐内容动态添加到UL模块中，以ID区分所有推荐模块信息
+				$.each(data, function(i, item) { 
+					var imgPath = item.IMAGE_NAME;
+					if(imgPath==null){
+						imgPath="/pub/img/no_photo.jpg";
+					}else{
+						imgPath="/media/upload"+item.IMAGE_NAME;
+					}
+					//$("#relate_product").find("div.mc ul").append("<li class='fore'><div class='p-img'> <a target='_blank' title='"+item.PRESS_NAME+"' href='/index/detail.do?method=getCataDetail&year="+item.ISSUE_YEAR+"&pressCode="+item.PRESS_CODE+"'> <img class='loading-style2' src='"+imgPath+"' alt='"+item.PRESS_NAME+"' width='55' height='60'></a> </div> <div class='p-name' style='width:100px'> <a target='_blank' title='"+item.PRESS_NAME+"' href='/index/detail.do?method=getCataDetail&year="+item.ISSUE_YEAR+"&pressCode="+item.PRESS_CODE+"'>"+item.PRESS_NAME+"</a> </div> <div class='p-price'> <strong style='font-size:12px'>\¥"+((item.YEAR_PRICE).toFixed(2))+"元/年</strong> </div></li>");
+					$("#relate_product").find("div.mc ul").append("<li class='fore'><div class='p-img'> <a target='_blank' title='"+item.PRESS_NAME+"' href='/index/detail.do?method=getCataDetail&pressCode="+item.PRESS_CODE+"'> <img class='loading-style2' src='"+imgPath+"' alt='"+item.PRESS_NAME+"' width='55' height='60'></a> </div> <div class='p-name' style='width:100px'> <a target='_blank' title='"+item.PRESS_NAME+"' href='/index/detail.do?method=getCataDetail&pressCode="+item.PRESS_CODE+"'>"+item.PRESS_NAME+"</a> </div> <div class='p-price'> <strong style='font-size:12px'>\¥"+((item.YEAR_PRICE).toFixed(2))+"元/年</strong> </div></li>");
+				});
+				$("#relate_product li:gt(0)").removeClass("fore");
+				$("#relate_product").show();
+			}
+		});
+	});
+</script> {/literal}
+<div id="relate_product" class="m" style="display: block;">
+	<div class="mt">
+		<h2>购买过该报刊的用户还购买了</h2>
+	</div>
+	<div class="mc">
+		<ul>
+		{foreach $similarinfo as $k => $v}
+			<li class="fore"><div class="p-img"> 
+				<a target="_blank" title="{$v.book_name}" href="{$smarty.const.__MODULE__}/Book/detail/book_id/{$v.book_id}">
+			 <img class="loading-style2" src="{$smarty.const.IMG_UPLOAD}{$v.book_small_img}" alt="{$v.book_name}" width="55" height="60"></a>
+			  </div>
+			   <div class="p-name" style="width:100px"> <a target="_blank" title="{$v.book_name}" href="{$smarty.const.__MODULE__}/Book/detail/book_id/{$v.book_id}">{$v.book_name}</a> </div> <div class="p-price"> <strong style="font-size:12px">¥{$v.book_price*12}元/年</strong> 
+			</div>
+		{/foreach}
+			</li>
+		</ul>
+	</div>
+</div>
+			<!-- 同类热卖商品 -->
+			
+
+<script type="text/javascript">
+	$(function() {
+		$.getJSON('http://bk.11185.cn:80/index/detail.do?method=findSimilarProduct', { 'pressCode' : '1-236','year':'' }, function(data) {
+			if (data == null || data == "") {
+				$("#similar_product").hide();
+			} else {
+				$("#similar_product div.mc ul").html(""); // 清空ul内容
+				// 将不同分类的畅销推荐内容动态添加到UL模块中，以ID区分所有推荐模块信息
+				$.each(data, function(i, item) { 
+					var imgPath = item.IMAGE_NAME;
+					if(imgPath==null){
+						imgPath="/pub/img/no_photo.jpg";
+					}else{
+						imgPath="/media/upload"+item.IMAGE_NAME;
+					}
+					if(i<3){
+						//$("#similar_product").find("div.mc ul").append("<li class='fore'> <div class='p-img'> <div class='i-img'> <a target='_blank' href='/index/detail.do?method=getCataDetail&year="+item.YEAR+"&pressCode="+item.PRESS_CODE+"' title='"+item.PRESS_NAME+"'> <img src='"+imgPath+"' alt='"+item.PRESS_NAME+"' height='90' width='72'> </a> </div> <b>"+(i+1)+"</b> </div> <div class='p-name' style='min-height:50px'> <a target='_blank' href='/index/detail.do?method=getCataDetail&year="+item.YEAR+"&pressCode="+item.PRESS_CODE+"' title='"+item.PRESS_NAME+"'>"+item.PRESS_NAME+"</a> </div> <div class='p-price'> <strong style='font-size:12px'>\¥"+((item.YEAR_PRICE).toFixed(2))+"元/年</strong> </div> </li>");
+						$("#similar_product").find("div.mc ul").append("<li class='fore'> <div class='p-img'> <div class='i-img'> <a target='_blank' href='/index/detail.do?method=getCataDetail&pressCode="+item.PRESS_CODE+"' title='"+item.PRESS_NAME+"'> <img src='"+imgPath+"' alt='"+item.PRESS_NAME+"' height='90' width='72'> </a> </div> <b>"+(i+1)+"</b> </div> <div class='p-name' style='min-height:50px'> <a target='_blank' href='/index/detail.do?method=getCataDetail&pressCode="+item.PRESS_CODE+"' title='"+item.PRESS_NAME+"'>"+item.PRESS_NAME+"</a> </div> <div class='p-price'> <strong style='font-size:12px'>\¥"+((item.YEAR_PRICE).toFixed(2))+"元/年</strong> </div> </li>");
+					}else{
+						//$("#similar_product").find("div.mc ul").append("<li class='fore'> <div class='p-img'> <div class='i-img'> <a target='_blank' href='/index/detail.do?method=getCataDetail&year="+item.YEAR+"&pressCode="+item.PRESS_CODE+"' title='"+item.PRESS_NAME+"'> <img src='"+imgPath+"' alt='"+item.PRESS_NAME+"' height='90' width='72'> </a> </div> </div> <div class='p-name' style='min-height:50px'> <a target='_blank' href='/index/detail.do?method=getCataDetail&year="+item.YEAR+"&pressCode="+item.PRESS_CODE+"' title='"+item.PRESS_NAME+"'>"+item.PRESS_NAME+"</a> </div> <div class='p-price'> <strong style='font-size:12px'>\¥"+((item.YEAR_PRICE).toFixed(2))+"元/年</strong> </div> </li>");
+						$("#similar_product").find("div.mc ul").append("<li class='fore'> <div class='p-img'> <div class='i-img'> <a target='_blank' href='/index/detail.do?method=getCataDetail&pressCode="+item.PRESS_CODE+"' title='"+item.PRESS_NAME+"'> <img src='"+imgPath+"' alt='"+item.PRESS_NAME+"' height='90' width='72'> </a> </div> </div> <div class='p-name' style='min-height:50px'> <a target='_blank' href='/index/detail.do?method=getCataDetail&pressCode="+item.PRESS_CODE+"' title='"+item.PRESS_NAME+"'>"+item.PRESS_NAME+"</a> </div> <div class='p-price'> <strong style='font-size:12px'>\¥"+((item.YEAR_PRICE).toFixed(2))+"元/年</strong> </div> </li>");
+					}
+				});
+				$("#similar_product li:gt(0)").removeClass("fore");
+				$("#similar_product").show();
+			}
+		});
+	});
+</script>
+<div id="similar_product" class="m" style="display:block;">
+	<div class="mt">
+		<h2>热销推荐</h2>
+	</div>
+	<div class="mc">
+		<ul>
+{foreach $bestseller as $k => $v}
+			<li class="fore"> <div class="p-img"> <div class="i-img"> 
+				<a target="_blank" href="{$smarty.const.__MODULE__}/Book/detail/book_id/{$v.book_id}" title="贵州民族报"> 
+				<img src="{$smarty.const.IMG_UPLOAD}{$v.book_small_img}" alt="贵州民族报" height="90" width="72"> </a>
+				 </div> <b>1</b> </div> <div class="p-name" style="min-height:50px"> 
+				 <a target="_blank" href="{$smarty.const.__MODULE__}/Book/detail/book_id/{$v.book_id}" title="贵州民族报">
+					 	{$v.book_name}</a>
+					 	 </div> <div class="p-price"> <strong style="font-size:12px">
+					 	 ¥{$v.book_price*12}元/年</strong> </div> </li>
+	{/foreach}				 	 
+		</ul>
+	</div>
+</div>
+		</div>
+		<div class="right">
+			
+
+
+
+
+
+
+<link href="{$smarty.const.IMG_URL}service.css" rel="stylesheet" type="text/css">
+<!-- 电子样刊阅读JS -->
+ {literal}
+<script type="text/javascript" src="{$smarty.const.IMG_URL}edocReader.js"></script>
+<script type="text/javascript">
+	// 打开促销活动详情
+	function openPromoDialog() {
+		//设置帮助信息弹出框
+		jQuery("#promoDialog").dialog({
+			autoOpen : true,
+			width : 810,
+			height : 350,
+			resizable : false,
+			modal : true,
+			show : {
+				effect : "blind",
+				duration : 500
+			},
+			hide : {
+				effect : "explode",
+				duration : 500
+			}
+		});
+	}
+	/* 报刊图片放大效果 */
+	function showBigImage(imgSrc){
+		$("#preview").find(".magazine_big img:first").attr("src",imgSrc);
+	}
+	/* 添加购物车和购买调用方法 */
+	function addPress(actionName)
+	{
+		// 获取选择的省份编号
+		var districtCode = $("#defProv").attr("procode");
+		// 获取选择的省份名称
+		//var provinceName = $("#defProv").text();
+		// 获取图片路径
+		//var imgPath = $("#bigImg").attr("src");
+		// 订阅份数
+		var itemCount = $("#buy-num").val();
+		//放入购物车
+		if (actionName == "addCart") {
+			var amount = parseInt($("#shopping-amount").text())+parseInt(itemCount);
+			$("#shopping-amount").text(amount);
+			/*var itemcount = $("#choose-amount input").val();*/
+			var year = $("#defYear").text();
+			$.getJSON('http://bk.11185.cn:80/index/cart.do?method=addCartByURL', {'receiverDistrict':districtCode,'oldPressCode' : '1-236','year':year,'itemCount':itemCount,'refreshFlag':'false'}, function(data) {
+				if(null==data||""==data){
+					//alert("您所选择的报刊以成功加入购物车，请进入我的购物车查看详细信息！");
+					//$("#cartListSize").html("0");
+					//window.location.reload();
+				}else{
+					amount = amount - parseInt(itemCount);
+					$("#shopping-amount").text(amount);
+					alert(eval(data)[0][0]+"添加失败，请重试！");
+				}
+			});
+		}
+		//放入收藏夹
+		else if (actionName == "favorite") {
+			$("#detailForm").attr("action","http://bk.11185.cn:80/order/myfavorite.do?method=addmyfavorite").submit();
+		}
+		// 点击购买按钮
+		else if (actionName == "buyNow"){
+			var year = $("#defYear").text();
+			//var url = $("#InitBuyUrl").attr("href")+"&receiverDistrict="+districtCode+"&year="+year+"&addFlag=false";
+			//location.href = $("#InitBuyUrl").attr("href",url);
+			location.href = "http://bk.11185.cn:80/index/cart.do?method=addCartByURL&oldPressCode=1-236&itemCount="+itemCount+"&receiverDistrict="+districtCode+"&year="+year+"&addFlag=false";
+		}
+	}
+	
+	// 发表评论调用方法
+	function pulishComments(){
+		var commentsContent = $("#commentsContent").val();
+		$.ajax({
+			type:"post",
+			url:"http://bk.11185.cn:80/detail/comments.do?method=saveUserComments",
+			data:{"pressCode":"1-236","content":commentsContent},
+			dataType:"JSON",
+			success: function(data){
+				$("#comment-list").html("");
+				$.each(data,function(i,item){
+					var content = item.content;
+					if(item.filterContent!=null){
+						content = item.filterContent;
+					}
+					var time=new Date(item.submitTime.time).format("yyyy-MM-dd hh:mm:ss"); 
+					$("#comment-list").append("<li> <div class='user-image'> <b></b> </div> <div class='user-info'> <div class='user-status'> <span>"+item.userAccount+"</span> <span style='padding-left: 10px;'>"+time+"</span> </div> <p> "+content);
+				});
+			},
+			error:function(msg){
+				alert("评论发表失败，请重试！");
+			}
+		});
+	}
+	
+	function changePrice(issueYear){
+		$.getJSON('http://bk.11185.cn:80/index/detail.do?method=findIssuePrice', { 'pressCode' : '1-236','issueYear':issueYear}, function(data) {
+			if(null!=data||""!=data){
+				$("#choose-btns").find("#InitCartUrl").show();
+				$("#choose-btns").find("#InitBuyUrl").show();
+				var s_price = parseFloat(data[0].SUBSCRIBE_REF_PRICE).toFixed(2);
+				var q_price = parseFloat(data[0].QUARTER_PRICE).toFixed(2);
+				var h_price = parseFloat(data[0].HALFYEAR_PRICE).toFixed(2);
+				var y_price = parseFloat(data[0].YEAR_PRICE).toFixed(2);
+				if(s_price==0.00){
+					$("#s_price").html("").append("<del>\¥0.00</del>");
+				}else{
+					$("#s_price").html("").append("<strong>\¥"+s_price+"</strong>");
+				}
+				if(q_price==0.00){
+					$("#q_price").html("").append("<del>\¥0.00</del>");
+				}else{
+					$("#q_price").html("").append("<strong>\¥"+q_price+"</strong>");
+				}
+				if(h_price==0.00){
+					$("#h_price").html("").append("<del>\¥0.00</del>");
+				}else{
+					$("#h_price").html("").append("<strong>\¥"+h_price+"</strong>");
+				}
+				if(y_price==0.00){
+					$("#y_price").html("").append("<del>\¥0.00</del>");
+				}else{
+					$("#y_price").html("").append("<strong>\¥"+y_price+"</strong>");
+				}
+			}
+		});
+	}
+	/* 判断当前省份是否可发行此报刊，如果不能发行则因此购物车及购买按钮 */
+	function selIssueProv(issueYear,districtCode){
+		var mess = "可订阅";
+		$.getJSON('http://bk.11185.cn:80/index/detail.do?method=findIssueProvince', { 'pressCode' : '1-236','issueYear':issueYear,'districtCode':districtCode}, function(data) {
+			if(null==data||""==data){
+				alert("系统异常，请重试！");
+			}else{
+				if(eval(data)=="true"){
+					$("#choose-btns").find("#InitCartUrl").show();
+					$("#choose-btns").find("#InitBuyUrl").show();
+				}else{
+					mess="<font color='red'>该范围邮政不可提供订阅</font>";
+					$("#choose-btns").find("#InitCartUrl").hide();
+					$("#choose-btns").find("#InitBuyUrl").hide();
+				}
+			}
+			$("#store-prompt").html(mess);
+		});
+	}
+	/* 查询是否包含促销活动信息 */
+	function findPromoInfo(issueYear){
+		var mess = "可订阅";
+		$.getJSON('http://bk.11185.cn:80/index/detail.do?method=findPromoInfo', { 'pressCode' : '1-236','issueYear':issueYear}, function(data) {
+			if(null==data||""==data){
+				/* $("#promo_content").html("").append("<em style='color:#e4393c;'>无促销</em>");
+				$("#promoDialog").html(""); */
+				$("#promo").hide();
+			}else{
+				var item = eval(data[0]);
+				$("#promo_content").html("").append("<em style='color:#e4393c;' onclick='openPromoDialog()'>"+item.promoBrief+"</em>");
+				$("#promoDialog").html("").append("<div class='info_box' style='width:740px; height:220px;'> <div class='tit'>"+item.promoBrief+"</div><ul><li><span style='text-indent: 2em;'>"+item.promoRecount+"</span></li></ul></div>");
+				$("#promo").show();
+			}
+		});
+	}
+	$(function(){
+		// 点击图片放大功能，默认获取小图中第一个图片信息
+		$("#preview").find(".magazine_big img:first").attr("src",$(".magazine_small").find("ul li:first img").attr("src"));
+		// 发行年份，省份选择添加鼠标hover事件
+		$("#store-selector,#year-selector").hover(function(){
+			$(this).addClass("hover");
+		},function(){
+			$(this).removeClass("hover");
+		});
+		// 选择年份点击事件处理
+		$("#year-selector").find("dl a").bind("click",function(){
+			var districtCode = $("#store-selector").find("#defProv").attr("procode");
+			var issueYear = $(this).attr("isuyear");
+			selIssueProv(issueYear,districtCode);
+			// 查询促销活动信息
+			findPromoInfo(issueYear);
+			// 根据年份查询价格变动
+			if($("#defYear").text()!=$(this).text()){				
+				changePrice(issueYear);
+				$("#defYear").text($(this).text());
+			}
+			$("#year-selector").removeClass("hover");
+		});
+		// 省份选择点击事件
+		$("#store-selector").find("dl a").bind("click",function(){
+			var districtCode = $(this).attr("procode");
+			var issueYear = $("#defYear").text();
+			selIssueProv(issueYear,districtCode);
+			$("#defProv").text($(this).text()).attr("procode",$(this).attr("procode"));
+			$("#store-selector").removeClass("hover");
+		});
+		// 设置年份默认显示最新年份内容
+		var defYear = $("#year-selector dl a:last").attr("isuyear");
+		$("#defYear").text(defYear);
+		// 发行省份默认选择第一个查询出的省份
+		var defProvCode = $("#store-selector dl a:first").attr("procode");
+		var defProvName = $("#store-selector dl a:first").text();
+		$("#defProv").text(defProvName).attr("procode",defProvCode);
+		/* 初始化发行省份为北京 */
+		selIssueProv(defYear,defProvCode);
+		/* 初始化价格 */
+		changePrice(defYear);
+		// 为拍档中最后一个商品去除加号
+		$("#partner_product div.suits ul").find("li:last").addClass("last-item");
+		
+		/*************** 报刊介绍、评论标签切换方法  *****************/
+		$("#product-detail").find(".tab li").bind("click",function(){
+			$(this).addClass("curr").siblings().removeClass("curr");
+			var tc_idx = $("#product-detail").attr("id")+"-"+($(this).index(".tab li")+1);
+			$("#"+tc_idx).show().siblings(".mc").hide();
+		});
+		
+		// 加入购物车动画效果
+		$(".run").click(function(){
+			var thisTop = $("#bigImg").offset().top+50; 
+			//所在位置的高度         
+			var thisLeft =$("#bigImg").offset().left+50; 
+			//所在位置的宽度
+			animatenTop(thisTop,thisLeft); 
+			return false;
+		});
+
+	});
+	
+	function animatenTop(thisTop,thisLeft) {
+		var srcPath=$("#smallimg").attr("src"); 
+		var CopyDiv = '<img src="'+srcPath+'" id="box" style="top:' + thisTop + 'px;left:' + thisLeft + 'px" />'; 
+		var topLength = $("#settleup-url").offset().top; 
+		//取得到购物车的宽度     
+		var leftLength = $("#settleup-url").offset().left; 
+		//取得到购物车的宽度
+		$("body").append(CopyDiv);
+		$("body").children("#box").animate({width: "30px",height: "30px","top": topLength, "left": leftLength, "opacity": .1}, 900, function(){$(this).remove()});
+	}
+</script>
+ {/literal}
+<style>
+#box { height: 120px; width: 126px; position: absolute;}
+</style>
+<!-- 收藏功能专用form -->
+<form id="detailForm" name="detailForm" method="post">
+	<input type="hidden" name="oldPressCode" value="1-236">
+	<input type="hidden" name="year" value="2015"> 
+	<input id="itemCount" type="hidden" name="itemCount" value="1">
+</form>
+<!-- 分类导航信息 -->
+
+	<div style="font: bold 14px &#39;microsoft yahei&#39;; padding: 10px 0px 20px 20px;">
+		
+			
+				
+					<strong style="font-size:18px;">政法时事</strong>
+					-&gt;
+					<a href="">
+						报纸 
+					</a>
+
+					-&gt;
+					<a href="">
+						人大、政协、侨务及民主党派机关报 
+					</a>
+				
+			
+		
+	</div>
+
+
+	
+	
+		<div id="product-intro">
+			{foreach $bookinfo as $k => $v}
+			<div id="name">
+				<h1>{$v.book_name}</h1>
+			</div>
+			<div class="clearfix">
+				<ul id="my-price">
+					<li>
+						<div class="dt">单 &nbsp;&nbsp;&nbsp;价：</div>
+						<div class="sub_dd" id="s_price"><strong>¥{$v.book_price}</strong></div>
+					</li>
+					<li>
+						<div class="dt">季 &nbsp;&nbsp;&nbsp;价：</div>
+						<div class="sub_dd" id="q_price"><strong>¥{$v.book_price*4}</strong></div>
+					</li>
+					<li>
+						<div class="dt">半&nbsp;年&nbsp;价：</div>
+						<div class="sub_dd" id="h_price"><strong>¥{$v.book_price*6}</strong></div>
+					</li>
+					<li>
+						<div class="dt">全&nbsp;年&nbsp;价：</div>
+						<div class="sub_dd" id="y_price"><strong>¥{$v.book_price*12}</strong></div>
+					</li>
+				</ul>
+				<ul id="summary">
+					<!-- <li id="summary-grade">
+						<div class="dt">商品评分：</div>
+						<div class="dd">
+							<div class="star">
+								<span class="star-white"><span class="star-yellow h5"></span></span>
+							</div>
+						</div>
+					</li> -->
+					
+					<li id="summary-year">
+						<div class="dt">发行年份：</div>
+						<div class="dd">
+							<div id="year-selector">
+								<div class="text">
+									<div id="defYear">2015</div>
+									<b></b>
+								</div>
+								<dl>
+									<dd>
+										
+											<a isuyear="2015" href="javascript:void(0)">2015</a>
+										
+									</dd>
+								</dl>
+								<div class="close" onclick="$(&#39;#year-selector&#39;).removeClass(&#39;hover&#39;)"></div>
+							</div>
+						</div>
+					</li>
+					<li id="summary-stock">
+						<div class="dt">配&nbsp;送&nbsp;至：</div>
+						<div class="dd">
+							<div id="store-selector">
+								<div class="text">
+									<div id="defProv" procode="11____">北京市</div>
+									<b></b>
+								</div>
+								<dl>
+									<dd>
+										
+											<a procode="11____" href="javascript:void(0)">北京市</a>
+										
+											<a procode="12____" href="javascript:void(0)">天津市</a>
+										
+											<a procode="13____" href="javascript:void(0)">河北省</a>
+										
+											<a procode="14____" href="javascript:void(0)">山西省</a>
+										
+											<a procode="15____" href="javascript:void(0)">内蒙古自治区</a>
+										
+											<a procode="21____" href="javascript:void(0)">辽宁省</a>
+										
+											<a procode="22____" href="javascript:void(0)">吉林省</a>
+										
+											<a procode="23____" href="javascript:void(0)">黑龙江省</a>
+										
+											<a procode="31____" href="javascript:void(0)">上海市</a>
+										
+											<a procode="32____" href="javascript:void(0)">江苏省</a>
+										
+											<a procode="33____" href="javascript:void(0)">浙江省</a>
+										
+											<a procode="34____" href="javascript:void(0)">安徽省</a>
+										
+											<a procode="35____" href="javascript:void(0)">福建省</a>
+										
+											<a procode="36____" href="javascript:void(0)">江西省</a>
+										
+											<a procode="37____" href="javascript:void(0)">山东省</a>
+										
+											<a procode="41____" href="javascript:void(0)">河南省</a>
+										
+											<a procode="42____" href="javascript:void(0)">湖北省</a>
+										
+											<a procode="43____" href="javascript:void(0)">湖南省</a>
+										
+											<a procode="44____" href="javascript:void(0)">广东省</a>
+										
+											<a procode="45____" href="javascript:void(0)">广西壮族自治区</a>
+										
+											<a procode="46____" href="javascript:void(0)">海南省</a>
+										
+											<a procode="50____" href="javascript:void(0)">重庆市</a>
+										
+											<a procode="51____" href="javascript:void(0)">四川省</a>
+										
+											<a procode="52____" href="javascript:void(0)">贵州省</a>
+										
+											<a procode="53____" href="javascript:void(0)">云南省</a>
+										
+											<a procode="54____" href="javascript:void(0)">西藏自治区</a>
+										
+											<a procode="61____" href="javascript:void(0)">陕西省</a>
+										
+											<a procode="62____" href="javascript:void(0)">甘肃省</a>
+										
+											<a procode="63____" href="javascript:void(0)">青海省</a>
+										
+											<a procode="64____" href="javascript:void(0)">宁夏回族自治区</a>
+										
+											<a procode="65____" href="javascript:void(0)">新疆维吾尔自治区</a>
+										
+									</dd>
+								</dl>
+								<div class="close" onclick="$(&#39;#store-selector&#39;).removeClass(&#39;hover&#39;)"></div>
+							</div>
+							<div id="store-prompt">可订阅</div>
+						</div>
+					</li>
+					<li id="summary-ph">
+						<div class="dt">出&nbsp;版&nbsp;社：</div>
+						<div class="dd">
+							
+								
+									<span class="grey">--</span>
+								
+								
+								
+							
+						</div>
+					</li>
+					<li>
+						<div class="dt">发报刊局：</div>
+						<div class="dd">
+							
+								
+									北京市发报刊局
+								
+								
+							
+						</div>
+					</li>
+				</ul>
+				
+					
+						<ul id="choose">
+							<li id="choose-amount">
+								<div class="dt">订阅份数：</div>
+								<div class="dd">
+									<div class="wrap-input">
+										<a onclick="setAmount.reduce(&#39;#buy-num&#39;)" href="javascript:;" class="btn-reduce"><span class="reduceQuantity">-</span></a> <a onclick="setAmount.add(&#39;#buy-num&#39;)" href="javascript:;" class="btn-add"><span class="addQuantity">+</span></a> <input onkeyup="setAmount.modify(&#39;#buy-num&#39;);" value="1" maxlength="3" id="buy-num" class="text">
+									</div>
+								</div>
+							</li>
+							<li id="choose-btns">
+								<div class="btn" id="choose-btn-append">
+									<a id="InitFavoriteUrl" class="btn-favorite" onclick="addPress(&#39;favorite&#39;)">收藏<b class="favorite"></b></a>
+									<a id="InitCartUrl" class="btn-append hide run" onclick="addPress(&#39;addCart&#39;)">加入购物车<b class="add"></b></a>
+									<!--<a id="InitBuyUrl" class="btn-buy hide" href="http://bk.11185.cn:80/index/cart.do?method=addCartByURL&oldPressCode=1-236&itemCount=1" onclick="addPress('buyNow')">-->
+									<a id="InitBuyUrl" class="btn-buy hide" onclick="addPress(&#39;buyNow&#39;)">
+										购买<b class="buy"></b></a>
+								</div>
+							</li>
+						</ul>
+					
+					
+				
+			</div>
+			<div class="clr"></div>
+			<div id="preview">
+				<div class="magazine_big">
+					<img id="bigImg" width="170" height="212" src="{$smarty.const.IMG_UPLOAD}{$v.book_big_img}" border="0">
+				</div>
+				<div class="magazine_small">
+					
+						<ul>
+							
+								<li>
+									<img id="smallimg" src="{$smarty.const.IMG_UPLOAD}{$v.book_small_img}" width="33" height="41" border="0" onclick="showBigImage(this.src);">
+								</li>
+							
+								<li>
+									<img id="smallimg" src="{$smarty.const.IMG_UPLOAD}{$v.book_small_img}" width="33" height="41" border="0" onclick="showBigImage(this.src);">
+								</li>
+							
+								<li>
+									<img id="smallimg" src="{$smarty.const.IMG_URL}1032.jpg" width="33" height="41" border="0" onclick="showBigImage(this.src);">
+								</li>
+							
+						</ul>
+					
+				</div>
+				{/foreach}
+				<div class="mt10 nowrap">
+					
+					<div id="short-share" style="margin-left: 20px;">
+						<!-- Baidu Button BEGIN -->
+						
+						<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=0" src="{$smarty.const.IMG_URL}bds_s_v2.js"></script>
+						
+						<script type="text/javascript">
+							document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+						</script>
+						<!-- Baidu Button END -->
+						<div class="clr"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+			<div id="o-suit" style="display:block;" class="m m1">
+				<div class="mt">
+					<h2>推荐组合</h2>
+				</div>
+				<div id="partner_product" class="mc">
+					<div class="master">
+						<s></s>
+						<div class="p-img">
+							
+							<a target="_blank" href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=1-236">
+								
+									
+										
+											<img src="{$smarty.const.IMG_URL}1033.jpg" height="100" width="82">
+										
+									
+									
+								
+							</a>
+						</div>
+						<div class="p-name">
+							
+							<a target="_blank" href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=1-236">中国民族报</a>
+						</div>
+						<div class="choose">
+							<input id="partner_0" actprice="1.5" relprice="150.0" class="hide" pressid="" issueyear="2015" pressname="" type="checkbox" checked=""> 
+							<label class="p-price" for="partner_0"> </label>
+						</div>
+					</div>
+					<div class="suits">
+						<ul class="lh" style="width: 590px;">
+							
+								<li><s data-push="1"></s>
+									<div class="p-img">
+										
+										<a target="_blank" href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=25-53">
+											
+												
+													<img alt="江淮时报" src="{$smarty.const.IMG_URL}5267.jpg" height="100" width="82">
+								
+										</a>
+									</div>
+									<div class="p-name">
+										<a target="_blank" href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=25-53&year=2015">江淮时报</a>
+									</div>
+									<div class="choose">
+										<input id="partner_1" actprice="1.0" relprice="96.0" pressid="25-53" issueyear="2015" pressname="江淮时报" onclick="calculatePrice(this,&#39;#o-suit&#39;)" type="checkbox">
+										<label class="p-price" for="partner_1">
+											<strong> ¥1.00</strong>
+										</label>
+									</div></li>
+							
+								<li><s data-push="2"></s>
+									<div class="p-img">
+										
+										<a target="_blank" href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=25-121">
+											
+												
+													<img alt="安徽日报.农村版" src="{$smarty.const.IMG_URL}8282.jpg" height="100" width="82">
+												
+												
+											
+										</a>
+									</div>
+									<div class="p-name">
+										<a target="_blank" href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=25-121&year=2015">安徽日报.农村版</a>
+									</div>
+									<div class="choose">
+										<input id="partner_2" actprice="1.2" relprice="120.0" pressid="25-121" issueyear="2015" pressname="安徽日报.农村版" onclick="calculatePrice(this,&#39;#o-suit&#39;)" type="checkbox">
+										<label class="p-price" for="partner_2">
+											<strong> ¥1.20</strong>
+										</label>
+									</div></li>
+							
+								<li><s data-push="3"></s>
+									<div class="p-img">
+										
+										<a target="_blank" href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=47-52">
+											
+												
+													<img alt="广西政协报" src="{$smarty.const.IMG_URL}5547.jpg" height="100" width="82">
+												
+												
+											
+										</a>
+									</div>
+									<div class="p-name">
+										<a target="_blank" href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=47-52&year=2015">广西政协报</a>
+									</div>
+									<div class="choose">
+										<input id="partner_3" actprice="1.0" relprice="156.0" pressid="47-52" issueyear="2015" pressname="广西政协报" onclick="calculatePrice(this,&#39;#o-suit&#39;)" type="checkbox">
+										<label class="p-price" for="partner_3">
+											<strong> ¥1.00</strong>
+										</label>
+									</div></li>
+							
+								<li class="last-item"><s data-push="4"></s>
+									<div class="p-img">
+										
+										<a target="_blank" href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=41-62">
+											
+												
+													<img alt="湘声报" src="{$smarty.const.IMG_URL}2341.jpg" height="100" width="82">
+												
+												
+											
+										</a>
+									</div>
+									<div class="p-name">
+										<a target="_blank" href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=41-62&year=2015">湘声报</a>
+									</div>
+									<div class="choose">
+										<input id="partner_4" actprice="1.0" relprice="110.0" pressid="41-62" issueyear="2015" pressname="湘声报" onclick="calculatePrice(this,&#39;#o-suit&#39;)" type="checkbox">
+										<label class="p-price" for="partner_4">
+											<strong> ¥1.00</strong>
+										</label>
+									</div></li>
+							
+						</ul>
+					</div>
+					<div class="infos">
+						<s></s>
+						<div class="p-name">
+							<strong>推荐组合购买</strong>
+						</div>
+						<div class="p-price">
+							单&nbsp;&nbsp;价： <strong id="group_actprice">¥1.50</strong>
+						</div>
+						<div class="p-market">
+							年&nbsp;&nbsp;价： <strong id="group_relprice">¥150.00</strong>
+						</div>
+						<div class="btns">
+							<a href="http://bk.11185.cn/index/cart.do?method=partnerToCart&pressInfo=1-236:2015:%E4%B8%AD%E5%9B%BD%E6%B0%91%E6%97%8F%E6%8A%A5" class="btn-buy"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		<div id="product-detail" class="m m1">
+			<div style="height: 28px;" class="float-nav-wrap">
+				<div style="height: 28px; width: 768px;" class="mt">
+					<ul class="tab">
+						<li class="curr"><a href="javascript:;">报刊介绍</a></li>
+						<li><a href="javascript:;">报刊评价</a></li>
+						<!-- <li><a href="javascript:;" >问题解答</a></li> -->
+					</ul>
+				</div>
+			</div>
+			<div id="product-detail-1" class="mc">
+				<ul class="detail-list">
+					<li> 国内标准刊号：CN11-0192 </li>
+					<li> 邮发编号：1-236 </li>
+					<li> 发行年份：2015 </li>
+					<li> 报刊种类：报纸 </li>
+					<li> 期刊类别：一周两报 </li>
+					<li> 出版日期： </li>
+				</ul>
+		
+				<div class="sub-m m1">
+					<div class="sub-mt">
+						<h3>报刊介绍</h3>
+					</div>
+					<div class="sub-mc">
+						<div class="con">
+							   《中国民族报》是由国家民族事物委员会主管，面向国内外公开发行的惟一一份全面报道我国五十六个民族和少数民族地区各项事业的中央级综合性报纸。
+　　《中国民族报》融权威性、新闻性、知识性、服务性为一体，积极宣传民族宗教方针政策；全方位追踪民族宗教热点新闻、深度报道民族宗教亮点事件、充分展示民族宗教工作成就、全面传播民族宗教多元文化、努力探索民族民族宗教前沿理论。
+　　《中国民族报》辟有《要闻》《经济》《教育》《理论》《宗教新闻》《宗教文化》《宗教理论》《民族文化》《环球》等专版，共推出一百多个精品栏目，报纸栏目多，信息量大，可读性强。
+　　每周二、五出版，彩色印刷，全年定价：１１０元。
+　　邮发代号：１－２３６　　　全国各地邮局均可订阅
+　　地址：北京市海淀区倒座庙１号院３号楼　　邮政编码：１０００８０
+　　　　　北京市８７９０信箱
+　　电话：０１０－８２６８４２２５　　　　
+　　详情请登阅：Http//www.mzb.com.cn
+						</div>
+						<div class="more" data-open="1" style="display: none;">
+							<a href="javascript:void(0)">查看全部</a>
+						</div>
+					</div>
+				</div>
+				<div class="clr"></div>
+				<div class="sub-m m1">
+					<div class="sub-mt">
+						<h3>栏目介绍</h3>
+					</div>
+					<div class="sub-mc">
+						<div class="con">
+							
+								要闻，宗教周刊<br>
+							
+						</div>
+						<div class="more" data-open="1" style="display: none;">
+							<a href="javascript:void(0)">查看全部</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="product-detail-2" class="mc hide">
+				
+				<div class="clearfix"></div>
+				<div id="comments">
+					<div class="m_title">
+						<div class="m_tab">
+							<span>购买评价</span>
+						</div>
+					</div>
+					<ul class="comment-list" id="comment-list">
+						
+							<li><span class="grey"> 暂无用户评论信息 </span></li>
+						
+						
+					</ul>
+					<!-- 查询结果分页 -->
+					
+					
+						<page:controller form="catalogSearchForm" action="/index/catalogSearch.do?method=findCatalog"></page:controller>
+					
+				</div>
+			</div>
+			
+		</div>
+	
+ {literal}
+<script type="text/javascript">
+	var setAmount={
+		min:1,max:999,count:1,countEl:$("#buy-num"),
+		//buyLink:$("#choose-btn-append .btn-buy"),
+		//targetLink:$("#choose-btn-append .btn-buy"),
+		//matchCountKey:["itemCount"],
+		add:function(){
+			//return this.count>=999?(alert("\u5546\u54c1\u6570\u91cf\u6700\u591a\u4e3a"+this.max),!1):(this.count++,this.countEl.val(this.count),this.setBuyLink(),void 0);
+			return this.count>=999?(alert("\u5546\u54c1\u6570\u91cf\u6700\u591a\u4e3a"+this.max),!1):(this.count++,this.countEl.val(this.count),void 0);
+		},
+		reduce:function(){
+			//return 1>=this.count?(alert("\u5546\u54c1\u6570\u91cf\u6700\u5c11\u4e3a"+this.min),!1):(this.count--,this.countEl.val(this.count),this.setBuyLink(),void 0);
+			return 1>=this.count?(alert("\u5546\u54c1\u6570\u91cf\u6700\u5c11\u4e3a"+this.min),!1):(this.count--,this.countEl.val(this.count),void 0);
+		},
+		modify:function(){
+			var t=parseInt(this.countEl.val(),10);
+			//return isNaN(t)||1>t||t>999?(alert("\u5546\u54c1\u6570\u91cf\u5e94\u8be5\u5728"+this.min+"-"+this.max+"\u4e4b\u95f4"),this.countEl.val(this.count),!1):(this.count=t,this.setBuyLink(),void 0);
+			return isNaN(t)||1>t||t>999?(alert("\u5546\u54c1\u6570\u91cf\u5e94\u8be5\u5728"+this.min+"-"+this.max+"\u4e4b\u95f4"),this.countEl.val(this.count),!1):(this.count=t,void 0);
+		}
+		/*setBuyLink:function(){
+			var t=this;
+			t.targetLink.each(function(){
+				var e,i,s=$(this),a=s.attr("href"),o=a.split("?")[1];
+				(function(){
+					for(var n=0;t.matchCountKey.length>n;n++)
+						if(i=RegExp(t.matchCountKey[n]+"=\\d+"),i.test(o))
+							return e=a.replace(i,t.matchCountKey[n]+"="+t.count),s.attr("href",e),!1;
+				})(jQuery);
+			});
+		}*/
+	};
+var calculatePrice=function(t,e){
+	for(var i=$(t).parents(e),
+			act=i.find(".master input").attr("actprice"),
+			rel=i.find(".master input").attr("relprice"),
+			a=i.find("input:checked"),
+			o=a.length,
+			n=i.find(".infos #group_relprice"),
+			r=i.find(".infos #group_actprice"),
+			c=parseFloat(rel),d=parseFloat(act),
+			l="http://bk.11185.cn:80/index/cart.do?method=partnerToCart&pressInfo=",
+			p=i.find(".btn-buy,.p-name a"),
+			m=["1-236:2015:中国民族报"],
+			u=1;a.length>u;u++)
+		c+=parseFloat(a.eq(u).attr("relprice")),
+		d+=parseFloat(a.eq(u).attr("actprice")),
+		m.push(a.eq(u).attr("pressid")+":"+a.eq(u).attr("issueyear")+":"+a.eq(u).attr("pressname"));
+		""!=act&&""!=rel&&(n.text("\uffe5 "+c.toFixed(2)),r.text("\uffe5 "+d.toFixed(2)),p.attr("href",l+m.join(",")),i.find(".infos .p-name span").html(""+(o-1)));
+};
+/******************* 内容收缩展开功能 *******************/
+$("#product-detail-1 .sub-m .more").attr("data-open","1"),
+$("#product-detail-1 .sub-m").each(function(){
+	var t=$(this).find(".more"),e=$(this).find(".con"),i=300;
+	e.length>0&&t.length>0&&e.height()>i
+		?(e.css({height:i,overflow:"hidden"}),
+			t.attr("data-open","0"),t.unbind("click").bind("click",function(){
+				var s=$(this);"0"==s.attr("data-open")?(e.removeAttr("style"),t.attr("data-open","1").find("a").html("\u6536\u8d77\u5168\u90e8")):(e.css({height:i,overflow:"hidden"}),t.attr("data-open","0").find("a").html("\u67e5\u770b\u5168\u90e8"))
+			}))
+		:t.hide();
+});
+
+</script>
+<script>
+Date.prototype.format = function(format) {  
+    /* 
+     * eg:format="yyyy-MM-dd hh:mm:ss"; 
+     */  
+    var o = {  
+        "M+" : this.getMonth() + 1, // month  
+        "d+" : this.getDate(), // day  
+        "h+" : this.getHours(), // hour  
+        "m+" : this.getMinutes(), // minute  
+        "s+" : this.getSeconds(), // second  
+        "q+" : Math.floor((this.getMonth() + 3) / 3), // quarter  
+        "S" : this.getMilliseconds()  
+        // millisecond  
+    }  
+  
+    if (/(y+)/.test(format)) {  
+        format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4  
+                        - RegExp.$1.length));  
+    }  
+  
+    for (var k in o) {  
+        if (new RegExp("(" + k + ")").test(format)) {  
+            format = format.replace(RegExp.$1, RegExp.$1.length == 1  
+                            ? o[k]  
+                            : ("00" + o[k]).substr(("" + o[k]).length));  
+        }  
+    }  
+    return format;  
+}  
+</script> {/literal}
+		</div>
+	</div>
+	<!-- 服务栏 -->
+	<div class="w mt10 clearfix">
+		
+<div id="service">
+	<dl class="fore1">
+		<dt><b></b><strong>新手入门</strong></dt>
+		<dd>
+			<div><a href="http://bk.11185.cn/index/service.do?method=subscriptionnotes">订阅须知</a></div>
+			<div><a href="http://bk.11185.cn/index/service.do?method=FAQnotes">常见问题</a></div>
+			<!--<div><a href="http://bk.11185.cn:80/helpCenter.do?method=helpForward&forwardId=main">业务介绍</a></div>
+			<div><a href="http://bk.11185.cn:80/news/news.do?method=find1&paraID=3">政策法规</a></div>
+			<div><a href="http://bk.11185.cn:80/pubinfo/pubinfo.do?method=find">刊社信息</a></div>-->
+		</dd>
+	</dl>
+	<dl class="fore2">
+		<dt><b></b><strong>支付方式</strong></dt>
+		<dd>
+			<div><a href="http://bk.11185.cn/index/service.do?method=paynotes&pageId=1">在线支付</a></div>
+			<div><a href="http://bk.11185.cn/index/service.do?method=paynotes&pageId=2">订阅券（卡）支付</a></div>
+		</dd>
+	</dl>
+	<dl class="fore3">
+		<dt><b></b><strong>售后服务</strong></dt>
+		<dd>
+			<!--
+			<div><a href="http://bk.11185.cn:80/order/netdownorder.do?method=selectOrder">我的订单</a></div>
+			
+			<div><a href="http://bk.11185.cn:80/userService.do">报刊续订</a></div>
+			<div><a href="http://bk.11185.cn:80/userService.do">报刊退订</a></div>
+			<div><a href="http://bk.11185.cn:80/userService.do">订单改址</a></div>-->
+			<div><a href="http://bk.11185.cn/index/service.do?method=billnotes">开具票据</a></div>
+		</dd>
+	</dl>
+	<dl class="fore4">
+		<dt><b></b><strong>特色服务</strong></dt>
+		<dd>
+		<!--
+			<div><a href="http://bk.11185.cn:80/helpCenter.do?method=helpForward&forwardId=question4">异地改址</a></div>
+			<div><a href="http://bk.11185.cn:80/helpCenter.do?method=helpForward&forwardId=question5">集订分送</a></div>-->
+			<div><a href="http://bk.11185.cn/userService.do">名址查询</a></div>
+			<div><a href="http://bk.11185.cn/userService.do">邮政机构查询</a></div>
+		</dd>
+	</dl>
+	<dl class="fore5">
+		<dt><b></b><strong>网站介绍</strong></dt>
+		<dd>
+			<div><a href="http://bk.11185.cn/index/service.do?method=aboutnotes">关于我们</a></div>
+			<div><a href="http://bk.11185.cn/index/service.do?method=contactnotes">联系我们</a></div>
+
+		</dd>
+	</dl>
+</div>
+	</div>
+	<!-- 版权信息 -->
+	<div id="copyright" class="mt10 clearfix">
+		
+Copyright 2010, 版权所有 中国邮政集团公司
+<br>
+服务热线：400-66-11185
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_30043824'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/c.php%3Fid%3D30043824%26l%3D2' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_30043824"><a href="http://quanjing.cnzz.com/" target="_blank" title="全景统计"><img border="0" hspace="0" vspace="0" src="{$smarty.const.IMG_URL}2.gif"></a></span><script src="{$smarty.const.IMG_URL}c.php" type="text/javascript"></script><script src="{$smarty.const.IMG_URL}core.php" charset="utf-8" type="text/javascript"></script>
+
+	</div>
+
+</body></html>

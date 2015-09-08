@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>修改报刊</title>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <link href="{$smarty.const.ADMIN_CSS_URL}mine.css" type="text/css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <div class="div_head">
+            <span>
+                <span style="float:left">当前位置是：报刊管理-》修改报刊信息</span>
+                <span style="float:right;margin-right: 8px;font-weight: bold">
+                    <a style="text-decoration: none" href="{$smarty.const.__MODULE__}/Book/showlist">【返回】</a>
+                </span>
+            </span>
+        </div>
+        <div></div>
+
+        <div style="font-size: 13px;margin: 10px 5px">
+            <form action="{$smarty.const.__SELF__}" method="post" enctype="multipart/form-data">
+                <!-- 传递报刊信息 隐藏域 -->
+                <input type="hidden" name="book_id" value="{$info.book_id}">
+            <table border="1" width="100%" class="table_a">
+                 <tr>
+                    <td>国内标准刊号</td>
+                    <td><input type="text" name="book_no" 
+                        value="{$info.book_no}"
+                        /></td>
+                </tr>
+                <tr>
+                    <td>报刊名称</td>
+                    <td><input type="text" name="book_name" 
+                        value="{$info.book_name}"
+                        /></td>
+                </tr>
+                <tr>
+                    <td>报刊价格</td>
+                    <td><input type="text" name="book_price" 
+                        value="{$info.book_price}"
+                        /></td>
+                </tr>
+                <tr>
+                    <td>报刊数量</td>
+                    <td><input type="text" name="book_number" 
+                        value="{$info.book_number}"
+                        /></td>
+                </tr>
+                <tr>
+                    <td>报刊品牌</td>
+                    <td>
+                        <select name='book_theme_id'>
+                            {foreach $catinfo as $k => $v}
+                            <option value="{$v.cat_id}" disabled>----{$v.cat_name}----</option>
+                            {foreach $themeinfo as $kk => $vv}
+                            {if $v.cat_id== $vv.cat_id}
+                            {if $vv.theme_id == {$info.book_theme_id}}
+                            <option value="{$vv.theme_id}" selected>{$vv.theme_name}</option>
+                            {else}
+                            <option value="{$vv.theme_id}">{$vv.theme_name}</option>
+                            {/if}
+                            {/if}
+                            {/foreach}
+                            {/foreach}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>报刊状态</td>
+                    <td>
+                        {if $info.book_status==1}
+                        <label><input type="radio" name="book_status" value="1" checked>报刊上架</label>
+                        <label><input type="radio" name="book_status" value="0">报刊下架</label>
+                        {else}
+                        <label><input type="radio" name="book_status" value="1">报刊上架</label>
+                        <label><input type="radio" name="book_status" value="0"checked>报刊下架</label>
+                        {/if}
+                    </td>
+                </tr>
+                <tr>
+                    <td>报刊图片</td>
+                    <td><img src="{$smarty.const.IMG_UPLOAD}{$info.book_big_img}" /height="60" width="60"></td>
+                </tr>
+                <tr>
+                    <td>报刊图片</td>
+                    <td><input type="file" name="book_img" /></td>
+                </tr>
+                <tr>
+                    <td>报刊详细描述</td>
+                    <td>
+                        <textarea name="book_introduce"  rows="9" cols="100">
+                            {$info.book_introduce}
+                        </textarea>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="修改">
+                    </td>
+                </tr>  
+            </table>
+            </form>
+        </div>
+    </body>
+</html>

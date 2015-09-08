@@ -1,0 +1,52 @@
+.onEmptyShow
+{
+    padding-left:25px; 
+	font-size: 12px;
+	line-height:30px; 
+	vertical-align:middle;
+}
+.onShow
+{
+    background:url(../../img/registerValidator/images/onShow.gif) no-repeat; 
+    padding-left:25px; 
+	font-size: 12px;
+	line-height:30px; 
+	vertical-align:middle;
+	margin-left: 28px;
+}
+.onFocus
+{
+    background:#E9F0FF url(../../img/registerValidator/images/onFocus.gif) no-repeat; 
+    padding-left:25px; 
+	font-size: 12px;
+	line-height:30px; 
+	vertical-align:middle;
+	margin-left: 28px;
+}
+.onError
+{
+    background:#FFF2E9 url(../../img/registerValidator/images/onError.gif) no-repeat;
+    padding-left:25px;
+	font-size: 12px;
+	line-height:30px; 
+	vertical-align:middle;
+	margin-left: 28px;
+}
+.onCorrect
+{
+    background:#E9FFEB url(../../img/registerValidator/images/onCorrect.gif) no-repeat;
+    padding-left:25px;
+	font-size: 12px;
+	line-height:30px; 
+	vertical-align:middle;
+	margin-left: 28px;
+}
+.onLoad
+{
+    background:#E9FFEB url(../../img/registerValidator/images/onLoad.gif) no-repeat 3px 3px;
+    padding-left:25px;
+	font-size: 12px;
+	line-height:30px; 
+	vertical-align:middle;
+	margin-left: 28px;
+} 

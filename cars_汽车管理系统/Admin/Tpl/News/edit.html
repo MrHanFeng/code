@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>user</title>
+	<link rel="stylesheet" href="__PUBLIC__/bs/css/bootstrap.min.css">
+	<script src="__PUBLIC__/bs/js/jquery.min.js"></script>
+	<script src="__PUBLIC__/bs/js/bootstrap.min.js"></script>
+	<script src="__PUBLIC__/kd/kindeditor-min.js"></script>
+	<style>
+		th,td{
+			text-align: center;
+		}
+	</style>
+	<script>
+      $(document).ready(function() {
+				if(<{$link}> == 1)
+				{
+					 $(".link_news").css("display","inline");
+                         $(".normal_news").css("display","none");
+				}else{
+					 $(".link_news").css("display","none");
+                         $(".normal_news").css("display","inline");
+				}
+			});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<a href="" class='btn btn-default'>修改新闻</a>
+			</div>
+			
+			<div class="panel-body">
+				<form action="__URL__/update" method='post'>
+					<div class="form-group">
+						<label for="">新闻标题:</label>
+						<input type="text" class="form-control" placeholder='name' name='title' value='<{$row['title']}>'>
+					</div>
+					<div class='form-group'>
+						<label for="">新闻类型:</label>		
+						<select name="chann_id" class='form-control'>
+					     <?php
+                               	$arr = explode("_",$row['chann_id']);
+								if($arr[1]==null)
+								{
+                                   $sqlchann="select * from chann order by id";
+			                        $rstchann=mysql_query($sqlchann);
+									while($rowchann=mysql_fetch_assoc($rstchann)){
+										if($rowchann['id']==$arr[0]){
+                                            echo "<option value='{$rowchann['id']}' selected>{$rowchann['name']}</option>";
+                                            $sqlsubchann="select * from subchann where chann_id={$rowchann['id']}";
+											$rstsubchann=mysql_query($sqlsubchann);
+											while($rowsubchann=mysql_fetch_assoc($rstsubchann)){
+													echo "<option value='{$rowchann['id']}_{$rowsubchann['id']}' >&nbsp;&nbsp;&nbsp;&nbsp;|--{$rowsubchann['name']}</option>";
+												}
+										}else
+											{
+												 echo "<option value='{$rowchann['id']}'>{$rowchann['name']}</option>";
+                                            $sqlsubchann="select * from subchann where chann_id={$rowchann['id']}";
+											$rstsubchann=mysql_query($sqlsubchann);
+											while($rowsubchann=mysql_fetch_assoc($rstsubchann)){
+													echo "<option value='{$rowchann['id']}_{$rowsubchann['id']}'>&nbsp;&nbsp;&nbsp;&nbsp;|--{$rowsubchann['name']}</option>";
+												}
+											}
+										
+										}
+											
+					            }else{
+									$sqlchann="select * from chann order by id";
+			                        $rstchann=mysql_query($sqlchann);
+									while($rowchann=mysql_fetch_assoc($rstchann)){
+										echo "<option value='{$rowchann['id']}' >{$rowchann['name']}</option>";
+										$sqlsubchann="select * from subchann where chann_id={$rowchann['id']}";
+										$rstsubchann=mysql_query($sqlsubchann);
+										while($rowsubchann=mysql_fetch_assoc($rstsubchann)){
+											if($rowsubchann['id']==$arr[1]){
+												echo "<option value='{$rowchann['id']}_{$rowsubchann['id']}' selected>&nbsp;&nbsp;&nbsp;&nbsp;|--{$rowsubchann['name']}</option>";
+
+											}else{
+												echo "<option value='{$rowchann['id']}_{$rowsubchann['id']}'>&nbsp;&nbsp;&nbsp;&nbsp;|--{$rowsubchann['name']}</option>";
+											}
+										}
+									}			
+								}
+					     ?>
+						</select>
+					</div>
+					<!-- <div class='form-group'>
+						<label for="">是否置顶:</label>
+						<if condition="$row['up_flag'] eq 1">		
+						<input type="radio" class="radios" name="ups" value="1" checked>是
+						<input type="radio" class="radios" name="ups" value="2">否
+						<else/>
+						<input type="radio" class="radios" name="ups" value="1" >是
+						<input type="radio" class="radios" name="ups" value="2" checked>否
+					    </if>
+					</div> -->
+					<!--  <div class="form-group link_news">
+						<label for="">新闻链接:</label>
+						<input type="text" class="form-control" placeholder='请输入新闻链接' name='link-contents' value="<{$row['link_contents']}>">
+					</div>
+				 -->
+					<div class="form-group normal_news">
+                  	 <label for="">新闻内容:</label>	 
+                  	  <textarea id='tid' name="content" rows='10' class='form-control' placeholder='contents'><{$row['content']}></textarea>
+                  	</div>
+                  	<br/>
+					<div class="form-group">
+						<input type="submit" value="提交" class='btn btn-primary'>
+						<input type="reset" value="取消" class='btn btn-danger'>
+					</div>
+					<input type="hidden" name="id" value='<{$row['id']}>'>
+					<input type="hidden" name="link" value='<{$link}>'>
+				</form>
+			</div>	
+		</div>
+	</div>
+<script>
+var editor;
+KindEditor.ready(function(K) {
+	editor = K.create('#tid', {
+	allowFileManager : true
+	});
+});
+</script>	
+</body>
+</html>

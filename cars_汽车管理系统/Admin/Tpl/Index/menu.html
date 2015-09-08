@@ -1,0 +1,398 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<LINK href="../Public/css/admin.css" type="text/css" rel="stylesheet">
+<script src="__PUBLIC__/bs/js/jquery.min.js"></script>
+<SCRIPT language=javascript>
+  function expand(el)
+  {
+    childObj = document.getElementById("child" + el);
+
+    if (childObj.style.display == 'none')
+    {
+      childObj.style.display = 'block';
+    }
+    else
+    {
+      childObj.style.display = 'none';
+    }
+    return;
+  }
+</SCRIPT>
+<style>
+.users,.channs,.subchanns,.news,.type,.imagenews,.consumer,.message,.link{
+   display: none;
+}
+</style>
+<script>
+   $(document).ready(function() {
+     if("<{$powers}>".indexOf("0")!=-1)
+      {
+        $(".users").css("display","block");
+      }
+       if("<{$powers}>".indexOf("1")!=-1)
+      {
+        $(".channs").css("display","block");
+      }
+      if("<{$powers}>".indexOf("7")!=-1)
+      {
+        $(".subchanns").css("display","block");
+      }
+     if("<{$powers}>".indexOf("2")!=-1)
+      {
+        $(".news").css("display","block");
+      }
+       if("<{$powers}>".indexOf("3")!=-1)
+      {
+        $(".type").css("display","block");
+      }
+       if("<{$powers}>".indexOf("4")!=-1)
+      {
+        $(".imagenews").css("display","block");
+      }
+       if("<{$powers}>".indexOf("5")!=-1)
+      {
+        $(".consumer").css("display","block");
+      }
+       if("<{$powers}>".indexOf("6")!=-1)
+      {
+        $(".message").css("display","block");
+      }
+       if("<{$powers}>".indexOf("8")!=-1)
+      {
+        $(".link").css("display","block");
+      }
+  });
+</script>
+</HEAD>
+<BODY>
+<TABLE height="100%" cellSpacing=0 cellPadding=0 width=170 
+background=../Public/images/menu_bg.jpg border=0>
+  <TR>
+    <TD vAlign=top align=middle>
+         <!-- 个人管理 -->
+      <TABLE cellSpacing=0 cellPadding=0 width=150 border=0 class="gerens">
+        <TR height=22>
+          <TD style="PADDING-LEFT: 30px" ><A 
+            class=menuParent onclick=expand(1) 
+            href="javascript:void(0);">个人管理</A>
+          </TD>
+        </TR>
+        <TR height=4><TD></TD></TR>
+      </TABLE>
+
+      <TABLE id=child1 style="DISPLAY: none" cellSpacing=0 cellPadding=0 
+      width=150 border=0 >
+        <TR height=20>
+          <TD align=middle width=30><IMG height=9 
+            src="../Public/images/menu_icon.gif" width=9>
+          </TD>
+          <TD><A class=menuChild 
+            href="__APP__/Admin/edit" 
+            target=main>修改密码</A>
+          </TD>
+        </TR>
+      </TABLE>
+      <!---管理员用户管理-->
+        <TABLE cellSpacing=0 cellPadding=0 width=150 border=0 class="users" border="1">
+        <TR height=22>
+          <TD style="PADDING-LEFT: 30px" ><A 
+            class=menuParent onclick=expand(2) 
+            href="javascript:void(0);">系统用户管理</A>
+          </TD>
+        </TR>
+        <TR height=4><TD></TD></TR>
+      </TABLE>
+
+      <TABLE id=child2 style="DISPLAY: none" cellSpacing=0 cellPadding=0 
+      width=150 border=0>
+        <TR height=20>
+          <TD align=middle width=30><IMG height=9 
+            src="../Public/images/menu_icon.gif" width=9>
+          </TD>
+          <TD><A class=menuChild 
+            href="__APP__/User/index" 
+            target=main>查看系统用户</A>
+          </TD>
+        </TR>
+
+        <TR height=20>
+          <TD align=middle width=30><IMG height=9 
+            src="../Public/images/menu_icon.gif" width=9>
+          </TD>
+          <TD><A class=menuChild 
+            href="__APP__/User/add" 
+            target=main>添加系统用户</A>
+          </TD>
+        </TR>
+      </TABLE>
+          <!-- 一级导航管理 -->
+      <TABLE cellSpacing=0 cellPadding=0 width=150 border=0 class="channs">
+        <TR height=22>
+          <TD style="PADDING-LEFT: 30px" ><A 
+            class=menuParent onclick=expand(3) 
+            href="javascript:void(0);">一级导航管理</A>
+          </TD>
+        </TR>
+        <TR height=4><TD></TD></TR>
+      </TABLE>
+
+      <TABLE id=child3 style="DISPLAY: none" cellSpacing=0 cellPadding=0 
+      width=150 border=0 >
+        <TR height=20>
+          <TD align=middle width=30><IMG height=9 
+            src="../Public/images/menu_icon.gif" width=9>
+          </TD>
+          <TD><A class=menuChild 
+            href="__APP__/Chann/index" 
+            target=main>查看一级导航</A>
+          </TD>
+        </TR>
+
+        <TR height=20>
+          <TD align=middle width=30><IMG height=9 
+            src="../Public/images/menu_icon.gif" width=9>
+          </TD>
+          <TD><A class=menuChild 
+            href="__APP__/Chann/add" 
+            target=main>添加一级导航</A>
+          </TD>
+        </TR>
+      </TABLE>
+       <!-- 二级导航管理 -->
+      <TABLE cellSpacing=0 cellPadding=0 width=150 border=0 class="subchanns">
+        <TR height=22>
+          <TD style="PADDING-LEFT: 30px" ><A 
+            class=menuParent onclick=expand(9) 
+            href="javascript:void(0);">二级导航管理</A>
+          </TD>
+        </TR>
+        <TR height=4><TD></TD></TR>
+      </TABLE>
+
+      <TABLE id=child9 style="DISPLAY: none" cellSpacing=0 cellPadding=0 
+      width=150 border=0 >
+        <TR height=20>
+          <TD align=middle width=30><IMG height=9 
+            src="../Public/images/menu_icon.gif" width=9>
+          </TD>
+          <TD><A class=menuChild 
+            href="__APP__/SubChann/index" 
+            target=main>查看二级导航</A>
+          </TD>
+        </TR>
+
+        <TR height=20>
+          <TD align=middle width=30><IMG height=9 
+            src="../Public/images/menu_icon.gif" width=9>
+          </TD>
+          <TD><A class=menuChild 
+            href="__APP__/SubChann/add" 
+            target=main>添加二级导航</A>
+          </TD>
+        </TR>
+      </TABLE>
+         <!-- 新闻管理 -->
+      <TABLE cellSpacing=0 cellPadding=0 width=150 border=0  class="news">
+        <TR height=22>
+          <TD style="PADDING-LEFT: 30px" ><A 
+            class=menuParent onclick=expand(4) 
+            href="javascript:void(0);">新闻管理</A>
+          </TD>
+        </TR>
+        <TR height=4><TD></TD></TR>
+      </TABLE>
+
+      <TABLE id=child4 style="DISPLAY: none" cellSpacing=0 cellPadding=0 
+      width=150 border=0  >
+        <TR height=20>
+          <TD align=middle width=30><IMG height=9 
+            src="../Public/images/menu_icon.gif" width=9>
+          </TD>
+          <TD><A class=menuChild 
+            href="__APP__/News/index" 
+            target=main>查看新闻</A>
+          </TD>
+        </TR>        
+         <TR height=20>
+          <TD align=middle width=30><IMG height=9 
+            src="../Public/images/menu_icon.gif" width=9>
+          </TD>
+          <TD><A class=menuChild 
+            href="__APP__/News/add" 
+            target=main>添加新闻</A>
+          </TD>
+        </TR>
+      </TABLE>
+               
+         <!-- 图片类型管理 -->
+      <TABLE cellSpacing=0 cellPadding=0 width=150 border=0  class="type">
+        <TR height=22>
+          <TD style="PADDING-LEFT: 30px" ><A 
+            class=menuParent onclick=expand(5) 
+            href="javascript:void(0);">图片类型管理</A>
+          </TD>
+        </TR>
+        <TR height=4><TD></TD></TR>
+      </TABLE>
+
+      <TABLE id=child5 style="DISPLAY: none" cellSpacing=0 cellPadding=0 
+      width=150 border=0  >
+        <TR height=20>
+          <TD align=middle width=30><IMG height=9 
+            src="../Public/images/menu_icon.gif" width=9>
+          </TD>
+          <TD><A class=menuChild 
+            href="__APP__/Type/index" 
+            target=main>查看图片类型</A>
+          </TD>
+        </TR>        
+         <TR height=20>
+          <TD align=middle width=30><IMG height=9 
+            src="../Public/images/menu_icon.gif" width=9>
+          </TD>
+          <TD><A class=menuChild 
+            href="__APP__/Type/add" 
+            target=main>添加图片类型</A>
+          </TD>
+        </TR>
+      </TABLE>
+
+          <!-- 图片新闻管理 -->
+      <TABLE cellSpacing=0 cellPadding=0 width=150 border=0  class="imagenews">
+        <TR height=22>
+          <TD style="PADDING-LEFT: 30px" ><A 
+            class=menuParent onclick=expand(6) 
+            href="javascript:void(0);">图片新闻管理</A>
+          </TD>
+        </TR>
+        <TR height=4><TD></TD></TR>
+      </TABLE>
+
+      <TABLE id=child6 style="DISPLAY: none" cellSpacing=0 cellPadding=0 
+      width=150 border=0  >
+        <TR height=20>
+          <TD align=middle width=30><IMG height=9 
+            src="../Public/images/menu_icon.gif" width=9>
+          </TD>
+          <TD><A class=menuChild 
+            href="__APP__/ImageNews/index" 
+            target=main>查看图片新闻</A>
+          </TD>
+        </TR>        
+         <TR height=20>
+          <TD align=middle width=30><IMG height=9 
+            src="../Public/images/menu_icon.gif" width=9>
+          </TD>
+          <TD><A class=menuChild 
+            href="__APP__/ImageNews/add" 
+            target=main>添加图片新闻</A>
+          </TD>
+        </TR>
+      </TABLE>
+
+                <!-- 普通用户管理 -->
+      <TABLE cellSpacing=0 cellPadding=0 width=150 border=0  class="consumer">
+        <TR height=22>
+          <TD style="PADDING-LEFT: 30px" ><A 
+            class=menuParent onclick=expand(7) 
+            href="javascript:void(0);">普通用户管理</A>
+          </TD>
+        </TR>
+        <TR height=4><TD></TD></TR>
+      </TABLE>
+
+      <TABLE id=child7 style="DISPLAY: none" cellSpacing=0 cellPadding=0 
+      width=150 border=0  >
+        <TR height=20>
+          <TD align=middle width=30><IMG height=9 
+            src="../Public/images/menu_icon.gif" width=9>
+          </TD>
+          <TD><A class=menuChild 
+            href="__APP__/Consumer/index" 
+            target=main>查看普通用户</A>
+          </TD>
+        </TR>        
+         <TR height=20>
+          <TD align=middle width=30><IMG height=9 
+            src="../Public/images/menu_icon.gif" width=9>
+          </TD>
+          <TD><A class=menuChild 
+            href="__APP__/Consumer/add" 
+            target=main>添加普通用户</A>
+          </TD>
+        </TR>
+      </TABLE>
+
+         <!-- 留言管理 -->
+      <TABLE cellSpacing=0 cellPadding=0 width=150 border=0  class="message">
+        <TR height=22>
+          <TD style="PADDING-LEFT: 30px" ><A 
+            class=menuParent onclick=expand(8) 
+            href="javascript:void(0);">论坛管理</A>
+          </TD>
+        </TR>
+        <TR height=4><TD></TD></TR>
+      </TABLE>
+
+      <TABLE id=child8 style="DISPLAY: none" cellSpacing=0 cellPadding=0 
+      width=150 border=0  >
+        <TR height=20>
+          <TD align=middle width=30><IMG height=9 
+            src="../Public/images/menu_icon.gif" width=9>
+          </TD>
+          <TD><A class=menuChild 
+            href="__APP__/Message/index" 
+            target=main>查看论坛</A>
+          </TD>
+        </TR>  
+        <TR height=20>
+          <TD align=middle width=30><IMG height=9 
+            src="../Public/images/menu_icon.gif" width=9>
+          </TD>
+          <TD><A class=menuChild 
+            href="__APP__/Message/add" 
+            target=main>发表论坛</A>
+          </TD>
+        </TR>         
+      </TABLE>
+                <!-- 链接管理 -->
+      <TABLE cellSpacing=0 cellPadding=0 width=150 border=0  class="link">
+        <TR height=22>
+          <TD style="PADDING-LEFT: 30px" ><A 
+            class=menuParent onclick=expand(10) 
+            href="javascript:void(0);">链接管理</A>
+          </TD>
+        </TR>
+        <TR height=4><TD></TD></TR>
+      </TABLE>
+
+      <TABLE id=child10 style="DISPLAY: none" cellSpacing=0 cellPadding=0 
+      width=150 border=0  >
+        <TR height=20>
+          <TD align=middle width=30><IMG height=9 
+            src="../Public/images/menu_icon.gif" width=9>
+          </TD>
+          <TD><A class=menuChild 
+            href="__APP__/Link/index" 
+            target=main>查看链接</A>
+          </TD>
+        </TR>        
+         <TR height=20>
+          <TD align=middle width=30><IMG height=9 
+            src="../Public/images/menu_icon.gif" width=9>
+          </TD>
+          <TD><A class=menuChild 
+            href="__APP__/Link/add" 
+            target=main>添加链接</A>
+          </TD>
+        </TR>
+      </TABLE>
+
+
+
+      </TD>
+    </TR>
+   </TABLE>
+</BODY>
+</HTML>

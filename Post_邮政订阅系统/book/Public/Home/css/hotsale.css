@@ -1,0 +1,42 @@
+
+/*--------图片轮播----------*/
+#hotpic { width: 980px; height: 262px; overflow: hidden; position:relative; top:0; margin:10px auto;}
+#hotpic #NewsPic { position: relative; width: 980px; height: 262px; overflow: hidden; z-index:20; }
+#hotpic #NewsPic a { overflow: visible; border: 0; text-decoration: none; }
+#hotpic #NewsPic .Picture { position: absolute; left: 0; top: 0;  width:980px; height:262px;}
+#hotpic #NewsPic .Nav { position: absolute; height: 13px; line-height: 14px; bottom:13px; right: 17px;}
+#hotpic #NewsPic .Nav span {float: right; display: block; background: #000; cursor: pointer; margin-left:3px; text-indent:-999px;}
+#hotpic #NewsPic .Nav span.Normal { background:url(/correcting/style/images/dot.png); width:14px; height:14px;  }
+#hotpic #NewsPic .Nav span.Cur { background:url(/correcting/style/images/dot1.png); width:14px; height:14px; }
+
+
+#hotsale{width:980px}
+#hotsale h2{font-size:100%;font-weight:normal}
+#hotsale .floor_hot{ width:980px; margin:0 auto 10px;}
+#hotsale .floor_hot h1{ text-indent:0; padding-left:30px; overflow:hidden; height:30px;}
+#hotsale .floor_hot h1 .fr{_margin-top:-32px;}
+#hotsale .floor_num01{ background:url(/correcting/style/images/hotsale/f01.png) 4px no-repeat;}
+#hotsale .floor_num02{ background:url(/correcting/style/images/hotsale/f02.png) 4px no-repeat;}
+#hotsale .floor_num03{ background:url(/correcting/style/images/hotsale/f03.png) 4px no-repeat;}
+#hotsale .floor_num04{ background:url(/correcting/style/images/hotsale/f04.png) 4px no-repeat;}
+#hotsale .floor_num05{ background:url(/correcting/style/images/hotsale/f05.png) 4px no-repeat;}
+#hotsale .floor_num06{ background:url(/correcting/style/images/hotsale/f06.png) 4px no-repeat;}
+#hotsale .sy-circle{ padding-top:6px;}
+#hotsale .sy-circle li { float:left; width:21px; height:21px; background:url(/correcting/style/images/hotsale/icon.png) center no-repeat; line-height:21px; text-align:center; font-weight:normal;}
+#hotsale .sy-circle li a{width:21px; height:21px; display:block;}
+#hotsale .sy-circle .selected{ display:block;width:21px; height:21px; background:url(/correcting/style/images/hotsale/strong_bg.png) center no-repeat; color:#03772a;}
+#hotsale .sy-circle .selected a{ color:#03772a;width:21px; height:21px; display:block;font-weight:bold;}
+#hotsale .sy-circle .selected02{ display:block;width:21px; height:21px; background:url(/correcting/style/images/hotsale/strong_bg.png) center no-repeat; color:#03772a;}
+#hotsale .hot_sale_more{ float:left; color:#03772a; font-size:12px; margin-left:10px; display:inline-block;}
+#hotsale .hot_sale_more a{ font-weight:normal;}
+#hotsale .floor_content{ width:978px; height:260px; border:1px solid #E6E6E6; border-top:none;}
+#hotsale .content_left{ float:left; width:167px; height:260px; border-right:1px solid #E6E6E6; padding:6px 0 0 8px;}
+#hotsale .floor_logo{ width:160px;}
+#hotsale .floor_logo a{ float:left; background:#000;}
+#hotsale .content_right{ float:left; width:800px;}
+
+
+#hotsale .content_right .fr_list{width:785px; padding:18px 0 0 15px; overflow:hidden;}
+#hotsale .content_right .fr_list li{width:155px; height:230px;padding:20px auto; text-align:center; float:left; color:#000; overflow:hidden;}
+#hotsale .content_right .fr_list li .imgBox{width:130px;height:170px;overflow:hidden; vertical-align:middle; text-align:center; background:url('/correcting/style/images/index/bg_cover_130.png') no-repeat;}
+#hotsale .content_right .fr_list li img{width:120px;height:160px;margin:4px 0 0 -2px; cursor:pointer;}

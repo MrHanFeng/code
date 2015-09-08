@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+        <title>会员列表</title>
+
+        <link href="{$smarty.const.ADMIN_CSS_URL}mine.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <style>
+        /*literal 不让smarty解析 */
+        {literal}
+            .tr_color{background-color: #9F88FF}
+            a {text-decoration: NONE}
+        {/literal}
+        </style>
+        <div class="div_head">
+            <span>
+                <span style="float: left;">当前位置是：商品管理-》商品列表</span>
+                <span style="float: right; margin-right: 8px; font-weight: bold;">
+                    <a style="text-decoration: none;"
+                     href="{$smarty.const.__MODULE__}/Goods/add">【添加商品】</a>
+                </span>
+            </span>
+        </div>
+        <div></div>
+        <div class="div_search">
+            <span>
+                <form action="#" method="get">
+                    品牌<select name="s_product_mark" style="width: 100px;">
+                        <option selected="selected" value="0">请选择</option>
+                        <option value="1">苹果apple</option>
+                    </select>
+                    <input value="查询" type="submit" />
+                </form>
+            </span>
+        </div>
+        <!-- {$info.1.goods_name} -->
+        <div style="font-size: 13px; margin: 10px 5px;">
+            <table class="table_a" border="1" width="100%">
+                <tbody>
+                    <tr style="font-weight: bold;">
+                        <tr>
+                                <th>商品编号</th>
+                                <th>商品名称</th>
+                                <th>商品颜色</th>
+                                <th>商品价格</th>
+                                <th>商品数量</th>
+                                <th>订单金额</th>
+                            </tr>
+                            {foreach $orderinfo as $k => $v}
+                            <tr>
+                                
+                                <td align="center">{$v.goods_id}</td>
+                                <td align="center">
+                                <a href="{$smarty.const.__MODULE__}/Goods/detail/goods_id/{$v.goods_id}" target="_blank" title="查看该商品">
+                                {foreach $goodsinfo as $kk => $vv}
+                                 {if $v.goods_id == $vv.goods_id}
+                                        <img style="width: 80px; height: 80px;" 
+                                        src="{$smarty.const.IMG_UPLOAD}{$vv.goods_small_img}" 
+                                         /><br/>
+                                 {/if}
+                                {/foreach}
+                                {$v.goods_name}
+                                </a>
+                                </td>
+                                <td align="center">颜色:黑色 <br />
+                                </td>
+                                <td align="center">￥{$v.goods_price}元</td>
+                                <td align="center">  {$v.goods_number}</td>
+                                <td align="center">￥{$v.goods_price*$v.goods_number}元</td>
+                            </tr>
+                            {/foreach}
+                        <td colspan="20" style="text-align: center;">
+                            {$pagelist}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0074)http://it.11185.cn/chinapostintegrate/toRegister.a?origin=0&registerType=1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>中北邮政网上营业厅</title>
+<script type="text/javascript" src="{$smarty.const.IMG_URL}jquery-1.6.4.js"></script>
+<!--<link rel="stylesheet" type="text/css" href="integrate/css/register/Common.css" /> 
+--><link rel="stylesheet" type="text/css" href="{$smarty.const.CSS_URL}validator.css">
+<link rel="stylesheet" href="{$smarty.const.CSS_URL}register.css" type="text/css">
+<script type="text/javascript" src="./js/formValidator.js"></script>
+<script type="text/javascript" src="./js/formValidatorRegex.js"></script>
+<script type="text/javascript" src="./js/addCustomer.js"></script>
+</head>
+<body>
+<div class="cp_top">
+<div class="cp_top_c">
+   <span>您好，欢迎来到中北邮政！</span>
+   <div class="fr">
+       <a href="http://11185.cn/index_zh.html" target="_blank" class="a_white">返回首页</a>|<a href="http://it.11185.cn/chinapostintegrate/toRegister.a?origin=0&registerType=1#" target="_blank" class="a_white">易邮通</a>|<a href="http://zxkf.11185.cn:8081/live/p.do?c=1&f=1&g=61" target="_blank" class="a_white">在线客服</a>|<a href="http://11185.cn/core/getArticles.a?shortname=helpcenter" target="_blank" class="a_white">帮助中心</a>
+   </div>
+</div>
+</div>
+<div class="logo"><img src="{$smarty.const.IMG_URL}zc_03.gif" width="229" height="70"></div>
+<div class="zc_c">
+<div class="bod">
+<form action="{$smarty.const.__SELF__}" method="post" id="addForm" name="addForm">
+<input type="hidden" name="customer.customerOrigin" value="0">
+<input type="hidden" name="registerType" value="1">
+<div id="con">
+<ul id="tags" class="fl">
+      <li class="selectTag"><a href="javascript:void(0)">邮箱注册</a> </li>
+</ul>
+<div id="tagContent">
+   	<div style="width: 160px;margin-left: 150px;color: red;">
+   		
+   		
+   		
+   		
+   	</div>
+	<ul class="zc_ul">
+        <li>
+            <span>用户名:</span><input class="inputblur" type="text" id="customerName" name="username" value="" size="20" maxlength="16" onfocus="this.className=&#39;inputfocus&#39;" onblur="this.className=&#39;inputblur&#39;">
+            <div class="ts"><span class="red">{$user.username}</span><div id="customerNameTip" class="onEmptyShow">&nbsp;</div></div>
+        </li>        
+        <li>
+            <span>邮箱:</span><input class="inputblur" type="text" id="email" name="user_email" value="" size="50" onfocus="this.className=&#39;inputfocus&#39;" onblur="this.className=&#39;inputblur&#39;">
+            <div class="ts"><span class="red">{$user.user_email}</span><div id="emailTip" class="onEmptyShow">&nbsp;</div></div>
+        </li>
+        <li>
+            <span>密码:</span><input class="inputblur" type="password" id="password" name="password" size="20" maxlength="18" onfocus="this.className=&#39;inputfocus&#39;" onblur="this.className=&#39;inputblur&#39;">
+            <div class="ts"><span class="red">{$user.password}</span><div id="passwordTip" class="onEmptyShow">&nbsp;</div></div>
+        </li>
+        <li>
+            <span>确认密码:</span><input class="inputblur" type="password" id="confirmPassword" name="password2" size="20" maxlength="18" onfocus="this.className=&#39;inputfocus&#39;" onblur="this.className=&#39;inputblur&#39;">
+            <div class="ts"><span class="red">{$user.password2}</span><div id="confirmPassowrdTip" class="onEmptyShow">&nbsp;</div></div>
+        </li>
+
+        <li>
+            <span>验证码:</span><input style="width: 42px;" class="inputblur" id="txtrandCode" name="imageValid" type="text" size="6" maxlength="4" onfocus="this.className=&#39;inputfocus&#39;" onblur="this.className=&#39;inputblur&#39;">
+          		<span style="margin-left: 10px;width: 173px;"><img src="{$smarty.const.__CONTROLLER__}/verifyImg" style="cursor: hand;" id="validImage" onclick="changeImageValid();">
+       			&nbsp;<a href="javascript:changeImageValid();">看不清？换一张</a></span>
+            <div class="ts"><span class="red">*</span><div id="txtrandCodeTip">&nbsp;</div></div>
+        </li>
+    </ul>
+</div>
+<div class="fr zc_banner">
+	<img src="{$smarty.const.IMG_URL}zc_07.jpg" width="341" height="347" class="fr"> 
+</div> 
+</div>
+<div class="clear an">
+	<input name="agree" type="checkbox" value="" checked="checked" style="width:30px;"><label style=" margin-right:40px;">我已阅读并同意<span class="green">《中北邮政注册协议》</span></label>
+	<input name="button" type="submit" value="" id="button" style=" border:0px;width:175px; height:35px;background-image:url(&#39;{$smarty.const.IMG_URL}zc_15.gif&#39;);">
+</div>
+<div style="width:780px; height:170px; margin-top:20px;float: left;OVERFLOW-Y: auto; OVERFLOW-X:hidden;">
+会员注册时候必须遵循的协议规则
+   <br>&nbsp;&nbsp; 一．服务内容
+    　　中北邮政的具体服务内容由中北邮政根据实际情况提供，例如个人照片、日记、在线交流等。中北邮政保留变更、中断或终止部分网络服务的权利。
+    　　中北邮政保留根据实际情况随时调整中北邮政平台提供的服务种类、形式。中北邮政不承担因业务调整给用户造成的损失。
+  <br>&nbsp;&nbsp;   二．内容使用权
+    　　我们鼓励用户充分利用中北邮政平台自由地张贴和共享他们自己的信息。您可以自由张贴从中北邮政个人主页或其他网站复制的图片等内容，但这些内容必须位于公共领域内，或者您拥有这些内容的使用权。同时，用户不应在自己的个人主页或社区中张贴其他受版权保护的内容。我们如果收到按下述程序提起的正式版权投诉，将会删除这些内容。
+    　　用户对于其创作并在中北邮政上发布的合法内容依法享有著作权及其相关权利。
+  <br>&nbsp;&nbsp;   三．隐私保护
+    　　保护用户隐私是中北邮政的重点原则，中北邮政通过技术手段、提供隐私保护服务功能、强化内部管理等办法充分保护用户的个人资料安全。
+    　    中北邮政保证不对外公开或向第三方提供用户注册的个人资料，及用户在使用服务时存储的非公开内容，但下列情况除外：
+    　　◇ 事先获得用户的明确授权；
+    　　◇ 按照相关司法机构或政府主管部门的要求。
+    <br>&nbsp;&nbsp; 四．社区准则
+    　　用户在申请使用中北邮政服务时，必须提供真实的个人资料，并不断更新注册资料。如果因注册信息不真实而引起的问题及其后果，中北邮政不承担任何责任。
+    　　用户在使用中北邮政服务过程中，必须遵循国家的相关法律法规，不得利用中北邮政平台，发布危害国家安全、色情、暴力等非法内容；不得利用中北邮政平台发布含有虚假、有害、胁迫、侵害他人隐私、骚扰、侵害、
+中伤、粗俗、或其它道德上令人反感的内容。
+    　　用户使用本服务的行为若有任何违反国家法律法规或侵犯任何第三方的合法权益的情形时，中北邮政有权直接删除该等违反规定之内容。
+    　　除非与中北邮政单独签订合同，否则不得将社区用于商业目的；中北邮政仅供个人使用。
+    　　不可以通过自动方式创建账户，也不可以对账户使用自动系统执行操作。
+    　　用户影响系统总体稳定性或完整性的操作可能会被暂停或终止，直到问题得到解决。
+   <br>&nbsp;&nbsp;  五．免责声明
+    　　互联网是一个开放平台，用户将照片等个人资料上传到互联网上，有可能会被其他组织或个人复制、转载、擅改或做其它非法用途，用户必须充分意识此类风险的存在。用户明确同意其使用中北邮政服务所存在的风险将完全由其自己承担；因其使用中北邮政服务而产生的一切后果也由其自己承担，中北邮政对用户不承担任何责任。
+    　　中北邮政不保证服务一定能满足用户的要求，也不保证服务不会中断，对服务的及时性、安全性、准确性也都不作保证。对于因不可抗力或中北邮政无法控制的原因造成的网络服务中断或其他缺陷，中北邮政不承担任何责任。
+   <br>&nbsp;&nbsp;  六．服务变更、中断或终止
+    　　如因系统维护或升级的需要而需暂停网络服务、服务功能的调整，中北邮政将尽可能事先在网站上进行通告。
+    　　如发生下列任何一种情形，中北邮政有权单方面中断或终止向用户提供服务而无需通知用户：
+    　　　◇ 用户提供的个人资料不真实；
+    　　　◇ 用户违反本服务条款中规定的使用规则；
+    　　　◇ 未经中北邮政同意，将中北邮政平台用于商业目的。
+   <br>&nbsp;&nbsp;  七．服务条款的完善和修改
+    　　中北邮政会有权根据互联网的发展和中华人民共和国有关法律、法规的变化，不时地完善和修改中北邮政服务条款。中北邮政保留随时修改服务条款的权利，用户在使用中北邮政平台服务时，有必要对最新的中北邮政服务条款进行仔细阅读和重新确认，当发生有关争议时，请以最新的服务条款为准。
+    <br>&nbsp;&nbsp; 八．特别约定
+    　　用户使用本服务的行为若有任何违反国家法律法规或侵犯任何第三方的合法权益的情形时，中北邮政有权直接删除该等违反规定之信息，并可以暂停或终止向该用户提供服务。
+    　　若用户利用本服务从事任何违法或侵权行为，由用户自行承担全部责任，因此给中北邮政或任何第三方造成任何损失，用户应负责全额赔偿。
+       <br>&nbsp;&nbsp;  一．服务内容
+    　　中北邮政的具体服务内容由中北邮政根据实际情况提供，例如个人照片、日记、在线交流等。中北邮政保留变更、中断或终止部分网络服务的权利。
+    　　中北邮政保留根据实际情况随时调整中北邮政平台提供的服务种类、形式。中北邮政不承担因业务调整给用户造成的损失。
+     <br>&nbsp;&nbsp;二．内容使用权
+    　　我们鼓励用户充分利用中北邮政平台自由地张贴和共享他们自己的信息。您可以自由张贴从中北邮政个人主页或其他网站复制的图片等内容，但这些内容必须位于公共领域内，或者您拥有这些内容的使用权。同时，用户不应在自己的个人主页或社区中张贴其他受版权保护的内容。我们如果收到按下述程序提起的正式版权投诉，将会删除这些内容。
+    　　用户对于其创作并在中北邮政上发布的合法内容依法享有著作权及其相关权利。
+     <br>&nbsp;&nbsp;三．隐私保护
+    　　保护用户隐私是中北邮政的重点原则，中北邮政通过技术手段、提供隐私保护服务功能、强化内部管理等办法充分保护用户的个人资料安全。
+    　　中北邮政保证不对外公开或向第三方提供用户注册的个人资料，及用户在使用服务时存储的非公开内容，但下列情况除外：
+    　　　◇ 事先获得用户的明确授权；
+    　　　◇ 按照相关司法机构或政府主管部门的要求。
+    <br>&nbsp;&nbsp; 四．社区准则
+    　　用户在申请使用中北邮政服务时，必须提供真实的个人资料，并不断更新注册资料。如果因注册信息不真实而引起的问题及其后果，中北邮政不承担任何责任。
+    　　用户在使用中北邮政服务过程中，必须遵循国家的相关法律法规，不得利用中北邮政平台，发布危害国家安全、色情、暴力等非法内容；不得利用中北邮政平台发布含有虚假、有害、胁迫、侵害他人隐私、骚扰、侵害、中伤、粗俗、或其它道德上令人反感的内容。
+    　　用户使用本服务的行为若有任何违反国家法律法规或侵犯任何第三方的合法权益的情形时，中北邮政有权直接删除该等违反规定之内容。
+    　　除非与中北邮政单独签订合同，否则不得将社区用于商业目的；中北邮政仅供个人使用。
+    　　不可以通过自动方式创建账户，也不可以对账户使用自动系统执行操作。
+    　　用户影响系统总体稳定性或完整性的操作可能会被暂停或终止，直到问题得到解决。
+     <br>&nbsp;&nbsp;五．免责声明
+    　　互联网是一个开放平台，用户将照片等个人资料上传到互联网上，有可能会被其他组织或个人复制、转载、擅改或做其它非法用途，用户必须充分意识此类风险的存在。用户明确同意其使用中北邮政服务所存在的风险将完全由其自己承担；因其使用中北邮政服务而产生的一切后果也由其自己承担，中北邮政对用户不承担任何责任。
+    　　中北邮政不保证服务一定能满足用户的要求，也不保证服务不会中断，对服务的及时性、安全性、准确性也都不作保证。对于因不可抗力或中北邮政无法控制的原因造成的网络服务中断或其他缺陷，中北邮政不承担任何责任。
+     <br>&nbsp;&nbsp;六．服务变更、中断或终止
+    　　如因系统维护或升级的需要而需暂停网络服务、服务功能的调整，中北邮政将尽可能事先在网站上进行通告。
+    　　如发生下列任何一种情形，中北邮政有权单方面中断或终止向用户提供服务而无需通知用户：
+    　　　◇ 用户提供的个人资料不真实；
+    　　　◇ 用户违反本服务条款中规定的使用规则；
+    　　　◇ 未经中北邮政同意，将中北邮政平台用于商业目的。
+    <br>&nbsp;&nbsp; 七．服务条款的完善和修改
+    　　中北邮政会有权根据互联网的发展和中华人民共和国有关法律、法规的变化，不时地完善和修改中北邮政服务条款。中北邮政保留随时修改服务条款的权利，用户在使用中北邮政平台服务时，有必要对最新的中北邮政服务条款进行仔细阅读和重新确认，当发生有关争议时，请以最新的服务条款为准。
+    <br>&nbsp;&nbsp; 八．特别约定
+    　　用户使用本服务的行为若有任何违反国家法律法规或侵犯任何第三方的合法权益的情形时，中北邮政有权直接删除该等违反规定之信息，并可以暂停或终止向该用户提供服务。
+    　　若用户利用本服务从事任何违法或侵权行为，由用户自行承担全部责任，因此给中北邮政或任何第三方造成任何损失，用户应负责全额赔偿。
+	报刊订阅须知  
+   <br>&nbsp;&nbsp;第1条 本网站是由中北邮政集团公司主办的，向中国境内的读者提供邮政报刊发行服务的专业网站。本网站办理的业务完全遵循邮政报刊发行业务的规定，内容主要包括目录查询、报刊推荐、网上订阅、在线支付、业务介绍、读者留言等服务。 
+	 <br>&nbsp;&nbsp;第2条 本须知对所提供服务的前提、过程、规则以及注意事项等内容进行了详细说明，关系到我们是否能顺利为您服务，请您认真阅读。 
+	 <br>&nbsp;&nbsp;第3条 在网站办理任何业务均需首先成为本网站的注册用户，注册时应提供真实准确的信息，以确保后续 服务可以顺利进行。对于您所填写的信息，我们将采取严格的保密措施。未经您的许可，这些信息 将不会用于其它商业目的。注册后您可随时对除客户帐号以外的个人信进行维护，并可查询本注册帐户下所办理的业务信息。 
+ <br>&nbsp;&nbsp;第4条 在本网站自行注册的客户为普通客户。另外，本网站还向协议客户提供一些增值服务，内容包括网上配发管理、内部分发、集订分送名址采集、到报（刊）查询等。协议客户的网上注册须由邮政部门完成，需要增值服务的客户请与当地邮政部门接洽，签定协议后开通网上帐户。 
+ <br>&nbsp;&nbsp;第5条 客户应妥善管理好帐户、密码和证书等注册信息，因客户原因造成信息失密而导致的损失，由客户自行负责。 
+ <br>&nbsp;&nbsp;第6条 本网站提供的主要业务为报刊订阅，订阅范围是出版部门交给邮政在全国公开发行的报刊。订阅的基本流程有：注册登录，查询目录，选择报刊，放入购物车，选择输入地址，办理支付，提交订单等。 
+ <br>&nbsp;&nbsp;第7条 客户在订阅时，要准确输入（选择）收报人与付款人的姓名、地址和联系电话。因投递地址填写错误或不准确，致使收报人无法收到或及时收到订阅的报刊的，我们将不予承担责任。 
+ <br>&nbsp;&nbsp;第8条 由于报刊发行地域范围、印刷地点的不同，当您订阅报刊时可能会有所限制，不同的地域所能看到的首期报刊和订阅款也可能会有差异，我们将在您办理相关业务时给予信息提示。 
+ <br>&nbsp;&nbsp;第9条 每日在22点—22点30分本网站将对目录数据加以更新，在此期间无法接受您提交的订单，请您稍后再试。 
+ <br>&nbsp;&nbsp;第10条 网上订阅支持在线支付和上门取费两种付费方式，每张订单只能选择一种支付方式。上门取费的订单，付款人和收报人须在同一省份。  
+ <br>&nbsp;&nbsp;第11条 在线支付目前可支持中北邮政储蓄银行发行的银联卡（绿卡）以及其它多家银行发行的银联卡，以及邮政报刊专用单和报刊订阅卡（券、单）。 
+ <br>&nbsp;&nbsp;第12条 选择上门取费的客户，邮政服务人员将根据您提供的联系方式和约定时间完成取费，报刊的起订期以上门取费时确定的实际起订日期为准。 
+ <br>&nbsp;&nbsp;第13条 客户在邮政营业网点办理与网上订阅相关的业务（如开具收据或发票、改址、退订取款等）时，须提供订单查询号，并出示有效证件。委托他人办理的还须受托人出示本人有效证件。请妥善保管收据或发票，遗失不补。 
+ <br>&nbsp;&nbsp;第14条 网上支付的订单办理退订分两种方式：一种为网上退订，退订款直接退回原支付卡（待开通）；一 种为网上提出退订申请后，可到收报人所在省任意电子化邮政营业网点领取退款。退款时将扣除退订手续费及各种优惠款，当退款小于退订手续费及各种优惠款之和或明示不能退订的，不能办理退订。 
+ <br>&nbsp;&nbsp;第15条 网上办理改址业务时，须在线支付改址手续费。不办理跨省改址业务。 
+ <br>&nbsp;&nbsp;第16条 在线支付的订单可享受网站优惠，上门取费的订单不能享受网站优惠。 
+ <br>&nbsp;&nbsp;第17条 您若需要邮政部门提供特殊投递服务，可凭收据或发票到所属投递网点办理手续。 
+ <br>&nbsp;&nbsp;第18条 未生效订单，网站最长保留三个月。 
+ <br>&nbsp;&nbsp;第19条 本须知的解释权归中北邮政集团公司。 
+</div>
+</form>
+</div>
+</div>
+<div class="footer">
+	<p><a href="http://www.chinapost.com.cn/">邮政主站</a> | <a href="http://it.11185.cn/chinapostintegrate/friendlinks.html">友情链接</a></p>
+    <p>Copyright © 2003-2011 中北邮政版权所有 备案/许可证编号为：京ICP备11025334号 经营许可证编号:京ICP证110573号</p>
+</div>
+
+</body></html>

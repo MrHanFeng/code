@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>      
+      <meta charset="utf-8" />
+      <title>房车中国</title>
+      <meta name="description" content="房车" />
+      <meta name="author" content="陈雅迪，张恩桥" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      <link href="../Public/css/index.css" type="text/css" rel="stylesheet">
+      <script src="../Public/js/index.js" type="text/javascript" charset="utf-8" language="javascript"></script>
+      <script src="../Public/js/jquery-1.4.2.js" type="text/javascript" charset="utf-8" language="javascript"></script>
+	  <script type="text/javascript">
+            $(document).ready(function() {
+                $(".nav li").mousemove(function() {
+                    $(this).find('ul').slideDown();
+                });
+                $(".nav li").mouseleave(function() {
+                    $(this).find('ul').slideUp();
+                });
+				//折叠导航
+				$(function(){
+					$(".div2").click(function(){ 
+						$(this).next("div").slideToggle("slow").siblings(".div3:visible").slideUp("slow");
+					});
+				});		
+						
+            });
+			
+      </script>
+     
+
+</head>
+<body>
+  <include file="head"/>
+    <!--bodyer begin-->
+    <div id="bodyer">
+        <div id="sub_left"><!--left begin-->
+                <div class="div1">
+                  <div class="div2">
+                      <a href="__URL__/index"> 首页</a>
+                  </div>
+                 <div class="div3"> </div>
+                 <volist name="all" id="arr1">
+                          <div class="div2">
+                           <a href="__URL__/news_list/id/<{$arr1['id']}>#sub_right" target="_self"><{$arr1['name']}></a>
+                          </div>
+                        <div class="div3">
+                          <ul>
+                           <volist name="arr1['subchann']" id="arr2">
+                             <li> <a href="__URL__/news_list/id/<{$arr1['id']}>_<{$arr2['id']}>#sub_right"  target="_self"><{$arr2["name"]}></a></li>
+                           </volist>
+                           </ul>
+                       </div>
+                  </volist> 
+                </div>
+           </div><!--left end-->
+           <div id="sub_right"><!--right begin-->
+           			<div class="about_content">
+                    	<h3><{$rows[0]["title"]}></h3>
+                          <center>               
+                          <img style="width:300px;height:200px;" src="__PUBLIC__/uploads/<{$rows[0]['img_url']}>"/>
+                          </center>
+                        <p>
+	             						<{$rows[0]["content"]}>
+                        </p>
+                    </div>
+           </div><!--right end-->
+           <div class="clear"></div>       
+    </div><!--bodyer end-->  
+      <include file="foot"/>
+</body>
+</html>

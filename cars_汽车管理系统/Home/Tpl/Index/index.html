@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>      
+      <meta charset="utf-8" />
+      <title>房车中国</title>
+      <meta name="description" content="房车" />
+      <meta name="author" content="陈雅迪，张恩桥" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      <link href="../Public/css/index.css" type="text/css" rel="stylesheet">
+      <script src="../Public/js/index.js" type="text/javascript" charset="utf-8" language="javascript"></script>
+      <script src="../Public/js/jquery-1.4.2.js" type="text/javascript" charset="utf-8" language="javascript"></script>
+	  <script type="text/javascript">
+            $(document).ready(function() {
+                $(".nav li").mousemove(function() {
+                    $(this).find('ul').slideDown();
+                });
+                $(".nav li").mouseleave(function() {
+                    $(this).find('ul').slideUp();
+                });
+				//tab
+				var tabs=function(){
+				function tag(name,elem){
+					return (elem||document).getElementsByTagName(name);
+				}
+				//获得相应ID的元素
+				function id(name){
+					return document.getElementById(name);
+				}
+				function first(elem){
+					elem=elem.firstChild;
+					return elem&&elem.nodeType==1? elem:next(elem);
+				}
+				function next(elem){
+					do{
+						elem=elem.nextSibling;  
+					}while(
+						elem&&elem.nodeType!=1  
+					)
+					return elem;
+				}
+				return {
+					set:function(elemId,tabId){
+						var elem=tag("li",id(elemId));
+						var tabs=tag("div",id(tabId));
+						var listNum=elem.length;
+						var tabNum=tabs.length;
+						for(var i=0;i<listNum;i++){
+								elem[i].onclick=(function(i){
+									return function(){
+										for(var j=0;j<tabNum;j++){
+											if(i==j){
+												tabs[j].style.display="block";
+												//alert(elem[j].firstChild);
+												elem[j].firstChild.idName="selected";
+												
+											}
+											else{
+												tabs[j].style.display="none";
+												elem[j].firstChild.idName="";
+											}
+										}
+									}
+								})(i)
+						}
+					}
+				}
+				}();
+				tabs.set("nav","menu_con");//执行
+				tabs.set("rank_nav","rank_menu");//执行
+						
+            });
+			
+      </script>
+</head>
+<body>
+	<include file="head"/>
+     <!--bodyer begin-->
+    <div id="bodyer">
+        
+            <!-- 代码 开始 -->
+              <div id="playBox">
+                <div class="pre"></div>
+                <div class="next"></div>
+                <div class="smalltitle">
+                  <ul>
+                    <li class="thistitle"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+                <ul class="oUlplay">
+                   <volist name="banner" id="bann">
+                     <li><a href="#" target="_blank"><img src="__PUBLIC__/uploads/<{$bann['img_url']}>"/></a></li>
+                   </volist>
+                </ul>
+              </div>
+            <!-- 代码 结束 -->
+          	<div class="news"><!--news begin-->
+            	<div class="title">
+                	<h3>新闻资讯</h3>
+                </div>
+                <div class="news_content">
+                	<div class="news_contentPh">
+                        <volist name="newsleft" id="left">
+                    		<a href="__URL__/imagenewsinfo/id/<{$left['id']}>">
+                                <img src="__PUBLIC__/uploads/<{$left['img_url']}>">
+                                <span>&nbsp;&nbsp;<{$left["title"]|msubstr=0,20,'utf-8',true}></span>
+                            </a> 
+                        </volist>                   
+                    </div>
+                    <div class="news_contentUl">
+                    		<!--政策新闻-->
+                    		<ul>
+                                <volist name="zhengcenews" id="zhengce">
+                                    <li><a href="__URL__/info/id/<{$zhengce['id']}>">
+                                        <{$zhengce['title']|msubstr=0,20,'utf-8',true}></a></li>
+                                </volist>
+                            </ul>
+                            <!--信息通知-->
+                            <ul>
+                            	<volist name="xinxinews" id="xinxi">
+                                    <li><a href="__URL__/info/id/<{$xinxi['id']}>">
+                                        <{$xinxi['title']|msubstr=0,20,'utf-8',true}></a></li>
+                                </volist>
+                            </ul>
+                    </div>
+                    <div class="news_contentAd">
+                    		<volist name="newsright" id="right">
+                            <a href="__URL__/imagenewsinfo/id/<{$right['id']}>">
+                                <img src="__PUBLIC__/uploads/<{$right['img_url']}>">
+                               <!--  <span>&nbsp;&nbsp;<{$right["title"]|msubstr=0,20,'utf-8',true}></span> -->
+                            </a> 
+                        </volist>   
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div><!--news end-->
+            
+            <div class="world"><!--房车世界 begin-->
+            		<div class="title">
+                        <h3>房车世界</h3>
+                    </div>
+                    <volist name="worldleft" id="left">
+                            <a href="__URL__/imagenewsinfo/id/<{$left['id']}>" class="world_big"> <img src="__PUBLIC__/uploads/<{$left['img_url']}>"><span><{$left['title']}></span></a>
+                    </volist>  
+                     <ul>
+                        <volist name="worldright" id="right">
+                            <li><a href="__URL__/imagenewsinfo/id/<{$right['id']}>"><img src="__PUBLIC__/uploads/<{$right['img_url']}>"><span><{$right['title']}></span></a></li>
+                        </volist>
+                     </ul>
+                     <div class="clear"></div>
+            </div><!--房车世界 end-->
+            <div class="luntan"><!--论坛 活动 begin-->
+                <div class="title_dot">
+                    <h3>论坛&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;活动</h3>
+                </div>
+                 <ul>
+                        <volist name="luntan" id="lun">
+                          <li>
+                            <a href="__URL__/imagenewsinfo/id/<{$lun['id']}>" target="_blank">
+                            <img src="__PUBLIC__/uploads/<{$lun['img_url']}>"></a>
+                           </li>
+                        </volist>
+                       
+                 </ul>
+                 <div class="clear"></div>
+            </div><!--论坛 活动 end-->
+            <div class="clear"></div>
+            <div id="lr"><!--lr begin(论坛活动后面左右开始分区)-->
+                <div id="left"><!--left begin-->
+                	<div class="forum_hotpost"><!--论坛热帖 begin-->
+                    	<div class="title_small">
+                        	 <span>论坛热帖</span>
+                        </div>
+                        <div class="forum_content"><!--forum_content begin-->
+                        	<volist name="luntanhot" id="lun">
+                                <a href="__URL__/imagenewsinfo/id/<{$lun['id']}>" target="_blank">
+                                <img src="__PUBLIC__/uploads/<{$lun['img_url']}>"></a>
+                            </volist>
+                             <ul>
+                            	<volist name="luntanhotnone" id="none">
+                                <li><a href="__URL__/imagenewsinfo/id/<{$none['id']}>" target="_blank">
+                                <{$none["title"]|msubstr=0,20,'utf-8',true}>
+                                </a>
+                                </li>
+                                </volist>
+                            </ul>
+                        </div><!--forum_content end-->
+                        <div class="clear"></div>
+                        <div class="public_welfare"><!--public_welfare begin-->
+                            <volist name="luntanhotlogo" id="logo">
+                                <a href="__URL__/imagenewsinfo/id/<{$logo['id']}>"><img src="__PUBLIC__/uploads/<{$logo['img_url']}>"></a>
+                            </volist>
+                        	  <ul>
+                                  <volist name="luntanhotsmall" id="small">
+                                    <if condition="$i eq 1">
+                                     <li>
+                                        <a href="__URL__/imagenewsinfo/id/<{$small['id']}>">
+                                        <img src="__PUBLIC__/uploads/<{$small['img_url']}>">
+                                        <div class="welfare_eg">
+                                            <h5><{$small['title']|msubstr=0,20,'utf-8',true}></h5>
+                                            <span><{$small['content']|msubstr=0,20,'utf-8',true}>
+                                            </span>
+                                        </div> 
+                                        <div class="clear"></div>
+                                        
+                                        </a>
+                                       
+                                    </li>
+                                    <else/>
+                                    <li><a href="__URL__/imagenewsinfo/id/<{$small['id']}>"><img src="__PUBLIC__/uploads/<{$small['img_url']}>"></a></li>
+                                    </if>
+                                  </volist>      
+                             </ul>
+                             <div class="clear"></div>
+                        </div><!--public_welfare end-->
+                        <div class="fc_forum"><!--fc_forum begin-->
+                        	<div class="title_small">
+                        	 	<span>房车论坛</span>
+                        	</div>
+                            <div class="clear"></div>
+                            <volist name="messages" id="messages">
+                             <div class="post"><!--post begin-->
+                                    <img src="__PUBLIC__/uploads/<{$messages['img_url']}>">
+                                    <div class="post_contentWrap">
+                                    <div class="post_content">
+                                        <a href="__URL__/message/id/<{$messages['id']}>"><{$messages['title']|msubstr=0,10,'utf-8',true}></a>
+                                        <p>
+                                           <{$messages['content']|msubstr=0,100,'utf-8',true}>
+                                        </p>
+                                        
+                                    </div>
+                                    <div class="post_manage">
+                                            <div class="date">
+                                               <{$messages['times']|date="Y-m-d H:i:s",###}>
+                                            </div>
+                                            <div class="zan">
+                                                <ul>
+                                                    <li><a href="">分享</a></li>
+                                                    <li><a href="">评论&nbsp;&nbsp;
+                                                        <volist name="messages['mcounts']" id="srow">
+                                                        <{$srow["mcounts"]}>
+                                                        </volist>
+                                                        </a>
+                                                    </li>
+                                                    <li><a href="">推荐  0</a></li>
+                                                </ul>
+                                            </div>
+                                   </div>
+                                   </div>
+                                   <div class="clear"></div>
+                            </div><!--post end-->
+                            </volist>
+                            <div class="clear"></div>
+                          	<div class="fc_forumMore">
+                            	<a href="">更多&gt;&gt;</a>
+                            </div>
+                        </div><!--fc_forum end-->
+                    </div><!--论坛热帖 end-->
+                    
+                </div><!--left end-->
+                 <div id="right"><!--right begin-->
+                 	<div class="ranks"><!--排行榜 begin-->
+                    	<div class="ranks_title">
+                        		
+                        				<span>排行榜</span>
+                                    
+                                      	<ul id="rank_nav">
+                                        <li class="rank_navCur">主题</a></li>
+                                        <li >地区</a></li>
+                                        </ul>
+									
+                        </div>
+                        <div class="clear"></div>
+                        <div id="rank_menu">
+                        <div  class="zhuti one">
+                    	<ul><!--主题排序-->
+                        		<li><a href="">分享</a></li>
+                                <li><a href="">评论 10</a></li>
+                                <li><a href="">推荐  0</a></li>
+                                <li><a href="">分享</a></li>
+                                <li><a href="">评论 10</a></li>
+                                <li><a href="">推荐  0</a></li>
+                                <li><a href="">分享</a></li>
+                                <li><a href="">评论 10</a></li>
+                                <li><a href="">推荐  0</a></li>
+                                <li><a href="">推荐  0</a></li>
+                        </ul>
+                        </div>
+                        <div  class="diqu one" style="display:none;">
+                        <ul><!--地区排序-->
+                        		<li><a href="">11111分享</a></li>
+                                <li><a href="">评论 10</a></li>
+                                <li><a href="">推荐  0</a></li>
+                                <li><a href="">分享</a></li>
+                                <li><a href="">评论 10</a></li>
+                                <li><a href="">推荐  0</a></li>
+                                <li><a href="">分享</a></li>
+                                <li><a href="">评论 10</a></li>
+                                <li><a href="">推荐  0</a></li>
+                                <li><a href="">推荐  0</a></li>
+                        </ul>
+                        </div>
+                       </div>
+                    </div><!--排行榜 end-->
+                    <div class="ad1"><!--右边第一个广告-->
+                        <volist name="ad1" id="ad1">
+                          <a href="<{$ad1['content']}>" target="_blank"><img src="__PUBLIC__/uploads/<{$ad1['img_url']}>"></a>
+                        </volist>	
+                    </div>
+                    <div id="fc_yingdi"><!--房车营地 房车改装 begin-->
+                    	<div class="yingdi_title">
+                        	<ul id="nav">
+                            	<li class="yingdi_titleLi " id="selected">房车营地</li>
+                                <li>房车改装</li>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                        <div id="menu_con">
+                            <div class="yingdi_content"><!--房车营地内容-->
+                               <volist name="yingdi" id="yingdi">
+                                  <a href="__URL__/imagenewsinfo/id/<{$yingdi['id']}>"><img src="__PUBLIC__/uploads/<{$yingdi['img_url']}>"></a>
+                               </volist>
+                                <ul>
+                                <volist name="yingdinews" id="yingdinews">
+                                   <li class="cur"><a href="__URL__/info/id/<{$yingdinews['id']}>"><{$yingdinews['title']|msubstr=0,20,'utf-8',true}></a></li>
+                                </volist>
+                                </ul>
+                            </div>
+                            <div class="gaizhuang_content" style="display:none;"><!--房车改装内容-->
+                                <volist name="gaizhuang" id="gaizhuang">
+                                  <a href="__URL__/imagenewsinfo/id/<{$gaizhuang['id']}>"><img src="__PUBLIC__/uploads/<{$gaizhuang['img_url']}>"></a>
+                               </volist>
+                                <ul>
+                                    <volist name="gaizhuangnews" id="gaizhuangnews">
+                                   <li><a href="__URL__/info/id/<{$gaizhuangnews['id']}>"><{$gaizhuangnews['title']|msubstr=0,20,'utf-8',true}></a></li>
+                                </volist>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!--房车营地 房车改装 end-->
+                    
+                    <div class="second_hand"><!--二手交易 begin-->
+                    	<div class="second_handTitle"><a href="">二手交易</a></div>
+                         <ul>
+                            <volist name="ershounews" id="ershou">
+                            	<li><a href="__URL__/info/id/<{$ershou['id']}>"><{$ershou["title"]|msubstr=0,20,'utf-8',true}></a></li>
+                            </volist>
+                        </ul>
+                    </div><!--二手交易 end-->
+                    <div class="ad1"><!--右边第二个广告-->
+                    	 <volist name="ad2" id="ad2">
+                          <a href="<{$ad2['content']}>" target="_blank"><img src="__PUBLIC__/uploads/<{$ad2['img_url']}>"></a>
+                        </volist>   
+                    </div>
+                </div><!--right end-->
+                <div class="clear"></div>
+            </div><!--lr end-->
+            <div class="ad_changban"><!--ad_changban begin-->
+            	<volist name="adbot" id="adbot">
+                          <a href="<{$adbot['content']}>" target="_blank"><img src="__PUBLIC__/uploads/<{$adbot['img_url']}>"></a>
+                </volist> 
+            </div><!--ad_changban end-->
+            <div class="world"><!--房车摄影 和房车世界一样 begin-->
+            		<div class="title">
+                        <h3>房车摄影</h3>
+                    </div>
+                    <volist name="sheyingbig" id="big">
+                          <a class="world_big" href="__URL__/imagenewsinfo/id/<{$big['id']}>" target="_blank"><img src="__PUBLIC__/uploads/<{$big['img_url']}>">
+                            <span><{$big['title']|msubstr=0,15,'utf-8',true}></span></a>
+                    </volist>
+                     <ul>
+                        <volist name="sheyingsmall" id="small">
+                             <li><a href="__URL__/imagenewsinfo/id/<{$small['id']}>"><img src="__PUBLIC__/uploads/<{$small['img_url']}>">
+                                <span><{$small['title']|msubstr=0,15,'utf-8',true}></span></a></li>
+                        </volist>
+                     </ul>
+                     <div class="clear"></div>
+            </div><!--房车摄影 end-->
+            <div class="links"><!--link begin-->
+            		<div class="title_link">
+                        <h3>友情链接</h3>
+                    </div>
+                    <div class="links_content">
+                    	<table>
+                        	<tr>
+                            	<td style="width:100px; text-align:center;">知名网站&gt;</td>
+                                <td>
+                                	<ul>
+                                        <volist name="link" id="links">
+                                         <li><a href="<{$links['link_url']}>" target="_blank"><{$links['name']}></a><span>|</span></li>
+                                        </volist>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+     
+            </div><!--link end-->
+    </div><!--bodyer end--> 
+    <include file="foot"/>
+</body>
+</html>

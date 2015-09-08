@@ -1,0 +1,93 @@
+﻿/*购物车*/
+.h3{height:25px;color:#000000;text-indent:15px; font:bold 14px/25px "microsoft yahei";}
+.h4{height:25px;color:#000000;text-indent:12px; font:14px/25px "microsoft yahei";}
+.s_shoppingcart{ float:right; margin-top:-35px;}
+.s_header{width:100%;height:80px; border-bottom:5px solid #03772a;}
+.s_banner{  width:990px; height:66px; margin:0 auto; margin-bottom:10px;}
+.gwc_table  { border:1px solid #d0d9d3;text-align:center;  color:#5c5b5a;border-collapse:collapse;}
+.gwc_table tr{ width:990px; text-align:center;  color:#5c5b5a;}
+.gwc_table td{border-top:1px solid #d0d9d3;empty-cells:show;}
+.gwc_table .gwc_tr1{ background:#d0d9d3; height:30px; line-height:20px;} 
+.gwc_table .gwc_tr2{ height:30px; line-height:20px;} 
+.gwc_table .gwc_tr3{ height:100px; line-height:70px; padding:15px 0px;}
+.gwc_table .gwc_tr4{  line-height:70px; padding:15px 0px;}  
+.gwc_table  .notselected
+{	border-width:2px;
+    /*IE*/
+    border:2px solid #F07707;
+    /*Firefox*/
+    -moz-border-image:url(/correcting/style/images/dashed_red2.png) 6 repeat;
+    /*Chrome & Safari*/
+    -webkit-border-image:url(/correcting/style/images/dashed_red2.png) 6 repeat;
+    /*Opera*/
+    border-image:url(/correcting/style/images/dashed_red2.png) 6 repeat;
+}
+.gwc_checkbox{width:20px; padding:0px 10px;}               
+.gwc_img{width:50px;}               
+.gwc_name{ width:90px;}
+.gwc_code{ width:70px;}
+.gwc_year{ width:70px;}
+.gwc_kanqi01{ width:30px;}
+.gwc_kanqi02{ width:200px;}
+.gwc_total{ width:50px;}
+.gwc_num{ width:50px;}
+.gwc_price{ width:60px;}
+.gwc_total_price{ width:70px;}
+.gwc_web_price{ width:70px;}
+.gwc_preferential_price{ width:60px;}
+.gwc_operate{ width:70px;}
+.fc_cs{color:#fc6715;}
+.fw_b{ font-weight:bold;}
+.gwc_table select{ display:inline;}
+.gwc_operate span{ display:block; text-align:center; line-height:30px}
+.gwc_tr4 span{ display:block; line-height:30px; text-align:left;}
+.title01{ margin-left:72px; color:#5c5b5a;}
+.gwc_qujiesuan{ border:none; background:url(/correcting/style/images/order/qujiesuan.jpg) no-repeat center; width:135px; height:32px;}
+
+
+/***added by Huang ShuYi****/
+.sy-tb-head{ font-weight:bold; text-align:left; padding-left:10px;}
+.sy-tr{ text-align:right; padding:15px 20px 15px 30px;}
+.sy-tr02{ padding:15px 30px; text-align:left; line-height:34px;}
+.sy-tr03{ height:170px; vertical-align:middle; line-height:20px;}
+.sy-tr04{ text-align:left; line-height:34px;}
+.sy-border-bt{ border-bottom:2px solid #006633;}
+.sy-renewItem{width:70px; margin-right:5px;  display:inline-block; text-align:right;}
+.sy-btn-submit{ width:135px; height:35px; border:none; color: #fff; font-weight:bold; cursor:pointer; background:url(../images/order/btn-submit.jpg) no-repeat; margin-top:5px; font-size:14px;}
+
+.sy-btn-counti{ 
+    background: none repeat scroll 0 0 #E6E6E6;
+    border: 1px solid #D6D6D6;
+    font-size: 14px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 12px;
+    text-align: center;
+    width: 86px;
+}
+}
+
+
+/**
+.sy-btn-submit:hover{ width:135px; height:35px; border:none; color: #fff; font-weight:bold; cursor:pointer; background:url(../images/order/btn-submit02.jpg) no-repeat;}
+*/
+.sy-btn-submit02{ width:97px; height:31px; border:none; color: #fff; font-weight:bold; cursor:pointer; background:url(../images/order/btn-submit03.jpg) no-repeat; margin-top:20px; font-size:14px;}
+.gwc_operate a:hover{ color:#F60;}
+
+/******/
+.fkcg_content{ padding:70px 0px 70px 315px; height:70px;border-bottom:2px solid #d0d9d3;}
+.wcdd_content{ padding-left:70px; background:url(../images/order/gou.jpg) no-repeat; height:70px; color:#5c5b5a;}
+.wcdd_content01{ width:100%; height:160px; padding-top:30px; border-bottom:1px solid #d0d9d3;}
+.wcdd_c01{ padding-left:20px; display:block;}
+.wcdd_c02{ margin-top:30px;color:#5c5b5a;}
+.wcdd_c03{ width:77px; height:29px; background:url(/correcting/style/images/order/ljzf.jpg) no-repeat center; border:none; margin-top:20px;}
+.wcdd_c04{ height:30px; padding-bottom:200px;}
+.fs21{font-size:21px;}
+.fkcg_c01{ line-height:60px;}
+
+.fkcg_button{ width:175px; float:right; margin-top:15px; height:30px; margin-bottom:50px;}
+.fkcg_button01{ width:77px; height:30px; background:url(/correcting/style/images/order/ckdd.jpg) no-repeat center; border:none;}
+.fkcg_button02{ width:77px; height:30px; background:url(/correcting/style/images/order/jxdy.jpg) no-repeat center; border:none; margin-left:15px;}
+
+.bk_p{height:30px;line-height:30px;font-size:12px;color:#727272;}

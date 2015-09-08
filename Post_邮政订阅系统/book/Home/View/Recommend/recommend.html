@@ -1,0 +1,745 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0107)http://bk.11185.cn/index.do;JSESSIONID_PUB=4jS0VX1Lyv5Gp30YgvVJMngJfJhRgvqrL5xhQQ1QlHXkrpxSpyZ2!-1869903175 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>中国邮政报刊订阅网</title>
+
+<link href="{$smarty.const.CSS_URL}base.css" rel="stylesheet" type="text/css">
+<link href="{$smarty.const.CSS_URL}index.css" rel="stylesheet" type="text/css">
+<link href="{$smarty.const.CSS_URL}captify.css" rel="stylesheet" type="text/css">
+<link type="text/css" rel="stylesheet" href="{$smarty.const.CSS_URL}jquery-ui.css">
+<script type="text/javascript" src="{$smarty.const.JS_URL}jquery-1.9.1.js"></script>
+<script type="text/javascript" src="{$smarty.const.JS_URL}jquery-ui.js"></script>
+<script type="text/javascript" src="{$smarty.const.JS_URL}base.js"></script>
+<script type="text/javascript" src="{$smarty.const.JS_URL}index.js"></script>
+<script type="text/javascript" src="{$smarty.const.JS_URL}jquery.easing.1.3.js"></script>
+<script type="text/javascript">
+{literal}
+jQuery.noConflict();
+/* 返回页面顶部JS效果  */
+jQuery(document).ready(function($){
+    $(window).bind("scroll",function(){ 
+        var a=$("#sidepanel");
+        var b=document.body.scrollTop||document.documentElement.scrollTop;0==b?a.hide():a.show();
+    });
+    $("#nav").find(".menu li:first").addClass("on");
+    //图片蒙版
+    $('.captify').hover(
+        function() {
+            $(this).children('div:last').stop(false,true).animate({bottom:6},{duration:200, easing: 'easeOutQuart'});
+        },
+        function() {
+            $(this).children('div:last').stop(false,true).animate({bottom:-100},{duration:200, easing: 'easeOutQuart'});
+        }
+    );
+    $("#p_rank li:gt(7)").hide();
+    $("#h_rank li:gt(7)").hide();
+
+});
+{/literal}
+</script>
+</head>
+
+<body>
+
+    <!-- 返回页面顶部 -->
+    <div style="right: 2px; display: none;" id="sidepanel" class="hide">
+        <a href=""></a>
+    </div>
+    
+    <!-- 快捷导航 -->
+    <div id="shortcut">
+        
+
+<script type="text/javascript">
+/* 网站收藏方法 */
+    function addToFavorite() {
+        var d = "http://bk.11185.cn/";
+        var c = "\u4e2d\u56fd\u90ae\u653f\u62a5\u520a\u8ba2\u9605\u7f51";
+        if (document.all) {
+            window.external.AddFavorite(d, c);
+        } else {
+            if (window.sidebar) {
+                window.sidebar.addPanel(c, d, "");
+            } else {
+                alert("\u5bf9\u4e0d\u8d77\uff0c\u60a8\u7684\u6d4f\u89c8\u5668\u4e0d\u652f\u6301\u6b64\u64cd\u4f5c!\n\u8bf7\u60a8\u4f7f\u7528\u83dc\u5355\u680f\u6216Ctrl+D\u6536\u85cf\u672c\u7ad9\u3002");
+            }
+        }
+        //createCookie("_fv", "1", 30, "/;domain=bk.11185.cn");
+    }
+
+
+jQuery(document).ready(function($){
+    var url="http://bk.11185.cn:80/userValidate?jsoncallback=success_jsonpCallback";
+    var username="";
+    jQuery.support.cors = true;
+    var grzx_top_c="您好，欢迎使用中国邮政报刊订阅网！<span>[<a href='http://bk.11185.cn:80/logon.do?method=registerLogon' target='_blank'>用户登录</a>&nbsp;<a href='http://bk.11185.cn:80/stat/statlogon.do?method=statuserlogon' target='_blank'>报刊社登录</a>]<a href='http://it.11185.cn/chinapostintegrate/toRegister.a?origin=0&registerType=1'>[免费注册]</a></span>";
+    var userInfo="";
+    var userType="";
+    if(userInfo!="" && userType!="3"){
+        grzx_top_c="报刊社用户：，您好！<span><a href='http://bk.11185.cn:80/stat/logon.do?method=statMain'>[报刊社主页]</a></span><span><a href='http://bk.11185.cn:80/stat/logon.do?method=statlogout'>[退出]</a></span>";
+    }else{
+        $.ajax({
+            type : "get",
+            async:false,
+            url : url,
+            dataType : "jsonp",
+            timeout:3000,
+            jsonp: "jsoncallback",
+            jsonpCallback:"success_jsonpCallback",
+            success : function(json){
+                username=json.name;
+                if(username!=""){
+                    grzx_top_c=username+"，您好！<span><a href='javascript:logout()'>[退出]</a></span>";
+                }
+            }, 
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert('用户信息读取失败，请与客服人员联系');
+            }
+        });
+    }
+    $("#loginbar").html(grzx_top_c);
+});
+
+function logout()
+{
+    var url = 'http://bk.11185.cn:80/logon.do?method=logoutbySSO';
+    jQuery.ajax({
+        type:"POST",
+        url:url,
+        error:function(){
+            alert("系统出现异常，无法完成退出操作，请与管理员联系")
+        },
+        success:function(data){
+            window.location.href="http://passport.11185.cn/cas/logout?service=http://bk.11185.cn:80";   
+        }
+    }); 
+}       
+
+</script>
+<div class="w">
+    <ul class="fl lh">
+        <li class="fore1 ld">
+            <b></b>
+            <a href="javascript:addToFavorite()" rel="nofollow">收藏中国邮政报刊订阅网</a>
+        </li>
+    </ul>
+    <ul class="fr lh">
+        <li id="loginbar" class="fore1">您好，欢迎使用中国邮政报刊订阅网！<span>[<a href="http://bk.11185.cn/logon.do?method=registerLogon" target="_blank">用户登录</a>&nbsp;<a href="http://bk.11185.cn/stat/statlogon.do?method=statuserlogon" target="_blank">报刊社登录</a>]<a href="http://it.11185.cn/chinapostintegrate/toRegister.a?origin=0&registerType=1">[免费注册]</a></span></li>
+        
+        <li id="mobile-subscibe" class="ld">
+            <s></s>
+            <a target="_blank" href="http://app.11185.cn/apps-dl/"><i></i>手机订阅</a>
+        </li>
+        <li id="special_order" class="ld">
+            <s></s>
+            <a href="http://bk.11185.cn/order/voucher.do?method=enter" style="color:red;"><i></i>专用单订阅</a>
+        </li>
+        <li id="other-service" class="ld menu">
+            <s></s>
+        <a href="http://bk.11185.cn/logon.do?method=mycount">我的报刊</a>
+        </li>
+    </ul>
+    <span class="cls"></span>
+</div>  
+<!-- 网站顶部使用的快捷方式，包含：登录、注册、分类信息等 -->
+
+    </div>
+    <!-- 模糊查询 -->
+    <div id="header" class="w clearfix">
+        
+
+
+
+{literal}
+<script type="text/javascript">
+    /* 删除左右两端的空格 */
+    function trim(str){ 
+        return str.replace(/(^\s*)|(\s*$)/g, "");
+    }
+    /* 判断对象是否为空 */
+    function isNullOrEmpty(strVal) {
+        if (strVal == '' || strVal == null || strVal == undefined) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    /* 验证浏览器内核  */
+    function checkBrowserCore() {
+        var Sys = {};
+        var ua = navigator.userAgent.toLowerCase();
+        var s;
+        (s = ua.match(/msie ([\d.]+)/)) ? Sys.trident = s[1] : (s = ua
+                .match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1] : (s = ua
+                .match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] : (s = ua
+                .match(/opera.([\d.]+)/)) ? Sys.opera = s[1] : (s = ua
+                .match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
+        return Sys;
+    }
+
+    /* 过滤空格 */
+    function ignoreSpaces(string) {
+        var temp = "";
+        string = '' + string;
+        splitstring = string.split(" ");
+        for (var i = 0; i < splitstring.length; i++)
+            temp += splitstring[i];
+        return temp;
+    }
+    
+    /* 模糊查询方法 */
+    function search(searchKey) {
+        var searchVal = "";
+        if(searchKey==null){
+            searchVal = jQuery("#searchKey").val();
+        }else{
+            searchVal = jQuery(searchKey).val();
+        }
+        if(trim(searchVal)=="可按照报刊名称或邮发代号查询" || isNullOrEmpty(trim(searchVal))){
+            return;
+        }
+        jQuery("#fuzzySearchForm").submit();
+    }
+    function keyMove(keyCode) {
+        if (keyCode == 40) {
+            var sel_li = jQuery('#shelper').find('li.item-selected');
+            if (sel_li.length == 0) {
+                jQuery("#shelper li:eq(0)").addClass('item-selected');
+                jQuery("#searchKey").focus().val(
+                        jQuery("#shelper li:eq(0)").children('div.search-item')
+                                .text());
+
+            } else if ("s_9" == sel_li.attr('id')) {
+                jQuery("#shelper li:eq(9)").removeClass('item-selected');
+                jQuery("#shelper li:eq(0)").addClass('item-selected');
+                jQuery("#searchKey").focus().val(
+                        jQuery("#shelper li:eq(0)").children('div.search-item')
+                                .text());
+            } else {
+                sel_li.removeClass('item-selected');
+                sel_li.next().addClass('item-selected');
+                jQuery("#searchKey").focus().val(
+                        sel_li.next().children('div.search-item').text());
+            }
+        } else if (keyCode == 38) {
+            var sel_li = jQuery('#shelper').find('li.item-selected');
+            if (sel_li.length == 0) {
+                jQuery("#shelper li:eq(9)").addClass('item-selected');
+                jQuery("#searchKey").focus().val(
+                        jQuery("#shelper li:eq(9)").children('div.search-item')
+                                .text());
+            } else if ("s_0" == sel_li.attr('id')) {
+                jQuery("#shelper li:eq(0)").removeClass('item-selected');
+                jQuery("#shelper li:eq(9)").addClass('item-selected');
+                jQuery("#searchKey").focus().val(
+                        jQuery("#shelper li:eq(9)").children('div.search-item')
+                                .text());
+            } else {
+                sel_li.removeClass('item-selected');
+                sel_li.prev().addClass('item-selected');
+                jQuery("#searchKey").focus().val(
+                        sel_li.prev().children('div.search-item').text());
+            }
+        }
+    }
+    
+    function removeCarttips(obj){
+        var index = jQuery(obj).attr("idx");
+        jQuery.getJSON("http://bk.11185.cn:80/index/cart.do?method=removeCartTips",{"index":index},function(data){
+            if(data==null|| data==""){
+                jQuery("#carttips dl dd").html("").append("<div class='prompt'><div class='nogoods'><b></b>您的购物车中还没有报刊，赶紧添加吧！</div></div>");
+                jQuery("#shopping-amount").text(0);
+            }else{
+                jQuery("#carttips dl dd").html("").append("<div id='carttips-content'><div class='smt'><h4 class='fl'>最近购买报刊</h4></div><div class='smc'><ul id='mcart-mz'></ul></div><div class='smb ar'></div></div>");
+                var count = 0,total=0.00;
+                jQuery.each(data,function(i,item){
+                    var imgPath = item.pblsPressImage.imageName;
+                    if(imgPath==null){
+                        imgPath="/correcting/style/images/no_photo.jpg";
+                    }else{
+                        imgPath="/media/upload"+imgPath;
+                    }
+                    count = count + parseInt(item.itemCount);
+                    total = total + parseFloat(item.subscribeRefPrice)*item.itemCount;
+                    jQuery("#mcart-mz").append("<li><div class='p-img fl'><a href='http://bk.11185.cn:80/index/detail.do?method=getCataDetail&year="+item.year+"&pressCode="+item.oldPressCode+"' target='_blank'><img src='"+imgPath+"' alt='"+item.pressName+"' height='50' width='50'></a></div><div class='p-name fl'><span></span><a href='http://bk.11185.cn:80/index/detail.do?method=getCataDetail&year="+item.year+"&pressCode="+item.oldPressCode+"' title='"+item.pressName+"' target='_blank'>"+item.pressName+"</a></div><div class='p-detail fr ar'><span class='p-price'><strong>￥"+item.subscribeRefPrice+"</strong>×"+item.itemCount+"</span><br><a class='delete' idx='"+i+"'href='javascript:void(0);' onclick='removeCarttips(this)'>删除</a></div></li>")
+                });
+                //alert(count+","+total+","+$("#mcart-mz").html());
+
+                jQuery("#carttips-content div.smb").html("").append("共<b>"+count+"</b>件商品　共计<strong>￥"+Number(total).toFixed(2)+"</strong><br><a href='http://bk.11185.cn:80/index/cart.do?method=cartList' title='去购物车结算' id='btn-payforgoods'>去购物车结算</a>");
+                jQuery("#shopping-amount").text(count);
+            }
+        });
+    }
+    function loadCarttips(){
+        jQuery.getJSON('http://bk.11185.cn:80/index/cart.do?method=cartTips',null, function(data) {
+            if(data==null|| data==""){
+                jQuery("#carttips dl dd").html("").append("<div class='prompt'><div class='nogoods'><b></b>您的购物车中还没有报刊，赶紧添加吧！</div></div>");
+            }else{
+                jQuery("#carttips dl dd").html("").append("<div id='carttips-content'><div class='smt'><h4 class='fl'>最近购买报刊</h4></div><div class='smc'><ul id='mcart-mz'></ul></div><div class='smb ar'></div></div>");
+                var count = 0,total=0.00;
+                jQuery.each(data,function(i,item){
+                    var imgPath = item.pblsPressImage.imageName;
+                    if(imgPath==null){
+                        imgPath="/correcting/style/images/no_photo.jpg";
+                    }else{
+                        imgPath="/media/upload"+imgPath
+                    }
+                    count = count + parseInt(item.itemCount);
+                    total = total + parseFloat(item.subscribeRefPrice)*item.itemCount;
+                    jQuery("#mcart-mz").append("<li><div class='p-img fl'><a href='http://bk.11185.cn:80/index/detail.do?method=getCataDetail&year="+item.year+"&pressCode="+item.oldPressCode+"' target='_blank'><img src='"+imgPath+"' alt='"+item.pressName+"' height='50' width='50'></a></div><div class='p-name fl'><span></span><a href='http://bk.11185.cn:80/index/detail.do?method=getCataDetail&year="+item.year+"&pressCode="+item.oldPressCode+"' title='"+item.pressName+"' target='_blank'>"+item.pressName+"</a></div><div class='p-detail fr ar'><span class='p-price'><strong>￥"+item.subscribeRefPrice+"</strong>×"+item.itemCount+"</span><br><a class='delete' idx='"+i+"'href='javascript:void(0);' onclick='removeCarttips(this)'>删除</a></div></li>")
+                });
+                //alert(count+","+total+","+$("#mcart-mz").html());
+
+                jQuery("#carttips-content div.smb").html("").append("共<b>"+count+"</b>件商品　共计<strong>￥"+Number(total).toFixed(2)+"</strong><br><a href='http://bk.11185.cn:80/index/cart.do?method=cartList' title='去购物车结算' id='btn-payforgoods'>去购物车结算</a>");
+                jQuery("#shopping-amount").text(count);
+            }
+        });
+    }
+    /* 点击关闭按钮调用方法 */
+    function hideTip() {
+        jQuery("#shelper").hide();
+    }
+
+    /* 选择查询列表某一项后调用方法 */
+    function clickItem(item) {
+        jQuery("#searchKey").focus().val(
+                jQuery(item).children('div.search-item').text());
+        hideTip();
+    }
+    jQuery(document).ready(function($){
+        $("body").bind('click',function(){
+            hideTip();
+        });
+        $("#searchKey").keyup(function(event) {
+            var currKey=event.keyCode;
+            //currKey=String.fromCharCode(event.keyCode)||String.fromCharCode(event.which); // 处理firefox兼容问题
+            var searchValue = ignoreSpaces($(this).val());
+            var url = "/index/fuzzy.do?method=fuzzySearch";
+            if (currKey == 38 || currKey == 40 || currKey == 13) {
+                //alert(currKey);
+                keyMove(currKey);
+                return;
+            }
+            if (searchValue != "") {
+                $.getJSON( url, { 'searchValue' : searchValue }, function(data) {
+                    $("#shelper").html(""); // 清空ul内容
+                    $.each( data, function(i, item) {
+                        if(i<10){
+                            $("#shelper").append("<li title='" + item[0] + "' id='s_" + i + "'onmouseover='javascript:$(\"#shelper\").find(\"li.item-selected\").removeClass(\"item-selected\");' onclick='clickItem(this)'><div class='search-item'>" + item[0] + "</div><div class='search-count'>" + item[1] + "&nbsp;(" + item[2] + ")</div></li>"); 
+                        }
+                    });
+                    $("#shelper").append("<li class='close' onclick='hideTip()'>关闭</li>"); $("#shelper").show(); 
+                });
+            }
+        });
+        loadCarttips();
+        $("#carttips dl").hover(function(){
+            $(this).addClass("hover");
+            loadCarttips();
+        },function(){
+            $(this).removeClass("hover");
+        });
+    });
+</script>
+<style>
+.gwc {
+    background: none repeat scroll 0 0 #F7F7F7;
+    border: 1px solid #EFEFEF;
+    height: 12px;
+    line-height: 12px;
+    margin-top: 10px;
+    padding: 5px 10px 10px 10px;
+}
+
+</style>
+
+        <div class="logo">
+            <a hidefocus="true" href="http://bk.11185.cn/"> 
+                <img width="325" height="75" alt="报刊订阅" src="{$smarty.const.IMG_URL}logo.jpg">
+            </a>
+        </div>
+    <div class="search">
+        <form action="http://bk.11185.cn/index/catalogSearch.do" method="get" id="fuzzySearchForm">
+            <input type="hidden" name="method" value="findCatalog">
+            <input id="searchKey" name="searchKey" class="query" onKeyDown="javascript:if(event.keyCode==13) search(this);" value="可按照报刊名称或邮发代号查询" onBlur="if(value==&#39;&#39;){value=&#39;可按照报刊名称或邮发代号查询&#39;}" onFocus="if(value==&#39;可按照报刊名称或邮发代号查询&#39;){value=&#39;&#39;}">
+            <input type="button" class="search_button" onClick="search()">
+            <ul id="shelper" class="hide" style="display: none;">
+            </ul>
+        </form>
+ {/literal}       
+    <!--    <div class="gwc fr">
+        <a target="_blank" href="http://bk.11185.cn:80/index/cart.do?method=getCartList">
+    <img width="20" height="16" src="/correcting/style/images/cartlogo.gif">
+    <span>购物车<font color="red" id="cartListSize">1</font>件
+        </span></a>
+    </div>-->
+        <div class="hot"><strong>热门搜索:</strong>
+            <a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=1-38" target="_blank">参考消息</a>  
+            <a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=54-17" target="_blank">读者</a>   
+            <a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=82-921" target="_blank">财经</a>
+        </div>
+    </div>
+    <div id="carttips">
+        <dl class="">
+            <dt class="ld">
+                <s></s>
+                <span class="shopping">
+                    <span id="shopping-amount">1</span>
+                </span>
+                <a href="http://bk.11185.cn/index/cart.do?method=cartList" id="settleup-url">购物车</a>
+                <b></b> 
+            </dt>
+            <dd><div id="carttips-content"><div class="smt"><h4 class="fl">最近购买报刊</h4></div><div class="smc"><ul id="mcart-mz"><li><div class="p-img fl"><a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&year=2015&pressCode=82-512" target="_blank"><img src="{$smarty.const.IMG_URL}20140905093847_1.jpg" alt="电脑爱好者" height="50" width="50"></a></div><div class="p-name fl"><span></span><a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&year=2015&pressCode=82-512" title="电脑爱好者" target="_blank">电脑爱好者</a></div><div class="p-detail fr ar"><span class="p-price"><strong>￥8</strong>×1</span><br><a class="delete" idx="0" href="javascript:void(0);" onClick="removeCarttips(this)">删除</a></div></li></ul></div><div class="smb ar">共<b>1</b>件商品　共计<strong>￥8.00</strong><br><a href="http://bk.11185.cn/index/cart.do?method=cartList" title="去购物车结算" id="btn-payforgoods">去购物车结算</a></div></div></dd>
+        </dl>
+    </div>
+
+    </div>
+    <!-- 导航菜单 -->
+    <div style="width:990px; margin:0 auto;">
+        <div id="nav" class="clearfix">
+            
+<ul class="menu">
+    <li class="on"><a href="Index.php">首页</a></li>
+    <li><a href="Hotsale.php">畅销报刊</a></li>
+    <li><a href="Campus.php">优秀校园报刊</a></li>
+    <li><a href="Recommend.php">海南省报刊推荐</a></li>
+    <li style="float: right"><img src="{$smarty.const.IMG_URL}phone.jpg" border="0" style="margin-right:10px;"></li>
+</ul>
+<!--
+<script>
+    (function(){
+        var url = window.location.href;
+        var navId = url.split("&")[1];
+        if(undefined!=navId && undefined!=navId.split("=")[1]){
+            alert();
+            $(".menu li").addClass("on").siblings().removeClass("on");
+        }
+    })(jQuery);
+</script>-->
+        </div>
+    </div>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!-- 显示在浏览器上的标题 -->
+    <title>中国邮政报刊订阅网</title>
+	<link href="{$smarty.const.CSS_URL}base.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="{$smarty.const.JS_URL}jquery-1.9.1.js"></script>
+
+	<div class="w mt10 mb10 clearfix">
+		<!-- 广告宣传页面 -->
+		
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<title>中国邮政发行报刊--海南省报刊推荐</title>
+{literal}
+<style type="text/css">
+/* reset*/
+html,body,h1,h2,h3,h4,h5,h6,dl,dt,dd,ul,ol,li,p,a,blockquote,pre,form,fieldset,legend,input,button,textarea,hr,cite,label,strong,em,span{margin:0;padding:0;}
+img{border:none;}
+ul,ol{list-style:none; } 
+body{font:12px/1.5 '宋体',Arial; }
+select,input,button{vertical-align:middle;font-size:100%;}
+fieldset,img{border:0;}
+.clear {clear:both;display:block;height:0; visibility:hidden; font:0/0 arial}
+.clearfix:after {content:"."; display: block; height: 0; clear: both; visibility: hidden; font-size:0;}
+.clearfix {*zoom:1;}
+em,i{ font-style:normal;}
+/* Hides from IE-mac \*/ 
+* html .clearfix {height: 1%;} 
+.clearfix {display: block;} 
+a{text-decoration:none; outline:none; color:#000; star:expression(this.onFocus=this.blur());}
+input,button{ outline:none; }
+::-moz-focus-inner{border:0px;}
+html{ overflow:-moz-scrollbars-vertical;}/*在Firefox浏览器下始终显示滚动条；不同浏览器的显示效果都将一致*/
+/* End hide from IE-mac */
+
+.w990{ width:990px; margin:0 auto;}
+.title-fwb{border-bottom: 3px solid #006633;color: #676767;font-size: 14px;height: 34px;position: relative; margin:20px 0;}
+.first_letter1 {background: url("/correcting/page/advert/hainan/images/floor_title_bg.png") no-repeat scroll;display: inline-block;float: left;font: bold 14px "microsoft yahei";height: 37px;left: 0;position: absolute;text-align: center;top: 0;
+}
+.first_letter1 em{font-size:18px;color:#fff;}
+.first_letter1 i{line-height:34px;margin-left:5px; font-size:16px;}
+.book_listw{width:1100px; overflow:hidden;}
+.book_listw li{width:175px; height:310px; float:left; margin:0 30px 0 0;}
+.book_listw li a{ width:160px; height:220px; padding:5px; background:#fff; border:1px solid #d4d4d4;  display:block; position:relative; margin-bottom:5px;}
+.book_listw li a img{width:160px; height:220px;}
+.book_listw li a span{background:#000;bottom: 5px;color: #fff;height: 22px;left: 5px;line-height: 22px;opacity: 0.6;overflow: hidden;padding: 0 5px;position: absolute;text-align: center;text-overflow: ellipsis;white-space: nowrap;width: 150px;}
+.book_listw li a i{ background:url(/correcting/page/advert/hainan/images/tags.png) no-repeat;color: #fff;height: 60px;line-height: 16px;padding: 5px;position: absolute;right: 5px;text-align: center;top: 5px;width: 16px;}
+.book_listw li p{ margin:5px 12px;}
+.book_listw li p em{ color:#555;}
+.book_listw li p span{ color:#E4393C; font:normal 14px 'verdana';}
+</style>
+{/literal}
+
+<div class="w990">
+	<img src="{$smarty.const.IMG_URL}banner1.jpg" width="990" height="250">
+    <!--杂志title开始-->
+    <h1 class="title-fwb">
+		<div class="first_letter1">
+        	<em>杂</em><i>志类</i>
+        </div>
+	</h1>
+    <!--杂志title结束-->
+    <!--杂志列表开始-->
+	<ul class="book_listw">
+    
+    	<li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=84-1" target="_blank"><img src="{$smarty.const.IMG_URL}84-1.jpg" alt="海南医学"><span>海南医学</span><i>半月刊</i></a>
+            <p><em>订阅参考单价：</em><span>¥6.00</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥144.00</span></p>
+        </li>
+        
+        <li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=84-2" target="_blank"><img src="{$smarty.const.IMG_URL}84-2.jpg" alt="海南师范大学学报（社会科学版）"><span>海南师范大学学报（社会科学版）</span><i>月刊</i></a>
+            <p><em>订阅参考单价：</em><span>¥10.00</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥120.00</span></p>
+        </li>
+        
+        <li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=84-3" target="_blank"><img src="{$smarty.const.IMG_URL}84-3.jpg" alt="海南大学学报（自科版）"><span>海南大学学报（自科版）</span><i>季刊</i></a>
+            <p><em>订阅参考单价：</em><span>¥10.00</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥40.00</span></p>
+        </li>
+        
+        <li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=84-4" target="_blank"><img src="{$smarty.const.IMG_URL}84-4.jpg" alt="海南大学学报（社会科学版）"><span>海南大学学报（社会科学版）</span><i>双月刊</i></a>
+            <p><em>订阅参考单价：</em><span>¥10.00</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥60.00</span></p>
+        </li>
+        
+        <li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=84-9" target="_blank"><img src="{$smarty.const.IMG_URL}84-9.jpg" alt="椰城"><span>椰城</span><i>月刊</i></a>
+            <p><em>订阅参考单价：</em><span>¥5.00</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥60.00</span></p>
+        </li>
+        
+        <li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=84-12" target="_blank"><img src="{$smarty.const.IMG_URL}84-12.jpg" alt="天涯"><span>天涯</span><i>双月刊</i></a>
+            <p><em>订阅参考单价：</em><span>¥18.00</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥108.00</span></p>
+        </li>
+        
+        <li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=84-13" target="_blank"><img src="{$smarty.const.IMG_URL}84-13.jpg" alt="新东方"><span>新东方</span><i>双月刊</i></a>
+            <p><em>订阅参考单价：</em><span>¥15.00</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥90.00</span></p>
+        </li>
+        
+        <li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=84-15" target="_blank"><img src="{$smarty.const.IMG_URL}84-15.jpg" alt="今日海南"><span>今日海南</span><i>月刊</i></a>
+            <p><em>订阅参考单价：</em><span>¥6.50</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥78.00</span></p>
+        </li>
+        
+        <li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=84-17" target="_blank"><img src="{$smarty.const.IMG_URL}84-17.jpg" alt="琼州学院学报"><span>琼州学院学报</span><i>双月刊</i></a>
+            <p><em>订阅参考单价：</em><span>¥10.00</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥60.00</span></p>
+        </li>
+        
+        <li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=84-18" target="_blank"><img src="{$smarty.const.IMG_URL}84-18.jpg" alt="海南师范大学学报（自科版）"><span>海南师范大学学报（自科版）</span><i>季刊</i></a>
+            <p><em>订阅参考单价：</em><span>¥6.00</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥24.00</span></p>
+        </li>
+        
+        <li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=84-19" target="_blank"><img src="{$smarty.const.IMG_URL}84-19.jpg" alt="海南广播电视大学学报"><span>海南广播电视大学学报</span><i>季刊</i></a>
+            <p><em>订阅参考单价：</em><span>¥8.00</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥32.00</span></p>
+        </li>
+        
+        <li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=84-20" target="_blank"><img src="{$smarty.const.IMG_URL}84-20.jpg" alt="中国热带医学"><span>中国热带医学</span><i>月刊</i></a>
+            <p><em>订阅参考单价：</em><span>¥15.00</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥180.00</span></p>
+        </li>
+        
+        
+        <li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=84-23" target="_blank"><img src="{$smarty.const.IMG_URL}84-23.jpg" alt="分子植物育种"><span>分子植物育种</span><i>双月刊</i></a>
+            <p><em>订阅参考单价：</em><span>¥40.00</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥480.00</span></p>
+        </li>
+        
+        
+        <li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=84-29" target="_blank"><img src="{$smarty.const.IMG_URL}84-29.jpg" alt="热带作物学报"><span>热带作物学报</span><i>月刊</i></a>
+            <p><em>订阅参考单价：</em><span>¥20.00</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥240.00</span></p>
+        </li>
+        
+        
+        <li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=84-30" target="_blank"><img src="{$smarty.const.IMG_URL}84-30.jpg" alt="世界热带农业信息"><span>世界热带农业信息</span><i>月刊</i></a>
+            <p><em>订阅参考单价：</em><span>¥7.50</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥90.00</span></p>
+        </li>
+        
+        
+        <li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=84-31" target="_blank"><img src="{$smarty.const.IMG_URL}84-31.jpg" alt="热带农业科学"><span>热带农业科学</span><i>月刊</i></a>
+            <p><em>订阅参考单价：</em><span>¥15.00</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥180.00</span></p>
+        </li>
+        
+        
+        <li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=84-32" target="_blank"><img src="{$smarty.const.IMG_URL}84-32.jpg" alt="热带生物学报"><span>热带生物学报</span><i>季刊</i></a>
+            <p><em>订阅参考单价：</em><span>¥15.00</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥60.00</span></p>
+        </li>
+        
+        
+        <li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=84-33" target="_blank"><img src="{$smarty.const.IMG_URL}84-33.jpg" alt="热带农业工程"><span>热带农业工程</span><i>双月刊</i></a>
+            <p><em>订阅参考单价：</em><span>¥15.00</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥90.00</span></p>
+        </li>
+        
+        
+        <li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=84-35" target="_blank"><img src="{$smarty.const.IMG_URL}84-35.jpg" alt="南岛视界"><span>南岛视界</span><i>月刊</i></a>
+            <p><em>订阅参考单价：</em><span>¥20.00</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥240.00</span></p>
+        </li>
+
+    	<li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=84-36" target="_blank"><img src="{$smarty.const.IMG_URL}84-36.jpg" alt="海岸生活"><span>海岸生活</span><i>月刊</i></a>
+            <p><em>订阅参考单价：</em><span>¥20.00</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥240.00</span></p>
+        </li>
+        
+        
+    </ul>
+	<!--杂志列表结束-->
+    
+    <!--报纸title开始-->
+    <h1 class="title-fwb">
+		<div class="first_letter1">
+        	<em>报</em><i>纸类</i>
+        </div>
+	</h1>
+    <!--报纸title结束-->
+    <!--报纸列表开始-->
+    <ul class="book_listw">
+    
+    	<li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=83-1" target="_blank"><img src="{$smarty.const.IMG_URL}83-1.jpg" alt="海南日报"><span>海南日报</span><i>日报</i></a>
+            <p><em>订阅参考单价：</em><span>¥1.00</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥360.00</span></p>
+        </li>
+        
+        <li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=83-2" target="_blank"><img src="{$smarty.const.IMG_URL}83-2.jpg" alt="海南农垦报"><span>海南农垦报</span><i>周二报</i></a>
+            <p><em>订阅参考单价：</em><span>¥0.95</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥91.20</span></p>
+        </li>
+        
+        <li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=83-8" target="_blank"><img src="{$smarty.const.IMG_URL}83-8.jpg" alt="海南声屏报"><span>海南声屏报</span><i>周一报</i></a>
+            <p><em>订阅参考单价：</em><span>¥3.00</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥156.00</span></p>
+        </li>
+        
+        <li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=83-9" target="_blank"><img src="{$smarty.const.IMG_URL}83-9.jpg" alt="三亚日报"><span>三亚日报</span><i>日报</i></a>
+            <p><em>订阅参考单价：</em><span>¥1.00</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥360.00</span></p>
+        </li>
+        <!--
+        <li>
+        	<a href="/index/detail.do?method=getCataDetail&pressCode=83-10" target="_blank"><img src="/correcting/page/advert/hainan/images/83-10.jpg" alt="证券导报" /><span>证券导报</span><i>周二报</i></a>
+            <p><em>订阅参考单价：</em><span>¥2.00</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥192.00</span></p>
+        </li>
+		-->
+        
+        <li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=83-16" target="_blank"><img src="{$smarty.const.IMG_URL}83-16.jpg" alt="法制时报"><span>法制时报</span><i>周六报</i></a>
+            <p><em>订阅参考单价：</em><span>¥1.20</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥396.00</span></p>
+        </li>
+        
+        <li>
+        	<a href="http://bk.11185.cn/index/detail.do?method=getCataDetail&pressCode=83-30" target="_blank"><img src="{$smarty.const.IMG_URL}83-30.jpg" alt="特区文摘报"><span>特区文摘报</span><i>周一报</i></a>
+            <p><em>订阅参考单价：</em><span>¥1.50</span></p>
+            <p><em>全&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;价：</em><span>¥72.00</span></p>
+        </li>
+        
+    </ul>
+    <!--报纸列表结束-->
+</div>
+
+
+
+
+
+	</div>
+<div class="w mt20 clearfix">
+        
+<div id="service">
+    <dl class="fore1">
+        <dt><b></b><strong>新手入门</strong></dt>
+        <dd>
+            <div><a href="http://bk.11185.cn/index/service.do?method=subscriptionnotes">订阅须知</a></div>
+            <div><a href="http://bk.11185.cn/index/service.do?method=FAQnotes">常见问题</a></div>
+            <!--<div><a href="http://bk.11185.cn:80/helpCenter.do?method=helpForward&forwardId=main">业务介绍</a></div>
+            <div><a href="http://bk.11185.cn:80/news/news.do?method=find1&paraID=3">政策法规</a></div>
+            <div><a href="http://bk.11185.cn:80/pubinfo/pubinfo.do?method=find">刊社信息</a></div>-->
+        </dd>
+    </dl>
+    <dl class="fore2">
+        <dt><b></b><strong>支付方式</strong></dt>
+        <dd>
+            <div><a href="http://bk.11185.cn/index/service.do?method=paynotes&pageId=1">在线支付</a></div>
+            <div><a href="http://bk.11185.cn/index/service.do?method=paynotes&pageId=2">订阅券（卡）支付</a></div>
+        </dd>
+    </dl>
+    <dl class="fore3">
+        <dt><b></b><strong>售后服务</strong></dt>
+        <dd>
+            <!--
+            <div><a href="http://bk.11185.cn:80/order/netdownorder.do?method=selectOrder">我的订单</a></div>
+            
+            <div><a href="http://bk.11185.cn:80/userService.do">报刊续订</a></div>
+            <div><a href="http://bk.11185.cn:80/userService.do">报刊退订</a></div>
+            <div><a href="http://bk.11185.cn:80/userService.do">订单改址</a></div>-->
+            <div><a href="http://bk.11185.cn/index/service.do?method=billnotes">开具票据</a></div>
+        </dd>
+    </dl>
+    <dl class="fore4">
+        <dt><b></b><strong>特色服务</strong></dt>
+        <dd>
+        <!--
+            <div><a href="http://bk.11185.cn:80/helpCenter.do?method=helpForward&forwardId=question4">异地改址</a></div>
+            <div><a href="http://bk.11185.cn:80/helpCenter.do?method=helpForward&forwardId=question5">集订分送</a></div>-->
+            <div><a href="http://bk.11185.cn/userService.do">名址查询</a></div>
+            <div><a href="http://bk.11185.cn/userService.do">邮政机构查询</a></div>
+        </dd>
+    </dl>
+    <dl class="fore5">
+        <dt><b></b><strong>网站介绍</strong></dt>
+        <dd>
+            <div><a href="http://bk.11185.cn/index/service.do?method=aboutnotes">关于我们</a></div>
+            <div><a href="http://bk.11185.cn/index/service.do?method=contactnotes">联系我们</a></div>
+
+        </dd>
+    </dl>
+</div>
+    </div>
+    <!-- 版权信息 -->
+    <div id="copyright" class="mt20 clearfix">
+        
+Copyright 2010, 版权所有 中国邮政集团公司
+<br>
+服务热线：400-66-11185
+{literal}
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_30043824'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/c.php%3Fid%3D30043824%26l%3D2' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_30043824"><a href="http://quanjing.cnzz.com/" target="_blank" title="全景统计"><img border="0" hspace="0" vspace="0" src="{$smarty.const.IMG_URL}2.gif"></a></span><script src="{$smarty.const.IMG_URL}c.php" type="text/javascript"></script><script src="{$smarty.const.IMG_URL}core.php" charset="utf-8" type="text/javascript">
+ </script>
+{/literal}
+</div>
+</body></html>

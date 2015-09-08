@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0103)http://passport.11185.cn/cas/login?service=http%3A%2F%2Fbk.11185.cn%2Flogon.do%3Fmethod%3DregisterLogon -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <title>中国邮政</title>
+	 
+     <link type="text/css" rel="stylesheet" href="{$smarty.const.CSS_URL}cas.css">
+     <!-- css.css -->
+     
+     <link type="text/css" rel="stylesheet" href="{$smarty.const.CSS_URL}css.css">
+     <!-- css.css -->
+     
+	 <meta content="IE=9" http-equiv="X-UA-Compatible">
+     <link rel="icon" href="" type="image/x-icon">
+
+</head>
+
+<body>
+<div class="dl">
+	<div class="logo"><a hidefocus="true" href=""><img src="{$smarty.const.IMG_URL}login_logo.jpg" width="360" height="70"></a></div>
+	<div class="dlk">
+    	
+    	<div class="dlk_l" id="newsImg"><img src="{$smarty.const.IMG_URL}hk.jpg"></div>
+
+    	<form   action="{$smarty.const.__SELF__}" method="post">
+        <div class="dlk_r">
+            <p><a href="{$smarty.const.__MODULE__}/User/register">免费注册</a></p>
+        	<ul class="zc_ul">
+            	<li>
+                    <span>邮箱/用户名/已验证手机:</span>
+					
+						
+						<input id="username" name="username" class="yhm" tabindex="1" accesskey="n" type="text" value="" size="25" autocomplete="false">
+					
+                </li>
+                <li>
+                    <span>密　码:</span>
+                    
+					<input id="password" name="password" class="mm" tabindex="2" accesskey="p" type="password" value="" size="25" autocomplete="off">
+                </li>
+                <li>
+                	<span>验证码:</span>
+                	<input id="code" name="captcha" class="yzm" tabindex="2" type="text" value="" size="23" autocomplete="off"><span>{$error_verify}</span>
+					<img id="imageId" width="60" height="27" src="{$smarty.const.__CONTROLLER__}/verifyImg" style="padding-left: 5px;"> 
+					
+                </li>
+             </ul>
+			 <div class="div_zhm">
+				 <span class="fl"><input type="checkbox" value="true" style="margin-right: 5px;">自动登录</span>
+				 <span class="fr yello"><a href="">忘记密码?</a></span>
+			  </div>
+			   <input name="submit" value="登录" class="us_Submit" type="submit" />
+        	 <img src="{$smarty.const.IMG_URL}login_16.gif" width="178" height="35" style="margin-left:100px; margin-top:-10px;">
+        	 
+        </div>
+        </form>
+    </div>
+    <div class="footer">
+    	<p><a>邮政主站</a> | <a>帮助中心</a> | <a>联系我们</a> | <a>版权说明</a></p>
+        <p>Copyright © 2003-2011 中国邮政版权所有 备案/许可证编号为：京ICP备11025334号 经营许可证编号:京ICP证110573号</p>
+    </div>
+</div>
+
+
+</body></html>

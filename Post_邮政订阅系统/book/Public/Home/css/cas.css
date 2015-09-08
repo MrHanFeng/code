@@ -1,0 +1,308 @@
+﻿html, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, pre, abbr, address, cite, code, dfn, em, img, kbd, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr, th, td, canvas, summary, time, audio, video {
+	outline: 0;
+	border: 0 currentColor;
+	font-size: 100%;
+	vertical-align: baseline;
+	margin: 0;
+	padding: 0;
+}
+blockquote, q {
+	outline: 0;
+	border: 0 currentColor;
+	font-size: 100%;
+	vertical-align: baseline;
+	quotes: none;
+	margin: 0;
+	padding: 0;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	outline: 0;
+	border: 0 currentColor;
+	font-size: 100%;
+	vertical-align: baseline;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+blockquote::before, blockquote::after, q::before, q::after {
+	content: none;
+}
+abbr[title], dfn[title] {
+	border-bottom-color: currentColor;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	cursor: help;
+}
+input, select {
+	vertical-align: middle;
+}
+body {
+	outline: 0;
+	border: 0 currentColor;
+	font-size: 100%;
+	vertical-align: baseline;
+	line-height: 1;
+	font: 12px Tahoma, Helvetica, Arial, 宋体, sans-serif;
+	margin: 20px;
+	padding: 0;
+}
+del {
+	outline: 0;
+	border: 0 currentColor;
+	font-size: 100%;
+	vertical-align: baseline;
+	text-decoration: line-through;
+	margin: 0;
+	padding: 0;
+}
+ins {
+	outline: 0;
+	border: 0 currentColor;
+	font-size: 100%;
+	vertical-align: baseline;
+	color: #000;
+	text-decoration: none;
+	background-color: #ff9;
+	margin: 0;
+	padding: 0;
+}
+table {
+	outline: 0;
+	border: 0 currentColor;
+	font-size: 100%;
+	vertical-align: baseline;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin: 0;
+	padding: 0;
+}
+mark {
+	outline: 0;
+	border: 0 currentColor;
+	font-size: 100%;
+	vertical-align: baseline;
+	color: #000;
+	font-style: italic;
+	font-weight: 700;
+	background-color: #ff9;
+	margin: 0;
+	padding: 0;
+}
+nav ul {
+	list-style: none;
+}
+a {
+	font-size: 100%;
+	vertical-align: baseline;
+	margin: 0;
+	padding: 0;
+}
+hr {
+	height: 1px;
+	display: block;
+	border-color: #ccc currentColor currentColor;
+	border-style: solid none none;
+	border-width: 1px 0 0;
+	margin: 1em 0;
+	padding: 0;
+}
+HTML {
+	background: #fff;
+	color: #404040;
+}
+#cas .flc-screenNavigator-view-container {
+	width: 950px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#cas .fl-screenNavigator-view {
+	position: relative;
+}
+#cas #header {
+	padding-top: 0;
+	margin-left:50px;
+}
+#cas #header #company-name {
+	background: url(../../images/logo.gif) no-repeat;
+	width: 118px;
+	height: 31px;
+	text-indent: -999em;
+	margin: 0 0 10px 10px;
+}
+#cas #header #app-name {
+	color: #f40;
+	font-size: 2em;
+	font-weight: 400;
+}
+#content {
+	z-index: 1;
+	position: relative;
+	min-height: 304px;
+	width: 327px;
+	_height: 304px;
+	overflow: hidden;
+	padding: 48px 0 48px 490px;
+	margin-left:50px;
+}
+#content .hd {
+	background: url(../../images/box_bg.png) no-repeat 0 top;
+	font-size: 0;
+	height: 20px;
+}
+#content .ft {
+	background: url(../../images/box_bg.png) no-repeat -800px bottom;
+	height: 20px;
+	font-size: 0;
+}
+#msg {
+	overflow: hidden;
+	margin: 10px 12px 0px 0px;
+}
+.errors {
+	border: 1px #ff8080 solid;
+	line-height: 18px;
+	background: url(../../images/stuff.png) #fff2f2 no-repeat -197px 0;
+	word-wrap: break-word;
+	white-space: normal;
+	float: none;
+	color: red;
+	padding: 4px 10px 4px 25px;
+}
+#sidebar {
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 490px;
+	height: 304px;
+	overflow: hidden;
+	background: url(../../images/img.jpg) no-repeat;
+	margin: 48px 0;
+}
+#sidebar .sidebar-content {
+	display: none;
+}
+#login {
+	background: url(../../images/box_bg.png) repeat-y -400px 0;
+	padding: 0 6px 0 4px;
+}
+#login H2 {
+	text-indent: 80px;
+	display: block;
+	height: 36px;
+	overflow: hidden;
+	z-index: 1;
+	line-height: 18px;
+	color: #555;
+	font-size: 14px;
+	cursor: default;
+}
+#login p.entries {
+	border-top: #d1d7dc 1px solid;
+	padding-top: 8px;
+	color: #999;
+	padding-left: 10px;
+	margin: 10px 20px 0 24px;
+}
+#login .row {
+	padding-top: 12px;
+}
+#login .row LABEL {
+	text-align: right;
+	width: 66px;
+	height: 24px;
+	padding-right: 10px;
+	display: inline-block;
+}
+#login .row .required {
+	border-bottom: #c8c8c8 1px solid;
+	border-left: #c8c8c8 1px solid;
+	line-height: 18px;
+	width: 180px;
+	vertical-align: middle;
+	border-top: #c8c8c8 1px solid;
+	margin-right: 3px;
+	border-right: #c8c8c8 1px solid;
+	padding: 3px;
+}
+#login .check {
+	overflow: hidden;
+	height: 56px;
+	padding: 4px 0 0 80px;
+}
+#login .check input {
+	vertical-align: middle;
+	margin-right: 3px;
+}
+#login .check LABEL {
+	width: 150px;
+	color: #aaa;
+	vertical-align: middle;
+	text-align: left;
+	padding: 5px 0 0;
+}
+#login .btn-row {
+	zoom: 1;
+	clear: both;
+	overflow: hidden;
+	padding: 4px 0 0 80px;
+}
+#login .btn-row .btn-submit {
+	border-bottom: 0;
+	border-left: 0;
+	line-height: 100px;
+	text-indent: -9999px;
+	width: 86px;
+	zoom: 1;
+	display: inline-block;
+	background: url(../../images/stuff.png) no-repeat 0 -40px;
+	height: 27px;
+	font-size: 0;
+	vertical-align: middle;
+	overflow: hidden;
+	border-top: 0;
+	cursor: pointer;
+	margin-right: 6px;
+	border-right: 0;
+}
+#login .btn-row .btn-submit:hover {
+	background-position: -100px -40px;
+}
+#login .btn-row .btn-reset {
+	border-bottom: 0;
+	border-left: 0;
+	line-height: 100px;
+	text-indent: -9999px;
+	width: 86px;
+	zoom: 1;
+	display: inline-block;
+	background: url(../../images/stuff.png) no-repeat 0 0;
+	height: 27px;
+	font-size: 0;
+	vertical-align: middle;
+	overflow: hidden;
+	border-top: 0;
+	cursor: pointer;
+	margin-right: 6px;
+	border-right: 0;
+}
+#login .btn-row .btn-reset:hover {
+	background-position: -100px 0;
+}
+#footer {
+	text-align: center;
+	clear: both;
+	border-top: #d1d7dc 1px solid;
+	padding-left: 10px;
+	margin: 10px auto;
+}
+#footer #copyright {
+	position: relative;
+	text-align: left;
+	font: 12px tahoma, arial, 宋体;
+	color: #b0b0b0;
+	padding: 7px 0 9px;
+}
+.watermark {
+	color: #999!important;
+}

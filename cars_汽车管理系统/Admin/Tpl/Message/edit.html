@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>user</title>
+	<link rel="stylesheet" href="__PUBLIC__/bs/css/bootstrap.min.css">
+	<script src="__PUBLIC__/bs/js/jquery.min.js"></script>
+	<script src="__PUBLIC__/bs/js/bootstrap.min.js"></script>
+	<script src="__PUBLIC__/kd/kindeditor-min.js"></script>
+	<style>
+		th,td{
+			text-align: center;
+		}
+	</style>
+	<script>
+         
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<a href="" class='btn btn-default'>查看论坛</a>
+			</div>
+			
+			<div class="panel-body">
+			<form action="__URL__/update" method="post"  enctype='multipart/form-data'>
+				    <div class="form-group">
+						<label for="">论坛标题:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="text" class="form-control" name='title' value='<{$row['title']}>'>
+				    </div>
+				    <div class="form-group">
+						<label for="">论坛图片:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+						<img src="__PUBLIC__/uploads/<{$row['img_url']}>">
+				    </div>
+				    <div class="form-group">
+					<label>更换图片</label>	
+					<input type="file" name="img">
+					<p class='help-block'>请选择图片...</p>
+					</div> 
+					<div class="form-group">
+						<label for="">论坛内容:</label>
+						<textarea id='tid' name="content" rows='10' class='form-control' placeholder='contents'><{$row['content']}></textarea>
+				    </div>
+				    <div class="form-group">
+						<label for="">论坛发布者:</label>&nbsp;&nbsp;&nbsp;&nbsp;<{$username}>
+				    </div>
+				    <div class="form-group">
+						<label for="">论坛发布者IP:</label>&nbsp;&nbsp;&nbsp;&nbsp;<{$row["ips"]}>---<{$address["country"]}>
+				    </div>
+					<div class="form-group">
+						<label for="">论坛状态:</label>
+						<if condition="$row['flag'] eq 1">
+						<label><input type="radio" name="flag" value="1" checked>已审核</label>
+                        <label><input type="radio" name="flag" value="2">未审核</label>
+						<else/>
+						<label><input type="radio" name="flag" value="1">已审核</label>
+					    <label><input type="radio" name="flag" value="2" checked>未审核</label>
+					    </if>
+					</div>
+					<div class="form-group">
+					<input type="hidden"  value="<{$row['id']}>" name="msid">
+                    <input type="submit" class="btn btn-info update" value="提交修改">
+					<hr>
+					</div>
+                    </form>
+				    <div class="form-group">
+						<label for="">已回复:</label>
+						 <volist name="rrow" id="rp">
+						 	<div class="all">
+							<div class="form-group">
+								<span><{$rp['rips']}></span>------
+								<span><{$rp['cusername']}></span>------
+								<span><{$rp['times']|date="Y-m-d H:i:s",###}></span>
+							</div>
+							<div class="form-group">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<{$rp['rcontent']}>
+							</div>
+							<div class="form-group">
+								 <if condition="$rp['rflag'] eq 1">
+								 	<button  type="button" data="<{$rp['rid']}>" class="btn btn-success ">已通过审核</button>
+								 <else/>
+								    <button type="button" data="<{$rp['rid']}>" class="btn btn-info flag">通过审核</button>
+								 </if>
+								  <button style="display:none" type="button" data="<{$rp['rid']}>" class="btn btn-success flag">已通过审核</button>
+                                <button type="button" data="<{$rp['rid']}>" class="btn btn-danger delete">删除</button>
+							     <hr>
+							</div>
+							<script type="text/javascript">
+                                $(function(){
+						          $('.delete').click(function(){
+						              var rids=$(this).attr("data");
+						              var all=$(this).parent().parent();
+						                $.post("__URL__/ajaxdelete",{
+						                      rid: rids
+						                },function(data){
+						                      if(data=='1'){
+						                        all.fadeOut(1000);
+						                      }
+						                });
+						            });
+						         $('.flag').click(function(){
+						               var rids=$(this).attr("data");
+						               var all=$(this);
+						               var alls=$(this).next();
+						                $.post("__URL__/ajaxflag",{
+						                      rid: rids
+						                },function(data){
+						                      if(data=='1'){
+						                        all.css('display','none');
+						                        alls.css('display','inline');
+						                      }
+						                });
+						            });
+						      });
+							</script>
+						    </div>
+					    </volist>
+					    <div style="text-align:right">
+					    	<{$show}>
+					    </div>
+					</div>
+			</div>	
+		</div>
+	</div>
+</body>
+<script>
+var editor;
+KindEditor.ready(function(K) {
+	editor = K.create('#tid', {
+	allowFileManager : true
+	});
+});
+</script>
+</html>

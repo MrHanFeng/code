@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>user</title>
+	<link rel="stylesheet" href="__PUBLIC__/bs/css/bootstrap.min.css">
+	<script src="__PUBLIC__/bs/js/jquery.min.js"></script>
+	<script src="__PUBLIC__/bs/js/bootstrap.min.js"></script>
+	<style>
+		th,td{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<a href="" class='btn btn-default'>修改用户</a>
+			</div>
+			
+			<div class="panel-body">
+				<form action="__URL__/update" method='post'>
+					<div class="form-group">
+						<label for="">账号:</label>
+						<input type="text" class="form-control" placeholder='name' name='username' value='<{$row['username']}>' readonly>
+					</div>
+					<div class="form-group">
+					<label for="">权限管理:</label>
+					<input name="powers[]" type="checkbox" value="0" />&nbsp;&nbsp;系统用户管理&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input name="powers[]" type="checkbox" value="1" />&nbsp;&nbsp;一级导航管理&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input name="powers[]" type="checkbox" value="7" />&nbsp;&nbsp;二级导航管理&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input name="powers[]" type="checkbox" value="2" />&nbsp;&nbsp;新闻管理&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input name="powers[]" type="checkbox" value="3" />&nbsp;&nbsp;图片类型管理&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="powers[]" type="checkbox" value="4" />&nbsp;&nbsp;图片新闻管理&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input name="powers[]" type="checkbox" value="5" />&nbsp;&nbsp;普通用户管理&nbsp;&nbsp;&nbsp;&nbsp;
+                     <input name="powers[]" type="checkbox" value="6" />&nbsp;&nbsp;留言管理&nbsp;&nbsp;&nbsp;&nbsp;
+                     <input name="powers[]" type="checkbox" value="8" />&nbsp;&nbsp;链接管理&nbsp;&nbsp;&nbsp;&nbsp;
+				    </div>
+					<div class="form-group">
+						<input type="submit" value="提交" class='btn btn-primary'>
+						<input type="reset" value="取消" class='btn btn-danger'>
+					</div>
+					<input type="hidden" name="id" value='<{$row['username']}>'>
+				</form>
+			</div>	
+		</div>
+	</div>	
+</body>
+</html>

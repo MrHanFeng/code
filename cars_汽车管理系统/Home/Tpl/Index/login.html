@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>      
+      <meta charset="utf-8" />
+      <title>房车中国</title>
+      <meta name="description" content="房车" />
+      <meta name="author" content="陈雅迪，张恩桥" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      <link href="../Public/css/index.css" type="text/css" rel="stylesheet">
+      <script src="../Public/js/index.js" type="text/javascript" charset="utf-8" language="javascript"></script>
+      <script src="../Public/js/jquery-1.4.2.js" type="text/javascript" charset="utf-8" language="javascript"></script>
+	  <script type="text/javascript">
+            $(document).ready(function() {
+                $(".nav li").mousemove(function() {
+                    $(this).find('ul').slideDown();
+                });
+                $(".nav li").mouseleave(function() {
+                    $(this).find('ul').slideUp();
+                });
+				
+            });
+			function openpage(){
+                window.location.replace("__URL__/register");
+             } 
+      </script>
+     
+
+</head>
+<body>
+    <include file="head"/>
+    <!--bodyer begin-->
+    <div id="bodyer">
+    		<div id="login"><!--login begin-->
+                <div class="top">登录通行证</div>
+                <div class="body">
+                    <form action="__URL__/dologin" method="post">
+                        <div class="pt">
+                            <label>用&nbsp;户&nbsp;名：</label> <input type="text" class="" name="username" />
+                        </div>
+                        <div class="pt">
+                            <label>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</label> <input type="text"
+                                class="" name="password" /> <a href="#">忘记密码？</a>
+                        </div>
+                        <div class="dl">
+                            <input type="submit" class="btn" value="登录" /> 
+                            <input type="button"   class="btn" value="注册" 
+                          onclick="openpage()";/>
+                              
+                        </div>
+                    </form>
+                </div>
+                <div class="bt">
+                   
+                   <span>房车中国由山西省房车协会.山西房车俱乐部主办</span>
+                </div>
+            </div><!--login end-->
+    		
+    </div><!--bodyer end-->
+    <include file="foot"/>
+</body>
+</html>

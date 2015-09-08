@@ -1,0 +1,47 @@
+<div id="header"><!--head begin-->
+    		<div id="header_wrap"><!--head_wrap begin-->
+    		<div class="logo">
+            	<img src="../Public/img/logo.png">
+                <span>房车中国由山西省房车协会.山西房车俱乐部主办</span>
+            </div>
+           <!--search begin-->
+            <div class="head_search">
+                <form method="Get" action="#" >
+                    <input type="hidden"  value="index"  name="c" />
+                    <input type="hidden"  value="search"  name="a" />
+            		<input type="text"  value="请输入搜索内容"  name="kw" onfocus="if(this.value=='请输入搜索内容')this.value='';" onblur="if(this.value=='')this.value='请输入搜索内容';" />
+                    <!--搜索指定栏目-->		
+                    <input type="hidden"  value="1"  name="catid" />
+                    <input type="submit"   value=""   />
+                </form>
+             </div>
+             <!--search end-->
+            <div class="head_login">
+                    <a href="__URL__/login">登录</a>
+                    <a href="__URL__/register">注册</a>
+        
+             </div>
+          
+        	
+        	<div class="tel"><span>400-800-8888</span></div>
+            <div class="clear"></div>
+    		</div><!--head_wrap end-->
+           	<div id="nav_wrap"><!--nav beign-->
+            	
+            	<ul class="nav">
+                	<li><a href="__URL__/index" target="_blank">首页</a>
+                    </li>
+                    <volist name="all" id="arr1">
+                         <li><a href="__URL__/news_list/id/<{$arr1['id']}>#sub_right" target="_blank"><{$arr1['name']}></a>
+                         <ul class="sub_nav"> 
+                         <volist name="arr1['subchann']" id="arr2">
+                            <li><a href="__URL__/news_list/id/<{$arr1['id']}>_<{$arr2['id']}>#sub_right"><{$arr2["name"]}></a></li> 
+                         </volist>
+                         </ul>
+                         </li>
+                    </volist> 
+                </ul>
+                <div class="clear"></div>
+               
+            </div><!--nav end-->
+    </div><!--head end-->

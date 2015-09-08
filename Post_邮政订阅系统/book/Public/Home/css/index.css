@@ -1,0 +1,50 @@
+
+/* 报刊分类、轮播广告、公共样式 */
+.hmain-left{ float:left; width:180px; height:300px; z-index:100; }
+.hmain-middle{ float:left; margin:auto 5px; width:598px; height:297px; overflow:hidden;}
+.hmain-right{ float:right; width:200px;}
+
+
+/* 公告栏 */
+#board,#order_tips{width:200px;}
+#board .hr-more{margin-left:90px; font:normal 12px/22px "microsoft yahei"; color:#fba01e}
+#callboard { height:130px; line-height:25px; overflow:hidden;padding:6px 0 0 12px;}
+#callboard ul { margin-left:10px;padding:0;}
+#callboard li { padding:0;}
+
+/* 订单快速查询 */
+#order_tips .h2{height:25px;color:#ffffff;background:#f39648;text-indent:20px; font:bold 14px/25px "microsoft yahei";}
+#order_tips .hmain-search{ border-top:1px solid #e6e6e6; line-height:32px; text-align:left;height:95px;}
+#order_tips .hmain-search .txt-input{ border:1px solid #fba01e; width:120px; height:20px; line-height:20px; color:#999;}
+#order_tips .hm-btn-search{ width:70px; height:21px; background:url(../img/hm-search.gif) no-repeat; border:none; cursor:pointer; float:right; margin-right:10px;}
+
+
+/*-----------------------畅销及精品推荐--------------------------*/
+.recommend {width:795px;height:530px;}
+.recommend .title{ border-bottom:2px solid #006633;  white-space: nowrap; vertical-align: middle; height:30px; line-height:30px;}
+/*.recommend .title{height:30px; line-height:30px; background:url("/correcting/style/images/rank/bg_detail_side.png") repeat-x rgb(246,246,246);}*/
+.recommend .fl-sort{float:left; margin-left:5px;}
+.recommend .fr-sort{float:right;font:normal 12px '宋体'; margin:8px 5px; color:#888888;}
+.recommend .fr-sort a{color:#888888; display:inline;padding:0 8px; border-right:1px solid #e6e6e6; height:20px;}
+.recommend .fr-sort a.selected{font-weight:bolder; font-size:13px; color:#ff6600;}
+.recommend .fr-sort .floor-more{ color:#f99b15;}
+.recommend .fr_div{width:795px;height:498px;border:1px solid #e6e6e6;overflow:hidden;}
+.recommend .fr_div ul{margin:10px 0 0 15px;}
+.recommend .fr_div ul li{padding:10px 0 10px 9px; color:#000; float:left; width:145px;}
+.recommend .imgBox{width:130px;height:170px; overflow:hidden; vertical-align:middle; text-align:center; background:url('/correcting/style/images/index/bg_cover_130.png') no-repeat;}
+.recommend .imgBox img{width:120px;height:160px;margin:4px 0 0 -2px; cursor:pointer;}
+.recommend .itemAttrs{width:100%;text-align:center;}
+
+
+/*-------------------------礼品区------------------------------*/
+.roll { width: 990px; height: 170px; margin: 20px auto 12px; position: relative; }
+.roll .btn_left { display: block; width: 30px; height: 29px; background: url(../images/btn.gif) no-repeat; position: absolute; top: 80px; left: 10px; z-index: 1; }
+.roll .btn_right { display: block; width: 30px; height: 29px; background:url(../images/btn.gif) no-repeat -31px 0; position: absolute; top: 80px; right:10px; z-index: 1; }
+.roll .wrap { width: 880px; height: 172px; margin: 0 auto; position: relative; overflow: hidden; }
+.roll ul { width: 880px; position: absolute; top: 0; left: 0; }
+.roll li { float: left; padding:0 20px; height: 172px; text-align: center; }
+.roll li a:hover { position: relative; top: 0; }
+.roll li img{ border:2px solid #f99b15;}
+.control { border-bottom: 1px solid #ccc; background: #eee; text-align: center; padding: 20px 0; }
+#advertise {width:990px;overflow:hidden;}
+#advertise ul li img{width:990px;height:90px;}

@@ -1,0 +1,61 @@
+.info_box {
+	border: #e5e5e5 1px solid;
+	padding: 10px;
+	margin-bottom: 10px;
+	font-size: 12px;
+	width:800px;
+	margin: 30px auto;
+	min-height:190px;
+}
+
+.info_box .tit {
+	height: 26px;
+	color: #cc0000;
+	font-weight: bold;;
+	border-bottom: #dddddd 1px dashed;
+}
+
+.info_box .sub-tit{
+	text-align:center;
+	vertical-align: middle;
+}
+
+.info_box .sub-tit h2{
+	font:bold 14px/20px '宋体';
+	height:30px;
+	line-height:30px;
+	padding-top:20px;
+}
+
+.info_box .inscribe{
+	width:80%;
+	height: 26px;
+	text-align:right;
+	padding-right:100px;
+	font-weight:bold;
+}
+
+.info_box ul {
+	padding: 10px 15px 0 15px;
+}
+
+.info_box ul li {
+	width: 100%;
+	color: #333333;
+	line-height: 32px;
+}
+.info_box ul li strong{
+	height:50px;
+	widht:150px;
+	text-align:right;
+	padding-right:20px;
+	float:left;
+}
+.info_box ul li span{
+	float:left;
+}
+.info_box ul li strong,.info_box ul li font {
+	color: #000000;
+	font-size: 12px;
+	font-weight: bold;
+}

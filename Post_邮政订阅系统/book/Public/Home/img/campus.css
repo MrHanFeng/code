@@ -1,0 +1,28 @@
+
+/*--------图片轮播----------*/
+#campushotpic { width: 978px ; height: 262px !important; }
+#campushotpic #NewsPic { position: relative; overflow: hidden; z-index:20; width: 978px ; height: 262px; !important;}
+#campushotpic #NewsPic .Picture {position: absolute; left: 0; top: 0; width:978px ; height:262px !important;}
+#campushotpic #NewsPic a { overflow: visible; border: 0; text-decoration: none; }
+#campushotpic #NewsPic .Nav { position: absolute; height: 13px; line-height: 14px; bottom:13px; right: 17px;}
+#campushotpic #NewsPic .Nav span {float: right; display: block; background: #000; cursor: pointer; margin-left:3px; text-indent:-999px;}
+#campushotpic #NewsPic .Nav span.Normal { background:url(/correcting/style/images/dot.png); width:14px; height:14px;  }
+#campushotpic #NewsPic .Nav span.Cur { background:url(/correcting/style/images/dot1.png); width:14px; height:14px; }
+	
+/*--------内容----------*/
+#campus h2{font-size:100%;font-weight:normal}
+#campus .floor{width:990px; float:left; margin-top:10px; _margin-top:0px;}
+#campus .floor-right{width: 978px ;min-height:360px; max-height:400px ; overflow:hidden; float:none;}
+#campus .floor-right .left{width: 100px;height:80px; margin-left:42px; _margin-left:20px;padding-left:42px;float:left;background:url(/correcting/style/images/campus/recommend.jpg) no-repeat;  }
+#campus .floor-right .text{font-size:13px;line-height:25px;color:#676767; padding-top:15px;background:#e8f5e8;border-bottom: 3px solid #d3d3d3;height: 80px;}
+#campus .floor-right .text span{padding-right:10px}
+#campus .fr_list{width: 960px;overflow:hidden;!important;margin:0 auto;}
+#campus .fr_list li{float:left; width:130px; padding:5px 15px; text-align:center; color:#000; overflow:hidden;  !important;}
+#campus .title{ border-bottom:2px solid #006633;background: url(/correcting/style/images/campus/num.jpg) no-repeat; text-indent:11px;height:30px; position:relative;}
+#campus .fr-sort{margin-top:5px;position:absolute;top:0px;right:0px;width:100px;}
+#campus .fr-sort li{width:21px;height:21px;background: url(/correcting/style/images/campus/icon.png) center center no-repeat;float:left;line-height:23px;*line-height:21px;text-indent:8px;cursor:pointer;}
+#campus .fr-sort li.hover{background: url(/correcting/style/images/campus/strong_bg.png) bottom no-repeat !important;color:#03772a;font-size:14px;}
+#campus .floor-right .fr_list li img{ margin-bottom:2px;}
+#campus .fr_list h2{ overflow:hidden; height:18px; text-overflow:ellipsis; white-space:nowrap; padding:0 8px;}
+#campus .fr_list .bk_name{ height:22px; overflow:hidden; font-size:14px; color:#000;}
+#campus .fr_list .bk_price{ color:#000;}
