@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>JS排序练习</title>
+		<meta http-equiv="content/type" content="text/html;chraset=UTF-8">
+		<script>
+			/*冒泡排序*/
+			function maopao(arr){
+				for(var i =0; i<arr.length-1;i++){
+					for(var j=0; j<arr.length-i-1; j++){
+						if(arr[j] >arr[j+1]){
+							var temp = arr[j];
+							arr[j] = arr[j+1];
+							arr[j+1] = temp;
+						}
+					}
+				}
+				alert(arr);
+			}
+
+
+			/*顺序排序*/
+			function shunxu(arr){
+				for(var i=0; i<arr.length-1 ;i++){
+					var p;
+					for(var j = i+1;j<arr.length;j++ ){
+						p = arr[i]<arr[j]?i:j;
+						var temp = arr[p];
+						arr[p]=arr[i];
+						arr[i]=temp;
+					}
+				}
+				alert(arr)
+			}
+
+			var arr=[11,12,3,2,13];
+			maopao(arr);
+			shunxu(arr);
+
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
