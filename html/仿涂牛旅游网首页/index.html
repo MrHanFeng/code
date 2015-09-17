@@ -1,181 +1,325 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>大首页</title>
-    <link rel="stylesheet" href="css/index.css" type="text/css">
-    <link rel="stylesheet" href="css/icon/css/font-awesome.min.css" type="text/css">
-</head>
-<body>
-<div id="big-top">
-    <div class="top-box">
-        <div class="tp-left">下午好，黑牧</div>
-        <div class="tp-right">
-            <a href="#">管理入口</a> |
-            <a href="#">帮助中心</a> |
-            <a href="#">设为首页</a> |
-            <a href="#">加入收藏</a>
-        </div>
-        <div class="clear"></div>
-    </div>
-</div>
+	<head>
+		<title>CSS练习</title>
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+		<link rel="stylesheet" href="./css/style.css">
+		<link rel="stylesheet" href="./css/icon/css/font-awesome.min.css">
 
-<div id="big-title">
-    <div class="title-box">
-        <!--logo与搜索-->
-        <div class="ls-box">
-            <div class="ls-left">
-                <ul>
-                    <li class="ls-l logo"><img src="http://img3.tuniucdn.com/site/images/index/logo_v4.gif"></li>
-                    <li class="ls-l city">
-                        <div class="city-name">太原站<i class="fa fa-sort-desc"></i></div>
-                    </li>
-                    <li class="clear"></li>
-                </ul>
-            </div>
-            <!--搜索-->
-            <div class="ls-right">
-                <ul>
-                    <li style="height: 25px"></li>
-                    <li class="sh">
-                        <div class="s-b list">
-                            <input type="text" class="txt">
-                            <input type="button" value="搜索" class="sub">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <div class="gj list">
-                            <span class="gj-span">高级查询<i class="fa fa-sort-desc"></i></span>
-                        </div>
-                        <div class="clear"></div>
-                    </li>
-                    <li class="key">
-                        热搜词：
-                        <a href="#">成都</a>
-                        <a href="#">九寨沟</a>
-                        <a href="#" class="a-color">黄龙</a>
-                        <a href="#">都江堰</a>
-                        <a href="#">稻城亚丁</a>
-                        <a href="#" class="a-color">黄龙</a>
-                        <a href="#">都江堰</a>
-                        <a href="#">稻城亚丁</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="clear"></div>
-        </div>
-        <!--主导航部分-->
-        <div class="th-box">
-            <div class="th-left"><i class="fa fa-list"></i>查询导航分类</div>
-            <div class="th-right">
-                <ul>
-                    <li class="list"><a href="#" class="a-hover">首页</a></li>
-                    <li class="list">
-                        <a href="#">周边短线</a>
-                        <i class="fa fa-sort-asc"></i>
-                        <div class="lt-box">
-                            <dl>
-                                <dd class="lt-l"><a href="#">五台山</a></dd>
-                                <dd class="lt-l"><a href="#">平遥古城</a></dd>
-                                <dd class="lt-l"><a href="#">云冈石窟</a></dd>
-                                <dd class="clear"></dd>
-                            </dl>
-                        </div> 
-                    </li>
-                    <li class="list">
-                        <a href="#">国内长线</a>
-                        <i class="fa fa-sort-asc"></i>
-                        <div class="lt-box" style="left: -200px">
-                            <dl>
-                                <dd class="lt-l"><a href="#">五台山</a></dd>
-                                <dd class="lt-l"><a href="#">四川</a></dd>
-                                <dd class="lt-l"><a href="#">云冈石窟</a></dd>
-                                <dd class="clear"></dd>
-                            </dl>
-                        </div>
-                    </li>
-                    <li class="list">
-                        <a href="#">出境旅游</a>
-                        <i class="fa fa-sort-asc"></i>
-                        <div class="lt-box" style="left: -300px">
-                            <dl>
-                                <dd class="lt-l"><a href="#">俄罗斯</a></dd>
-                                <dd class="lt-l"><a href="#">平遥古城</a></dd>
-                                <dd class="lt-l"><a href="#">云冈石窟</a></dd>
-                                <dd class="clear"></dd>
-                            </dl>
-                        </div>
-                    </li>
-                    <li class="clear"></li>
-                </ul>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
-</div>
+		<script type="text/javascript">
+		function hasClass(obj, cls) {
+			return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+		}
 
-<div id="big-info">
-    <div class="info-box">
-        <div class="info-left">
-            <ul>
-                <li class="list">
-                    <div class="title"><i class="fa fa-thumb-tack"></i>目的地</div>
-                    <div class="key">
-                        <a href="#" class="a-color">白石山</a>
-                        <a href="#">白洋淀</a>
-                        <a href="#" class="a-color">野三坡</a>
-                        <a href="#" class="a-color">华山</a>
-                        <a href="#">黄河壶口瀑布</a>
-                    </div>
-                </li>
-                <li class="list" style="background: #f3f3f3;border-top: 1px dotted #dddddd;border-bottom: 1px dotted #dddddd">
-                    <div class="title"><i class="fa fa-thumb-tack"></i>供应商</div>
-                    <div class="key">
-                        <a href="#">白石山</a>
-                        <a href="#">白洋淀</a>
-                        <a href="#" class="a-color">野三坡</a>
-                        <a href="#">华山</a>
-                        <a href="#" class="a-color">白洋淀</a>
-                        <a href="#">野三坡</a>
-                        <a href="#">华山</a>
-                    </div>
-                </li>
-                <li class="list">
-                    <div class="title"><i class="fa fa-calendar"></i>出发日期</div>
-                    <div class="key">
-                        <a href="#">白石山</a>
-                        <a href="#">白洋淀</a>
-                        <a href="#">野三坡</a>
-                        <a href="#">华山</a>
-                        <a href="#" class="a-color">黄河壶口瀑布</a>
-                    </div>
-                </li>
-                <li class="list" style="background: #f3f3f3;border-top: 1px dotted #dddddd">
-                    <div class="title"><i class="fa fa-thumbs-up"></i>活动专区</div>
-                    <div class="key">
-                        <a href="#">白石山</a>
-                        <a href="#"class="a-color">白洋淀</a>
-                        <a href="#">野三坡</a>
-                        <a href="#"class="a-color">华山</a>
-                        <a href="#">黄河壶口瀑布</a>
-                        <a href="#">白石山</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="info-right">
-            <div class="rt-top"><img src="images/a1.jpg"></div>
-            <div class="rt-a">
-                <ul>
-                    <li class="rt-l"><a href="#"><img src="images/Island1.jpg"></a></li>
-                    <li class="rt-l"><a href="#"><img src="images/jr1.jpg"></a></li>
-                    <li class="rt-l"><a href="#"><img src="images/lytj.jpg"></a></li>
-                    <li class="rt-l"><a href="#"><img src="images/nrzx.jpg"></a></li>
-                    <li class="clear"></li>
-                </ul>
-            </div>
-        </div>
-        <div class="clear"></div>
-    </div>
-</div>
-</body>
+		function addClass(obj, cls) {
+			if (!this.hasClass(obj, cls)) obj.className += " " + cls;
+		}
+
+		function removeClass(obj, cls) {
+			if (hasClass(obj, cls)) {
+				var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+				obj.className = obj.className.replace(reg, ' ');
+			}
+		}
+
+		function toggleClass(obj,cls){
+			if(hasClass(obj,cls)){
+				removeClass(obj, cls);
+			}else{
+				addClass(obj, cls);
+			}
+		}
+
+		function toggleClassTest(){
+			var obj = document. getElementsByClassName('ad_pic');
+//			alert(obj.);
+			toggleClass(obj,"ad_show");
+		}
+
+		</script>
+
+	</head>
+	<body >
+		
+		
+		<div class="top_menu">
+			<div class="contain">
+			<span style="margin:0 auto">下午好:先生</span>
+				
+			</div>
+		</div>
+
+		<div id="mao"></div>
+		<div class="contain">
+				<div class="head"><!-- start head-->
+						<div class="h_left"><!-- start m_left-->
+							<img src="./images/logo.jpg" alt="LOGO" >
+								<span style="margin-bottom: 100px;"><b>太原</b></span>
+							<div style="width:300px;"></div>
+						</div><!-- end m_left-->
+
+					<div class="h_right"><!-- start m_right-->
+							<!-- <div class="search">
+									<i></i>
+									<input type="text" placeholder="         目的地，景点，路线" class="in-f">
+									<input type="submit" value="搜 索" class="in-s">
+							</div> -->
+							<div id='cs-s'>
+								<ul>
+									<li><input type='text' class='txt'></li>
+									<li><input type='submit' class='but' value="搜索"></li>
+									<li style='clear:both'></li>
+								</ul>
+								
+							</div>
+							<div class="hot">
+								<ul>
+									<li><a href="">热搜词</a></li>
+									<li><a href="">三亚</a></li>
+									<li><a href="">九寨沟</a></li>
+									<li><a href="">日本</a></li>
+									<li><a href="">韩国</a></li>
+									<li><a href="">台湾</a></li>
+								</ul>
+							</div>
+					</div><!-- end right-->
+				</div><!-- end head-->
+		</div>
+
+		<div class="nav" style='text-align:center'><!--start nav-->
+			<div class="contain"><!--start contain-->
+				<div class="menu">
+					<div class="m_left" >
+					</div>
+					<div class="m_right">
+						<ul>
+							<li class="li"><a href="" style="color:red;">首页</a></li>
+							<li  class="li"><a href="">周边短线</a>
+								<i class="fa fa-sort-asc"></i>
+								<div class="l-s">
+									<ul>
+										<li>短线1</li>
+										<li>短线1</li>
+										<li>短线1</li>
+										<li>短线2</li>
+									</ul>
+								</div>
+							</li>
+							<li class="li" ><a href="">国内长线</a>
+								<i class="fa fa-sort-asc"></i>
+								<div class="l-s" style="left:-160px">
+									<ul>
+										<li>短线1</li>
+										<li>短线1</li>
+										<li>短线1</li>
+										<li>短线2</li>
+										<li>短线2</li>
+										<li>短线2</li>
+										<li>短线2</li>
+									</ul>
+								</div>
+							</li>
+							<li class="li"><a href="">国内长线</a>
+								<i class="fa fa-sort-asc"></i>
+								<div class="l-s" style="left:-240px">
+									<ul>
+										<li>短线1</li>
+										<li>短线1</li>
+										<li>短线1</li>
+										<li>短线1</li>
+										<li>短线1</li>
+										<li>短线1</li>
+										<li>短线1</li>
+										<li>短线2</li>
+									</ul>
+								</div>
+							</li>
+							<li class="li"><a href="">国内长线</a>
+								<i class="fa fa-sort-asc"></i>
+								<div class="l-s" style="left:-320px">
+									<ul>
+										<li>短线1</li>
+										<li>短线1</li>
+										<li>短线1</li>
+										<li>短线1</li>
+										<li>短线1</li>
+										<li>短线1</li>
+										<li>短线1</li>
+										<li>短线2</li>
+									</ul>
+								</div>
+							</li>
+							<li class="li"><a href="">国内长线</a>
+								<i class="fa fa-sort-asc"></i>
+								<div class="l-s" style="left:-400px">
+									<ul>
+										<li>短线1</li>
+										<li>短线1</li>
+										<li>短线1</li>
+										<li>短线1</li>
+										<li>短线1</li>
+										<li>短线2</li>
+										<li>短线2</li>
+										<li>短线2</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div><!--end contain-->
+		</div><!--end nav-->
+
+		<div class="clear"></div>
+
+		<div class="contain"><!--start contain-->
+			<div class="showlist"><!--start showlist-->
+				<div class="cate">
+					<div class="cate_details">
+						<div class="cate_title">
+							<i class="one"></i> <span>目的地</span>
+						</div>
+						<div class="cate_content">
+							<ul>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="cate_details">
+						<div class="cate_title">
+							<i class="two"></i> <span>供应商</span>
+						</div>
+						<div class="cate_content">
+							<ul>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="cate_details">
+						<div class="cate_title">
+							<i class="three"></i> <span>出发时间</span>
+						</div>
+						<div class="cate_content">
+							<ul>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="cate_details">
+						<div class="cate_title">
+							<i class="four"></i> <span>活动专区</span>
+						</div>
+						<div class="cate_content">
+							<ul>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+								<li><a href="">aaa</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="adver">
+					<div class="ad_pic">
+						<img src="images/b1.jpg" alt="" class="ad_show">
+						<img src="images/b2.jpg" alt=""  >
+						<img src="images/b3.jpg" alt="">
+					</div>
+
+					<div class="ad_word">
+						<div class="word_box" onclick="toggleClassTest()">
+							<a href="">出境错峰</a>
+						</div>
+						<div class="word_box" onclick="toggleClassTest()">
+							<a href="">周边游 嗨到底</a>
+						</div>
+						<div class="word_box" onclick="toggleClassTest()">
+							<a href="">古城时光之旅</a>
+						</div>
+						<div class="word_box" onfocus="toggleClassTest()">
+							<a href="">美国预售3999</a>
+						</div>
+					</div>
+
+					<div class="clear"></div>
+					<div class="small_pic">
+						<div class="sp-box">
+							<img src="images/s1.jpg" alt="">
+							<div class="img_shadow">test</div>
+						</div>
+						<div class="sp-box">
+							<img src="images/s2.jpg" alt="">
+							<div class="img_shadow">test</div>
+						</div>
+						<div class="sp-box">
+							<img src="images/s3.jpg" alt="">
+							<div class="img_shadow">test</div>
+						</div>
+						<div class="sp-box">
+							<img src="images/s4.jpg" alt="">
+							<div class="img_shadow">test</div>
+						</div>
+					</div>
+				</div>
+			</div><!--end showlist-->
+
+			<div class="showlist">
+				<div class="content">
+					<div class="content_title">
+						<div class="t_left">
+							<img src="" alt="标志" width="30" height="30" style="vertical-align:middle;margin-left:20px">
+							<span style="font-size: 18px;font-weight: bold; height:30px; line-height: 30px;display:inline-block">周边短线</span>
+						</div>
+						<div class="t_right">
+							<span><a href="">精选</a></span>
+							<span><a href="">初夏山水</a></span>
+							<span><a href="">名声山水</a></span>
+							<span><a href="">城市</a></span>
+							<span><a href="">古镇</a></span>
+							<span style="font-size: 10px;"><a href="">更多产品</a></span>
+						</div>
+					</div>
+					<div class="content_detail">
+
+					</div>
+				</div>
+			</div>
+
+		</div><!--end contain-->
+		<a href="#mao">
+			<div class="top">
+				<span>返回顶部</span>
+			</div>
+		</a>
+	</body>
+
 </html>
