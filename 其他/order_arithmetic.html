@@ -32,9 +32,23 @@
 				alert(arr)
 			}
 
+			/*枚举排序*/
+			function meiJuOrder(arr){
+			var return_arr = new Array();
+			 for(var i =0; i<arr.length;i++){
+			      var temp=0;
+			      for(var j = 0;j<arr.length;j++){
+			         if(arr[i]>arr[j]) temp+=1;//关键
+			     }
+			     return_arr[temp]=arr[i];
+			    }
+			    alert(return_arr);
+			}
+
 			var arr=[11,12,3,2,13];
 			maopao(arr);
 			shunxu(arr);
+			meiJuOrder(arr);
 
 		</script>
 	</head>
