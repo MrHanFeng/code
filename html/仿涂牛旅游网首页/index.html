@@ -5,39 +5,6 @@
 		<meta http-equiv="content-type" content="text/html;charset=UTF-8">
 		<link rel="stylesheet" href="./css/style.css">
 		<link rel="stylesheet" href="./css/icon/css/font-awesome.min.css">
-
-		<script type="text/javascript">
-		function hasClass(obj, cls) {
-			return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
-		}
-
-		function addClass(obj, cls) {
-			if (!this.hasClass(obj, cls)) obj.className += " " + cls;
-		}
-
-		function removeClass(obj, cls) {
-			if (hasClass(obj, cls)) {
-				var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
-				obj.className = obj.className.replace(reg, ' ');
-			}
-		}
-
-		function toggleClass(obj,cls){
-			if(hasClass(obj,cls)){
-				removeClass(obj, cls);
-			}else{
-				addClass(obj, cls);
-			}
-		}
-
-		function toggleClassTest(){
-			var obj = document. getElementsByClassName('ad_pic');
-//			alert(obj.);
-			toggleClass(obj,"ad_show");
-		}
-
-		</script>
-
 	</head>
 	<body >
 		
@@ -250,9 +217,16 @@
 				</div>
 				<div class="adver">
 					<div class="ad_pic">
-						<img src="images/b1.jpg" alt="" class="ad_show">
-						<img src="images/b2.jpg" alt=""  >
+						<img src="images/b1.jpg" alt="" class="ad_show" >
+					</div>
+					<div class="ad_pic">
+						<img src="images/b2.jpg" alt="" >
+					</div>
+					<div class="ad_pic">
 						<img src="images/b3.jpg" alt="">
+					</div>
+					<div class="ad_pic">
+						<img src="images/b2.jpg" alt="">
 					</div>
 
 					<div class="ad_word">
@@ -260,7 +234,7 @@
 							<a href="">出境错峰</a>
 						</div>
 						<div class="word_box" onclick="toggleClassTest()">
-							<a href="">周边游 嗨到底</a>
+							<a href="">周边999 游 嗨到底</a>
 						</div>
 						<div class="word_box" onclick="toggleClassTest()">
 							<a href="">古城时光之旅</a>
@@ -271,10 +245,11 @@
 					</div>
 
 					<div class="clear"></div>
+					
 					<div class="small_pic">
-						<div class="sp-box">
+						<div class="sp-box" >
 							<img src="images/s1.jpg" alt="">
-							<div class="img_shadow">test</div>
+							<div class="img_shadow" >test</div>
 						</div>
 						<div class="sp-box">
 							<img src="images/s2.jpg" alt="">
@@ -323,3 +298,4 @@
 	</body>
 
 </html>
+<script type="text/javascript" src="js/index.js"></script>
