@@ -1,15 +1,6 @@
-/*点击文字，大广告图切换*/
-    //var slide_img = document.getElementsByClassName('ad_pic');
-    //var word_box = document.getElementsByClassName('word_box');
-    //
-    //for(var i=0 ;i<word_box.length;i++){
-    //    word_box[i].onclick=function(){
-    //
-    //        slide_img[i].setAttribute('class',' ad_show');
-    //    }
-    //}
 
-/*滑动图片背景渐变深化颜色,
+
+/*滑动图片背景渐变深化颜色,加style
 *   1.this的用法很关键
 *   2.理解for循环结构实质，最后生成的文档为4段代码，无变量的，
 *       所以触发for循环里的事件onmouseover时，不会执行事件onmouseover前边的代码var bl=true
@@ -58,19 +49,52 @@
             //img_shadow[3].setAttribute('style','')
         }
     }
-    //
-    //s_time=setInterval(function(){
-    //    if(tm==3){
-    //        clearTimeout(s_time);
-    //        return;
-    //    }
-    //    tm+=1;
-    //    alert(tm)
-    //},100)
 
 
+/*点击文字，大广告图切换，加class*/
 
 
-    //setInterval(function(){
-    //
-    //},200)
+    var slide_img = document.getElementsByClassName('ad_pic');
+    var word_box = document.getElementsByClassName('word_box');
+    for(var i=0;i<word_box.length;i++){
+        word_box[i]=this;
+        word_box[i].onmouseover=function(){
+            for(var j=0;j<word_box.length;j++){move_class('ad_show',slide_img[j]);if(word_box[j]==this) k=j}
+            add_class('ad_show',slide_img[k]);
+            clearInterval(time_roll);
+        }
+    }
+
+    function auto_roll(x){
+        for(var j=0;j<word_box.length;j++){move_class('ad_show',slide_img[j]);}
+        add_class('ad_show',slide_img[x]);
+    }
+    var y=0;
+    var time_roll = setInterval(function(){
+        auto_roll(y);
+        y+=1;
+        if(y==word_box.length)y=0;
+    },2500)
+    /**
+     *  添加class
+     *  @param ad_cls:要添加的class名字
+     *  @param cls_name 所要操作的DOM节点，已经有document.getElementByClassName获取
+     */
+    function add_class(ad_cls,cls_name){
+            var temp = cls_name.getAttribute('class');
+            temp +=' '+ad_cls;
+            cls_name.setAttribute('class',temp);
+         }
+
+    /**
+     *  删除class
+     *  @param del_cls:要删除的class名字
+     *  @param cls_name 所要操作的DOM节点，已经有document.getElementByClassName获取
+     */
+    function move_class(del_cls,cls_name){
+            var temp = cls_name.getAttribute('class');
+            if(!temp)return;
+            temp = temp.replace(' '+del_cls,'');
+            cls_name.setAttribute('class',temp)
+        }
+
