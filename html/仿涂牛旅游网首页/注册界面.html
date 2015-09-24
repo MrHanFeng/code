@@ -7,6 +7,7 @@
         body{padding:0px; margin:0px; color:#333333; font-family: 'Microsoft YaHei'; font-size:14px; line-height:150%;}
         h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd,form,img,p,label,a{margin:0; padding:0; border:none; list-style-type:none;text-decoration:none;}
         body{background: #f3f3f3}
+        label{cursor: pointer}
         .clear{clear:both}
         .top{width:100%; height: 70px; border-bottom: 2px solid green; background: #ffffff; }
         .top .top_left,.top .top_right{width:25%; }
@@ -69,12 +70,12 @@
                             <input type="radio" name="sex">男
                             <input type="radio" name="sex" checked>女</li>
                         <li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp爱好：
-                            <input type="checkbox" name="hobby" checked>看书
-                            <input type="checkbox" name="hobby">跑步
-                            <input type="checkbox" name="hobby">音乐
-                            <input type="radio" name="select_hb" onclick="all_fn()">全选
-                            <input type="radio" name="select_hb" onclick="noall()">全不选
-                            <input type="radio" name="select_hb" onclick="fan()">反选
+                            <label><input type="checkbox" name="hobby" checked>看书</label>
+                            <label><input type="checkbox" name="hobby">跑步</label>
+                            <label><input type="checkbox" name="hobby">音乐</label>
+                            <label><input type="radio" name="select_hb" onclick="all_fn()">全选</label>
+                            <label><input type="radio" name="select_hb" onclick="noall()">全不选</label>
+                            <label><input type="radio" name="select_hb" onclick="fan()">反选</label>
                         </li>
                         <li>&nbsp&nbsp&nbsp手机号：
                             <input type="text"  class='input_cls' placeholder="请输入电话" name="tel_num" onblur="tel_fn()" title="正则匹配">
@@ -86,7 +87,7 @@
                         </li>
                         <li>&nbsp&nbsp&nbsp所在地：
                             <select name="sheng" onchange="add_shi()"></select>
-                            <select name="shi" onchange="add_qu()">
+                            <select name="shi" onchange="add_qu(this)">
                                 <option value="" >--请选择--</option>
                             </select>
                             <select name="qu">
@@ -94,7 +95,7 @@
                             </select>
                         </li>
                         <li>
-                            <span style="margin-left:70px;color:black"><input type="checkbox" name="accept" value="0" onclick="accept_fn()" >愿意接受旅游咨询免费信息</span>
+                            <span style="margin-left:70px;color:black"><label><input type="checkbox" name="accept" value="0" onclick="accept_fn()" >愿意接受旅游咨询免费信息</label></span>
                         </li>
                         <li>
                             <input type="button" value="下一步" class="next" name="next" onclick="next_fn()" >
@@ -272,7 +273,7 @@
     var sheng = form_one.sheng;
     var shi = form_one.shi;
     var qu = form_one.qu;
-    var city_data={//设置数备库
+ /*   var city_data={//设置数备库 初次练习所写，使循环造成了代码冗余
         '山西省':[
             {'太原市':['万柏林区','杏花岭区','迎泽区']},
             {'大同市':['大同区','大同区','大同区']}
@@ -290,25 +291,8 @@
             {'杭州市':['杭州区','杭州区','杭州区']}
         ]
     };
-    //开始
 
-//    function add_area(flag){
-//        var str=' ';
-//        for(var i=0 in city_data){
-//            str +='<option value="'+i+'">'+i+'</option>';
-//            if(flag==1) continue;
-//
-//        }
-//        if(flag==1){
-//            sheng.innerHTML=str;
-//            return ;
-//        }
-//        if(flag==1){
-//            sheng.innerHTML=str;
-//            return ;
-//        }
-//
-//    }
+
     add_sheng();
     function add_sheng(){
         var str='<option value="">--请选择--</option>';
@@ -329,8 +313,10 @@
         }
         shi.innerHTML=str;
     }
-    function add_qu(){
+    function add_qu(t){
         var str='<option value="">--请选择--</option>';
+//        var value = t.value;
+//        alert(value);
         var temp=city_data[sheng.value];
         for(var i=0;i<temp.length;i++){
             for(var j in temp[i]){
@@ -342,13 +328,55 @@
                 qu.innerHTML=str;
             }
         }
-//        var temp=city_data[sheng.value][0][shi.value];
-////        console.log(temp);
-//
-//        for(var i=0;i<temp.length;i++){
-//            str += '<option value="'+temp[i]+'">'+temp[i]+'</option>';
-//        }
-//        qu.innerHTML=str;
+
+    */
+    var city_data={//设置数备库，重新设置，减少代码冗余
+        '山西省': {
+            '太原市':['万柏林区','杏花岭区','迎泽区'],
+            '大同市':['大同区','大同区','大同区']
+        },
+        '安徽省': {
+            '芜湖市':['芜湖区','芜湖区','芜湖区'],
+            '合肥市':['合肥区','合肥区','合肥区'],
+            '六安市':['六安区','六安区','六安区']
+        },
+        '江苏省': {
+            '南京市':['南京区','南京区','南京区'],
+            '苏州市':['苏州区','苏州区','苏州区']
+        },
+
+        '浙江省': {
+            '杭州市':['杭州区','杭州区','杭州区']
+        }
+    };
+    //开始
+
+    add_sheng();
+    function add_sheng(){
+        var str='<option value="">--请选择--</option>';
+        for(var i in city_data){
+            str +='<option value="'+i+'">'+i+'</option>';
+        }
+        sheng.innerHTML=str;
+    }
+    function add_shi(){
+        var str='<option value="">--请选择--</option>';
+        qu.innerHTML=str;
+        var temp=city_data[sheng.value];
+//        console.log(temp);
+        for(var i in temp){
+                str += '<option value="'+i+'">'+i+'</option>';
+        }
+        shi.innerHTML=str;
+    }
+    function add_qu(t){
+        var str='<option value="">--请选择--</option>';
+        var temp=city_data[sheng.value][shi.value];
+        for(var i=0;i<temp.length;i++){
+            str += '<option value="'+temp[i]+'">'+temp[i]+'</option>';
+        }
+        qu.innerHTML=str;
+
     }
 
 /*7.下一步按钮，验证整个表单*/
