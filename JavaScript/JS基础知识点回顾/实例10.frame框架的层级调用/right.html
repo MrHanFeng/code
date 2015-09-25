@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>right</title>
+    <style>
+        body{background: lightblue;  }
+        input{background: #007537;border:none;width:100px;height:30px;}
+        input:hover{background: #00bc55  }
+    </style>
+</head>
+<body>
+    <div id="right">
+        这里是右边第一层
+    </div>
+    <input type="submit" value="获取第一层内容" onclick="alert(parent.index)">
+    <input type="submit" value="获取左一内容" onclick="alert(parent.left_one.left_one)">
+    <input type="submit" value="获取左二"onclick="alert(parent.left_one.left_two.left_two)">
+    <input type="submit" value="获取本层内容" onclick="alert(right)">
+
+
+</body>
+<script>
+    var right = document.getElementById('right').innerText;
+//    alert(right);
+</script>
+</html>

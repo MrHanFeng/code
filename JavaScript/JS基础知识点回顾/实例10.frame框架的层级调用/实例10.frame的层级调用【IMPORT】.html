@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>frame框架的层级调用</title>
+    <style>
+        body{background: orangered;  }
+        .kuai{width:550px;height:500px;margin:30px;}
+        input{background: #007537;border:none;width:100px;height:30px;}
+        input:hover{background: #00bc55  }
+    </style>
+
+</head>
+
+<body>
+    <iframe src="left_one.html" frameborder="1" name="left_one" class="kuai"></iframe>
+    <iframe src="right.html" frameborder="1" name="right_one"class="kuai"></iframe>
+    <div id="index">
+        这里是index内容
+    </div>
+    <input type="submit" value="获取本层内容" onclick="alert(index)">
+    <input type="submit" value="获取左一内容" onclick="alert(left_one.left_one)">
+    <input type="submit" value="获取左二" onclick="alert(left_one.left_two.left_two)">
+    <input type="submit" value="获取右一" onclick="alert(right_one.right)">
+</body>
+<script>
+    var index = document.getElementById('index').innerText;
+//    alert(index);
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>left</title>
+    <style>
+        body{background: lightblue;  }
+        .kuai{width:300px;height:300px;background: #f3f3f3;margin:30px;}
+        input{background: #007537;border:none;width:100px;height:30px;}
+        input:hover{background: #00bc55  }
+    </style>
+
+</head>
+<body>
+
+    <div id="left_one">
+        这里是左边第一层
+    </div>
+    <input type="submit" value="获取第一层内容" onclick="alert(parent.index)">
+    <input type="submit" value="获取本层内容" onclick="alert(left_one)">
+    <input type="submit" value="获取左二" onclick="alert(left_two.left_two)">
+    <input type="submit" value="获取右一" onclick="alert(parent.right_one.right)">
+    <iframe src="left_two.html" frameborder="1" class="kuai" name="left_two"></iframe>
+</body>
+<script>
+    var left_one = document.getElementById('left_one').innerText;
+//        alert(left_one);
+</script>
+</html>
