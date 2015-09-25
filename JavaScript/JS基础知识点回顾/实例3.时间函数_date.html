@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>时间函数练习</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <style>
+        #time, #aid_time ,#last_time{
+            background: black;
+            color: green;
+            border: 2px solid orangered;
+            width:900px;
+            height:60px;
+            margin:0 auto;
+            padding:5px;
+            font-size: 52px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 align="center">中秋倒计时</h1>
+    <button onclick="alert(get_time())">点击查看时间</button>
+    <div id="time">
+    </div><br>
+    <div id="aid_time">
+        <b>中秋时间：</b>2015-9-27 00:00:00
+    </div><br>
+    <div id="last_time" style="color: red">
+    </div>
+</body>
+<script>
+
+//    <!--获取当前时间 -->
+    function get_time(){
+        time = new Date();//创建对象，默认为当前时间
+        var m = time.getMonth()+1;//[返回月份数（0--11）
+        var Y = time.getFullYear();
+        var d = time.getDate();//返回日期数（1--31）
+        var H = time.getHours();//返回时数（0--23）
+        var i = time.getMinutes();//返回分数（0--59）
+        var s = time.getSeconds();//返回秒数（0--59）
+        if(i<10) i="0"+i;
+        s<10 && (s="0"+s);
+        var time = Y+"-"+m+"-"+d+" "+H+":"+i+":"+s;
+        return time;
+    }
+
+    ///获得时间差
+   function get_last(){
+       var time = new Date();//创建对象，默认为当前时间
+       var aid_time = new Date('2015','8','27',0,00,00);//设置目标时间
+       var last= (aid_time.getTime() - time.getTime())/1000;
+
+       var day = parseInt(last/(60*60*24));
+       var temp = last%(60*60*24);//取余数
+
+       var hour = parseInt(temp /(60*60));
+       var temp = temp %(60*60);//取余数
+
+       var min = parseInt(temp/60);
+       var temp =  parseInt(temp % 60) ;//取余数
+
+       return ("还剩:"+day+"天"+hour+"小时"+min+"分"+temp+"秒");
+   }
+    get_last();
+
+    //    填入时间
+    var cur_t =  document.getElementById("time");
+    var last_time =  document.getElementById("last_time");
+    cur_t.innerHTML = "<b>现在时间：</b>"+get_time();
+    last_time.innerHTML = "<b>剩余时间：</b>"+get_last();
+    setInterval(function(){
+        cur_t.innerHTML = "<b>现在时间：</b>"+get_time();
+        last_time.innerHTML = "<b>剩余时间：</b>"+get_last();
+    },1000);
+
+
+</script>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>排序问题与生成随机数</title>
+    <style>
+        #sort{width:300px; height:20px;background: #00993f;}
+    </style>
+    <script>
+        /* 获得随机数，方法一 彩票系统,存在不确定性,
+        *   random运气不好或者技术过大，系统崩溃！！！BUG
+        */
+        function randNum(){
+            var arr = new Array();
+            var flag = new Array();
+            for(i=0;i<3;i++){
+                var key = Math.ceil(Math.random()*31+1);
+                if(flag[key]) {
+                    continue;
+                }
+                flag[key] = true;
+                arr[i] = key;
+            }
+            alert( arr);
+        }
+
+        /*获得随机数，方法二*/
+        function getRand(){
+            var arr = new Array();//存放预备库
+            //数组初始化
+            for(var i =0; i<32; i++){
+                arr[i]=i;
+            }
+            var a = getArrayItems(arr,5);
+            alert(a);
+        }
+        /**从一个给定的数组arr中,随机返回num个不重复项
+         *  关键函数: splice  生成的新数组是【重组数组】，结合arr.lenght达到目的
+         *  原理：临时数组存放库，用一个减一个，达到不重复
+         * */
+        function getArrayItems(arr, num) {
+            //取出的数值项,保存在此数组
+            var return_array = new Array();
+            for (var i = 0; i<num; i++) {
+                //判断如果数组还有可以取出的元素,以防下标越界
+                if (arr.length>0) {
+                    var arrIndex = Math.round(Math.random()*arr.length);
+                    return_array[i] = arr[arrIndex];
+//                    alert(arr);
+                    arr.splice(arrIndex, 1);//删除这个数组,会重组数组，关键！！！
+                } else {
+                    break;
+                }
+            }
+            return return_array;
+        }
+    </script>
+</head>
+<body>
+    <div id="sort">
+
+    </div>
+    <button ondblclick="sort()">排序动作,双击</button>  <----
+    <br>
+    <br>
+    <input type="submit" value="生成随机数" onclick="getRand()">
+</body>
+<script>
+
+    /*排序*/
+    function sort(){
+        var num = prompt("请输入一串数字，用“,”隔开","125,21,6,32,1");
+        var arr = num.split(',');//        alert(typeof(arr));//        alert(arr[1]);
+        a = bubbleSort(arr);//        alert(a);
+        var sort_a = document.getElementById('sort');
+        sort_a.innerHTML=a;
+    }
+
+    /*此冒泡排序在运算次数上存在问题，严格意义上不符合冒泡排序*/
+    function bubbleSort(array) {
+        for (var i = 0; i < array.length; i++) {
+            for (var j = 0; j < array.length -i-1; j++) {
+                if (parseInt(array[j+1]) < parseInt(array[j])) {
+                    var temp = array[j + 1];
+                    array[j + 1] = array[j];
+                    array[j] = temp;
+                }
+            }
+        }
+        return array;
+    }
+
+    /*顺序排序*/
+    function orderAsc(arr){
+        var temp = Array();
+        for(var i = 0; i < arr.length - 1; i++ ){
+            var p = i;
+            for(var j = i+1 ; j< arr.length; j++){
+                p = arr[p]<arr[j]?p:j;
+            }
+            if(!(p == i)){
+                temp = arr[p];
+                arr[p] = arr[i];
+                arr[i]=temp;
+            }
+        }
+        alert(arr);
+    }
+
+    /*枚举排序*/
+    function meiJuOrder(arr){
+    var return_arr = new Array();
+     for(var i =0; i<arr.length;i++){
+          var temp=0;
+          for(var j = 0;j<arr.length;j++){
+             if(arr[i]>arr[j]) temp+=1;//关键
+         }
+         return_arr[temp]=arr[i];
+        }
+        alert(return_arr);
+    }
+    arr = [162,152,151,266,2];
+//    orderAsc(arr);
+    meiJuOrder(arr);
+</script>
+</html>

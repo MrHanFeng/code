@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3种弹框</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <script>
+        function al(){
+            alert("this is test!");
+        }
+        function con(){
+           var a = confirm("确定返回true,失败返回false");
+            alert("返回了:"+a);
+        }
+        function pro(){
+            var a =prompt("请输入一个值","输出默认值");
+            alert(a);
+        }
+
+    </script>
+</head>
+<body>
+<input type="submit" onclick="al();" value="alert弹框">
+<input type="submit" onclick="con();"value="confirm弹框">
+<input type="submit" onclick="pro();"value="prompt弹框">
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浏览器对象window_screen_histrot_location_navigator</title>
+    <style>
+        ul li{list-style-type: none}
+        body{background: #f3f3f3; }
+        .content{width:1200px; margin: 0 auto; }
+        .div{background: #ffffff; width:500px; height: 230px; float: left;margin:25px }
+        button{border: none; background: #00993f; width:100px; height: 30px; margin:5px; text-align: center; -webkit-border-radius: 80%; -moz-border-radius: 80%; border-radius: 30%; outline: none; }
+        button:hover{background: #007537; }
+        .bj{background: red; }
+    </style>
+
+</head>
+<body>
+<div class="content">
+    <div class="div" >
+        <h1>window对象属性</h1>
+        <button onclick="alert(document.body.innerHTML)" title="输出body体内所有信息">document</button>
+        <button onclick="alert(location)" title="输出URL">location</button>
+        <button onclick="alert(console[0])" title="查看JS日志">console</button>
+        <button onclick="alert(outerHeight)" title="窗口边界的垂直尺寸，随时变化，px">outerHeight </button>
+        <button onclick="alert(outerWidth)" title="窗口边界的水平尺寸，px"> outerWidth</button>
+        <button onclick="alert(pageXOffset)" title="网页x-position的位置" class="bj">pageXOffset </button>
+        <button onclick="alert(pageYOffset)" title="网页y-position的位置，产生了滚动条的时候，滚动条的位置" class="bj"> pageYOffset</button>
+        <button onclick="alert(innerHeight)" title="窗口左边界的X坐标" > innerHeight</button>
+        <button onclick="alert(innerWidth)" title="窗口内容区的水平尺寸，px"> innerWidth</button>
+        <button onclick="alert(screenX)" title="窗口左边界的X坐标，窗口移动，它变">screenX </button>
+        <button onclick="alert(screenY)" title="窗口上边界的Y坐标">screenY </button>
+        <!--<button onclick="alert()" title=""> </button>-->
+     </div>
+
+    <div class="div">
+        <h1>window对象方法</h1>
+        <button onclick="alert('这是一个弹框')" title="alert弹框"> alert</button>
+        <button onclick="alert('返回值为： '+confirm('是否确定？'))" title="显示确认信息对话框"> confirm</button>
+        <button onclick="alert('你输出了：'+prompt('请输入值'))" title="显示提示信息，并提供可输入的字段">propmt </button>
+        <button onclick="open('','百度','_self,width=1000px,height=10px,top=100px,left=100px,fullscreen=1,location=1,menubar=1')" title="打开新窗口">
+            open
+        </button>
+        <button onclick="close()" title="关掉本窗口">close </button>
+        <button onclick="scrollTo(0,500)" title="意思是滚动到指定像素。不管现在哪儿，滚动到那个坐标，绝对"class="bj">scrollTo(x坐标，y坐标)</button>
+        <button onclick="scrollBy(0,500)" title="意思是滚动到指定坐标。相对现在的位置，继续按坐标滚动距离，相对"class="bj">scrollBy(水平点数，垂直点数) </button>
+
+        <button onclick="resizeBy(100,100)" title="相对调整窗口大小，IE可以">resizeBy(水平点数，垂直点数)</button>
+        <button onclick="resizeTo(100,100)" title="绝对调整窗口大小，IE可以">resizeTo(宽度，高度) </button>
+        <button onclick="moveBy(50,50)" title="相对窗口的当前坐标把它移动指定的像素，相对定位，IE可以">moveBy(水平点数，垂直点数)</button>
+        <button onclick="moveTo(50,50)" title="可把窗口的左上角移动到一个指定的坐标。绝对，IE可以"> moveTo(x坐标，y坐标)</button>
+
+        <button title="scroll:滚动；resize：调整IE窗口的大小；move:移动IE浏览器；to:绝对定位，从头开始改变；by:相对定位，相对现在的位置继续改变">总结</button>
+     </div>
+
+    <div class="div">
+        <h1>屏幕对象（screen）</h1>
+
+        <button onclick="alert(screen.availHeight)" title="屏幕可用像素高度【不变】,对比height,outerHeight"> availHeight</button>
+        <button onclick="alert(screen.availWidth)" title="屏幕可用像素宽度"> availWidth</button>
+        <button onclick="alert(screen.colorDepth)" title="颜色深度"> colorDepth</button>
+        <button onclick="alert(screen.height)" title="【屏幕】区域的实际高度【不变】"> height</button>
+        <button onclick="alert(screen.width)" title="屏幕区域的实际宽度">width </button>
+        <!--<button onclick="alert()" title=""> </button>-->
+    </div>
+    <div class="div">
+        <h1>历史对象(history)</h1>
+
+        <button onclick="alert(history.current)" title="当前历史记录的网址">current </button>
+        <button onclick="alert(history.length)" title="存储在记录清单中的网址数目">length </button>
+        <button onclick="alert(history.next)" title="">next </button>
+        <button onclick="alert(history.previous)" title="">previous </button>
+        <button onclick="alert(history.go(1))" title="">go </button>
+        <!--<button onclick="alert(history.)" title=""> </button>-->
+     </div>
+    <div class="div">
+        <h1>位置对象（location）</h1>
+
+        <button onclick="alert(location.pathname)" title="表示URL中的路径"> pathname</button>
+        <button onclick="alert(location.host)" title="表示URL中的主机部分"> host</button>
+        <button onclick="alert(location.hostname)" title="表示URL中的主机名称"> hostname</button>
+        <button onclick="alert(location.href)" title="完整的URL字符串"> href</button>
+        <button onclick="alert(location.search)" title="表示URL中的查询信息"> search</button>
+     </div>
+    <div class="div">
+        <h1>领航员对象（navigator）</h1>
+
+        <button onclick="alert(navigator.appName)" title="浏览器名称">appName </button>
+        <button onclick="alert(navigator.appVersion)" title="浏览器版本"> appVersion</button>
+        <button onclick="alert(navigator.appCodeName)" title="浏览器代码">appCodeName </button>
+        <button onclick="alert(navigator.platform)" title="编译浏览器的机器类型">platform </button>
+
+
+
+
+    </div>
+</div>
+    <div style="width:100%;height: 1000px;border: 1px solid black;float: left;">
+        
+    </div>
+
+</body>
+<script>
+    var name = "this is name";
+</script>
+</html>

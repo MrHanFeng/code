@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <title>for,switch乘法表练习</title>
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+        <script type="text/javascript">
+    /*乘法表*/
+    function num(a){
+        var b = cf(a,prompt("请输入列数",9));
+        function cf(a,b){
+            var i,j;
+            document.write("<table border=1 cellpadding='2'>");
+            for(i=1;i<=a;i++){
+                document.write("<tr>");
+                for(j=b ;j>=i;j--){
+                    document.write("<td>");
+                    document.write(i+"*"+j+"="+i*j);
+                    document.write("</td>");
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        }
+    }
+
+    /*圣诞树练习一,for*/
+    function xy(){
+        var i =1;
+        for(;i<=11; i++){
+            if(i%2){
+                var k=0;
+                k = Math.ceil((11-i)/2);
+                for(j=0;j<k;j++){
+                    document.write("_");
+                }
+                for(j=0;j<i;j++){
+                    document.write("*");
+                }
+                for(j=0;j<k;j++){
+                    document.write("_");
+                }
+                document.write("<br>");
+            }
+
+
+        }
+    }
+
+    /*圣诞树练习二switch*/
+    function xx(){
+        var x;
+        var y=0;
+        document.write("<div align='center'>");
+        for(x=1;x<10;x++) {
+            y+=1;
+            document.write("<br>");
+            switch(y){
+                case 1:
+                    document.write("*1");
+                   continue;
+                case 2:
+                    document.write('**2');
+                    continue;
+                case 3:
+                    document.write('***3');
+                    continue;
+                case 4:
+                    document.write('****4');
+                    continue;
+                case 5:
+                    document.write('*****5');
+                    continue;
+                case 6:
+                    document.write('******6');
+                    continue;
+                case 7:
+                    document.write('*******7');
+                    continue;
+                case 8:
+                    document.write('********8');
+                    continue;
+                case 9:
+                    document.write('*********9');
+                    continue;
+                break;
+            }
+        }
+        document.write("</div>");
+
+    }
+
+        </script>
+    </head>
+    <body>
+         <input type="submit" value="点击生成乘法列表" onclick="num(prompt('请输入行数,行数必须小于列数',9));">
+         <input type="submit" value="点击生成星号矩阵练习一" onclick="xy();">
+         <input type="submit" value="点击生成星号练习二(switch)" onclick="xx();">
+    </body>
+</html>

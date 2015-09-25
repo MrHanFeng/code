@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS的一些函数使用</title>
+    <style>
+        .test{
+            width:900px;border:1px solid black;margin:20px auto;padding-bottom:10px;
+            text-align: left;
+            background: #00993f;
+
+        }
+    </style>
+    <script>
+        function use_eval(){
+            alert(eval(prompt("请输入一个常量表达式,运算符可以是JavaScript所允许的任何运算符,而操作数只能是常量。如123*321/9,我将为您计算出结果。","0-2")))
+        }
+        function use_escape(){
+            alert('escape()将字符串中的非字母数字字符转换为按格式%XX表示的数字');
+            alert("处理前：Tom & Jerry Show");
+            alert("处理后: "+escape("Tom & Jerry Show"));
+            alert('unescape()函数将字符串中格式为“%XX”的数字转换为字符,与前边互为逆过程');
+            var a = escape("Tom & Jerry Show")
+            alert("处理前："+a);
+            alert(unescape('处理后：'+a));
+        }
+        function use_nan(){
+            var a =prompt("请输入值");
+            alert(isNaN(a));
+        }
+        function use_tran(){
+            var a =prompt("请输入一串混合值：如（123.45abc）","123.45abc");
+            alert("输出parseFloat转换成浮点型:"+parseFloat(a));
+            alert("输出parseInt转换成整型:"+parseInt(a));
+        }
+    </script>
+</head>
+<body align="center">
+    <input type="submit" value="eval函数" onclick="use_eval()">
+    <input type="submit" value="escape函数/unescape函数" onclick="use_escape()">
+    <input type="submit" value="isNaN()isFinite()函数" onclick="use_nan()">
+    <input type="submit" value=" parseFloat(),parseInt()函数" onclick="use_tran()">
+
+    <div class="test">
+        <h2>isNaN()isFinite()</h2>
+        1.isNaN函数确定一个变量是否是NaN，如果是，则返回true，否则返回false。<br>
+        2.isFinite()函数用于确定一个变量是否有限，如果这个变量不是NaN、负无穷或正无穷，那么它将返回true，否则返回false。如isFinite(1)、isFinite(true)返回true，而isFinite(“a”)返回false。
+
+    </div>
+    <div class="test">
+        <h2> parseFloat(),parseInt()知识点</h2>
+        1.parseFloat()将字符串开头的整数或浮点数分解出来，转换为浮点数。如，parseFloat(“123.45”)、parseFloat(“123.45abc”)返回浮点数123.45，而parseFloat(“abc123.45”)和parseFloat(true)返回NaN。<br>
+       2. parseInt()将字符串开头的整数分解出来，转换为整数。如，parseInt(“123”)、parseInt(“123.45”)、parseInt(“123.45abc”)都返回整数123，而parseInt(“abc123”)和parseInt(true)返回NaN。
+    </div>
+</body>
+</html>

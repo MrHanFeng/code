@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+	<style>
+		#main{
+			position:absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<img src="haha.gif">	
+	</div>		
+</body>
+<script>
+var dobj=document.getElementById('main');	
+var dw=dobj.clientWidth;
+var dh=dobj.clientHeight;
+var xs=0;
+var ys=0;
+var v=30;
+var docw=document.documentElement.clientWidth;
+var doch=document.documentElement.clientHeight;
+
+document.onkeydown=function(event){
+	var key=event.keyCode;
+
+	switch(key){
+		case 37:
+			xs-=v;	
+			if(xs<=0){
+				xs=0;
+			}
+			dobj.style.left=xs+'px';
+			break;
+		case 38:
+			ys-=v;	
+			if(ys<=0){
+				ys=0;
+			}
+			dobj.style.top=ys+'px';
+			break;
+		case 39:
+			xs+=v;	
+			if(xs>=docw-dw){
+				xs=docw-dw;
+			}
+			dobj.style.left=xs+'px';
+			break;
+		case 40:
+			ys+=v;	
+			if(ys>=doch-dh){
+				ys=doch-dh;
+			}
+			dobj.style.top=ys+'px';
+			break;
+	}
+}
+</script>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习JS对象_arr_str</title>
+</head>
+<style>
+    .div{width:450px; height:400px; float:left; background: #f3f3f3;margin:20px;}
+    input {border: 0; float:left; margin: 10px; background: #00993f; cursor: pointer; outline: none; width:100px; height:30px; }
+    input:hover{background: #007537; }
+</style>
+<body>
+<div style="width: 1200px ;margin:0 auto;height: 600px;">
+
+    <div class="div">
+        <h2>arr的定义</h2>
+        <p>
+            1. var arr = new <font color="red">A</font>rray(); arr[0]=0;....<br>
+            2. var arr = new <font color="red">A</font>rray(1,2,3);<br>
+            3. var arr = [1,2,3]<br>
+        </p>
+    </div>
+    <div class="div">
+        <h2></h2>
+    </div>
+    <div class="div">
+        <h2>str的定义</h2>
+        <p>
+            1.var str = new <font color="red">S</font>tring ("this is string test,测试.") <br>
+            2.str = "this is string test,测试.";
+        </p>
+    </div>
+    <div class="div">
+        <h2>str函数的用法</h2>
+        <h3>"this is string test,测试."</h3>
+        <input type="submit" value="charAt" onclick="str_charAt()" title="返回指定索引位置处的字符">
+        <input type="submit" value="charCodeAt" onclick="str_charCodeAt()" title="返回索引位置的ASCII字符码，十进制表示">
+        <input type="submit" value="indexOf" onclick="str_indexOf()" title="返回字串在对象中的索引位置">
+        <input type="submit" value="lastIndexOf" onclick="str_lastIndexOf()" title="返回字串在对象中的索引位置【倒序】">
+        <input type="submit" value="search" onclick="str_search()" title="返回字串在对象中的索引位置">
+        <input type="submit" value="replace" onclick="str_replace()" title="字串2替换字串1；只能替换第一个，后边及时有满足的字符，也无法替换">
+        <input type="submit" value="slice" onclick="str_slice()" title="返回索引i倒索引j-1的子串">
+        <input type="submit" value="split" onclick="str_split()" title="用于把一个字符串分割成字符串数组。返回数组">
+        <input type="submit" value="splice" onclick="arr_splice()" title="对数组操作，可以从指定位置删除，替换，添加数组【三个参数的应用】，返回数组">
+        <input type="submit" value="substring" onclick="str_substr()" title="返回索引i倒索引j-1的子串">
+        <input type="submit" value="substr" onclick="str_substr()" title="返回特定长度的字串,PHP相似">
+        <input type="submit" value="link" onclick="str_link()" title="link() 方法用于把字符串显示为超链接。">
+        <div style="clear:both;"></div>
+    <br>&nbsp比较：
+        splice,split;
+        <br>slice,substring，sub_str
+    </div>
+</div>
+
+    <script>
+        str = "this is string test,测试.";
+        function str_charAt(){
+            var a = prompt("请输入你要返回值的位置");
+            alert(str.charAt(a));
+        }
+        function str_charCodeAt(){
+            var a = prompt("请输入你要返回值的位置");
+            alert(str.charCodeAt(a));
+        }
+        function str_indexOf(){
+            var a = prompt("请输入你的字符串,会返回给你第一次出现的位置");
+            alert(str.indexOf(a));
+        }
+        function str_lastIndexOf(){
+            var a = prompt("请输入你的字符串,会返回给你最后一次出现的位置");
+            alert(str.lastIndexOf(a));
+        }
+        function str_search (){
+            var a = prompt("请输入你的字符串");
+            alert("它的位置是"+str.search(a));
+        }
+        function str_replace (){
+            var a = prompt("请输入你要替换的字符串1");
+            var b = prompt("请输入你新字符串2");
+            alert("替换后的结果:"+str.replace(a,b));
+        }
+        function str_slice (){
+            var a = prompt("请输入开头字符串i");
+            var b = prompt("请输入结尾字符串j");
+            alert("截取后的结果:"+str.slice(a,b));
+        }
+        function str_split (){
+            var a = prompt("请输入删除的字符串");
+            alert("删除后的结果:"+str.split(a));
+        }
+        function arr_splice (){
+//            var arr = ["this","is","test"];
+            var arr = [1,2,3];
+            alert("数组里有的值："+arr);
+            var a = prompt("请输入删除值的下标");
+            var b = prompt("请输入从它以后，删除的个数");
+//            var c = prompt("要插入的值");
+            alert("删除的值是:"+arr.splice(a,b));
+            alert("最后结果是:"+arr);
+        }
+        function str_substr (){
+            var a = prompt("请输入替换开始的下标");
+            var b = prompt("请输入返回字符串的长度");
+            alert("结果:"+str.substr(a,b));
+        }
+        function str_substring (){
+            var a = prompt("请输入开头字符串i");
+            var b = prompt("请输入结尾字符串j");
+            alert("截取后的结果:"+str.substring(a,b));
+        }
+        function str_link (){
+            var a = prompt("请输入URL");
+            alert("截取后的结果:"+str.link(a));
+        }
+    </script>
+</body>
+</html>

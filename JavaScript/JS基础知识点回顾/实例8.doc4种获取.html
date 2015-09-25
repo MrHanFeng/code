@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>document获取</title>
+    <script>
+        function show(){
+            var obj_id = get_id('doc_id');
+            var obj_class = get_class('doc_class');
+            var obj_tag = get_tag('span');
+            var obj_name = get_name('name');
+
+            /*id*/
+//            alert(obj_id.innerHTML);//获取到id所在【div内】的所有信息
+//            alert(obj_id.innerText+".."+obj_id.textContent);//获取【div内】的文本内容，不加<span>
+//            alert(obj_id.outerHTML);//获取【包括DIV】的代码<div><span>XXX</span></div>
+
+            /*class*/
+//            document.write(obj_class[0].innerText);//注意排序
+//            document.write(obj_class[1].innerHTML);//注意排序
+
+            /*tag*/
+//                alert(obj_tag[1].outerHTML);//获取的span 是根据整个页面搜索的，注意下标
+
+            /*name*/
+                alert(obj_name[1].outerHTML);
+        }
+//        alert(screen.availHeight);
+
+        function get_id(id){var obj = document.getElementById(id);return obj;}
+        function get_class(id){var obj = document.getElementsByClassName(id);return obj;}
+        function get_tag(id){var obj = document.getElementsByTagName(id);return obj;}
+        function get_name(id){var obj = document.getElementsByName(id);return obj;}
+    </script>
+</head>
+<body>
+    <div id="doc_id"><span>这是ID里的值 span0</span></div>
+
+    <div class="doc_class">这是class1</div>
+    <div class="doc_class">这是class2</div>
+    <div class="doc_class">这是class3</div>
+
+    <div>这里是tag <span>span1</span></div>
+    <div> 这里是tag <span>span2</span></div>
+
+    <div name="name">name1</div>
+    <div name="name">name2</div>
+    <div name="name">name3</div>
+
+    <hr>
+    <input type="submit" value="获取id" onclick="show()">
+    <input type="submit" value="获取class" onclick="show()">
+    <input type="submit" value="获取tag" onclick="show()">
+    <input type="submit" value="获取name" onclick="show()">
+
+</body>
+</html>
