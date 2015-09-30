@@ -1,4 +1,4 @@
-
+/*纯JS实现的功能写入此处*/
 
 /*滑动图片背景渐变深化颜色,加style
 *   1.this的用法很关键
@@ -6,7 +6,6 @@
 *       所以触发for循环里的事件onmouseover时，不会执行事件onmouseover前边的代码var bl=true
 */
     var img_box =  document.getElementsByClassName('sp-box');
-
     for(var i=0;i<img_box.length;i++){
         var bl=true,is_this;
         /*鼠标移动到图上时*/
@@ -57,9 +56,11 @@
     var slide_img = document.getElementsByClassName('ad_pic');
     var word_box = document.getElementsByClassName('word_box');
     for(var i=0;i<word_box.length;i++){
-        word_box[i]=this;
+        word_box[i]=this;//做一个记录，解决下标问题
         word_box[i].onmouseover=function(){
-            for(var j=0;j<word_box.length;j++){move_class('ad_show',slide_img[j]);if(word_box[j]==this) k=j}
+            for(var j=0;j<word_box.length;j++){
+                move_class('ad_show',slide_img[j]);
+                if(word_box[j]==this) k=j}//如果相等了，记录下标，后边用
             add_class('ad_show',slide_img[k]);
             clearInterval(time_roll);
         }
@@ -74,7 +75,7 @@
         auto_roll(y);
         y+=1;
         if(y==word_box.length)y=0;
-    },2500)
+    },2500);
     /**
      *  添加class
      *  @param ad_cls:要添加的class名字
@@ -98,3 +99,10 @@
             cls_name.setAttribute('class',temp)
         }
 
+
+/*设置侧面浮动导航*/
+    $(function(){
+        var ver_menu=$('.ver_menu');
+        var showlist=$('.showlist');
+        //alert(showlist.innerWidth())
+    });

@@ -6,13 +6,13 @@ a:visited{color:inherit;}
 div {text-align: left;}
 
 
-.top_menu{width:100%;height:40px;background: #F3F3F3;position: fixed;top:0px;left:0px;}
+.top_menu{width:100%;height:40px;background: #F3F3F3;position: fixed;top:0px;left:0px;z-index: 100}
 .top_menu span{width:100px;height:40px;line-height:40px;font-size:15px;font-weight:bold;vertical-align:middle;display: inline-block;}
 
 .contain{width:1000px;margin:0px auto;}
 .head{width:1000px;height:120px;margin-top:40px;}
 .head .h_left{width:410px;height: 110px;margin: 5px;float:left;}
-.h_left img{width:340px;height: 90px;vertical-align:middle}
+.h_left img{width:300px;height: 80px;vertical-align:middle}
 
 .head .h_right{width:500px;height: 110px;margin: 5px;float:right;}
 
@@ -86,9 +86,32 @@ div {text-align: left;}
 .content{width:100%;}
 .content .content_title{width:100%;height:30px;border-bottom: 2px solid  #BE201F;position: relative;}
 .content .content_title .t_left{height: 30px;vertical-align: top;float: left;width: 200px;}
+.content .content_title .t_left .fa{ }
 .content .content_title .t_right {float: right;}
 .content .content_title .t_right span{height: 30px;line-height: 30px;margin: 0 10px;float: left;font-size: 16px;}
 .content .content_detail{height:450px;background: yellowgreen;}
 
-.top{position: fixed; bottom:20px; right: 20px; width: 60px; height:60px; border-radius: 50%; background: lightgray; } 
+.top{position: fixed; bottom:20px; right: 20px; width: 60px; height:60px; border-radius: 50%; background: lightgray;z-index: 101 }
 .top span{text-align: center;vertical-align: middle;height:40px;width:40px;margin: 10px;display:inline-block;}
+
+#left_menu{  position: fixed;  z-index: 99;  }
+#left_menu ul li{width:36px;background: #f3f3f3;margin: 5px;padding:2px;cursor: pointer;text-align: center}
+#left_menu .lt-hover{background: orange}
+
+#ad_box{
+    width:100%;
+    position: fixed;
+    bottom:0;
+    z-index: 100;
+    height: 150px;
+    margin: auto;
+    background: rgba(0,0,0,0.5) bottom;
+}
+#ad_box .ad_close{
+    background: url("../images/ad_close.png") no-repeat;
+    width:39px;
+    height:39px;
+    margin-left: 100px;
+    transform:rotate(-0deg);
+    cursor: pointer;
+}
