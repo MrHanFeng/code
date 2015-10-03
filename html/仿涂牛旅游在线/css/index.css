@@ -1,0 +1,115 @@
+body,html{padding:0px; margin:0px; color:#333333; font-family:"Microsoft YaHei","ËÎÌו",Arial,Lucida,Verdana,Helvetica,sans-serif; font-size:12px; line-height:110%;}
+h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd,form,img,p,label,a{margin:0; padding:0; border:none; list-style-type:none;text-decoration:none;}
+.clear{ clear: both}
+a:hover {color: orangered}
+.header_icon{
+    background: url("../images/header_v3.png");
+}
+
+#top-ad{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(248, 248, 220);
+    overflow: hidden;
+    display: none;
+
+}
+#top-ad .ad-img{
+    width:1200px;
+    margin: auto;
+    position: relative;
+}
+#top-ad .ad-img .ad-close{
+    width:18px;
+    height: 18px;
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: url("../images/icon_close.png");
+    cursor: pointer;
+}
+#top-ad .ad-img .ad-close:hover{background:black;opacity: 0.5;border-radius: 50%}
+#top-ad .ad-img img{
+    width:1200px;
+    height: 60px;
+}
+
+
+#header{
+    width:100%;
+    height:157px;
+    overflow: hidden;
+}
+
+#header .tp-bg,#header .hd-middle,#header .hd-menu{width:1200px;margin: auto;}
+#header .hd-top{
+    background: #f8f8f8;
+    border: 1px solid #eee;
+}
+#header .tp-bg{
+    height:29px;
+}
+#header .hd-top .top-left,#header .hd-top .top-right{height:29px;line-height: 29px;}
+#header .hd-top .top-left{
+    width:200px;
+    float:left
+}
+#header .hd-top .top-left span{padding:5px}
+#header .hd-top .top-right{
+    width:600px;
+    float:right;
+}
+#header .hd-top .top-right li{
+    float:left;
+    margin:0 10px;
+}
+#header .hd-top .top-right li:first-child img{
+    width: 114px;
+    height: 20px;
+    padding-top: 2px;
+}
+#header .hd-top .top-right .nav_item_one .dropdown-db,#header .hd-top .top-right  .nav_item_two .dropdown-map{
+    display:none;
+}
+#header .hd-top .top-right .nav_item_one{
+    padding-left:22px;
+    background: url("../images/oneyuan.gif") no-repeat 0,1px;
+}
+#header .hd-top .top-right .nav_item_one i,#header .hd-top .top-right .nav_item_two i{
+    width:5px;
+    height: 3px;
+    display: inline-block;
+    background-position: -8px -13px;
+    vertical-align: middle;
+}
+#header .hd-top .top-right .weibo a,#header .hd-top .top-right .weixin a{
+    margin-top:2px;
+    width:18px;
+    height:13px;
+    display:inline-block;
+}
+#header .hd-top .top-right .weibo a{
+    background-position:-40px -50px;
+}
+#header .hd-top .top-right .tel a{
+    width:11px;
+    height:26px;
+    display:inline-block;
+    background: url("../images/tel.gif") no-repeat;
+    background-position: -10px 0;
+}
+#header .hd-top .top-right .weixin a{
+    background-position:-63px -49px;
+}
+
+
+#header .hd-middle{
+    height:92px;
+
+}
+#header .hd-menu{
+    height:35px;
+    border: 2px solid #37C249;
+
+}
