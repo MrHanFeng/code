@@ -1,7 +1,7 @@
 $(function(){
     /*顶部广告*/
     var top_ad=$('#top-ad');
-    //top_ad.show(1000);
+    top_ad.show(1000);
     top_ad.find('.ad-close').click(function(){
         top_ad.hide(1000);
     });
@@ -198,6 +198,136 @@ $(function(){
     });
 
 
+    /*设置中间效果切换，图片阴影*/
+    var md_lf_showlist =$('#main .md-lf-showlist');
+    img_shadow_fn();
+    function img_shadow_fn(){
+        $.each(md_lf_showlist,function(i,v){
+            /*切换导航与对应内容*/
+            var showlt_tit=$(this).find('.showlt_tit li');
+            var showlt_con=$(this).find('.showlt_con .st-cn-right ');
+            showlt_tit.click(function(){
+                showlt_tit.removeClass('st-li-hover');
+                $(this).addClass('st-li-hover');
+                var key=$(this).index();
+                showlt_con.removeClass('ri-hover');
+                showlt_con.eq(key).css('opacity','0.5');
+                showlt_con.eq(key).animate({opacity:1},'fast');
+                showlt_con.eq(key).addClass('ri-hover');
+            });
+        });
+
+        /*中间介绍小图背景阴影设置*/
+        var img=md_lf_showlist.find('.cn-ri_img');
+        img.hover(
+            function(){
+                var img_shadow=$(this).find('.cn-ri_img_shadow');
+                img_shadow.css('top',120);
+                img_shadow.animate({'top':0},'fast');
+            },
+            function(){
+                var img_shadow=$(this).find('.cn-ri_img_shadow');
+                img_shadow.animate({'top':120},'fast');
+            }
+        );
+    };
+
+    /*热销排行报的切换*/
+    var order_tit=$('.hot_order .order_tit li');
+    var order_con=$('.hot_order .order_cons');
+    order_tit.click(function(){
+        order_tit.removeClass('od-tit-hover');
+        order_con.removeClass('od-con-hover');
+        var key =$(this).index();
+        order_tit.eq(key).addClass('od-tit-hover')
+        order_con.eq(key).addClass('od-con-hover')
+    });
+
+
+    /*右边银行卡效果*/
+    var credit_down=$('.credit_down');
+    var as_box_one=$('.bank_box .as_box_one');
+    as_box_one.hover(
+        function(){
+            credit_down.css('display','block');
+        },
+        function(){
+            credit_down.css('display','none');
+        }
+    );
+
+    /*设置左边导航*/
+    var left_menu=$('#left_menu');
+    var left_menu_li=left_menu.find('li');
+    var main_showlists=$('.md-lf-showlist ');
+     //计算左边的距离
+    var window_width=parseFloat($(window).width());
+    var menu_width=parseFloat(left_menu.width());
+    ct_dis()
+   function ct_dis(){
+       var left =(window_width-1200)/2-menu_width-3;
+       left_menu.css('left',left);
+   }
+    //设置顶部隐藏
+    function hidden_menu(){
+        if($(window).scrollTop()<200){
+            left_menu.hide();
+        }else{
+            left_menu.show();
+        }
+    }
+    hidden_menu();
+
+     //设main滚动，联动左边导航
+    $(window).scroll( function() {
+        var now_scroll=$(window).scrollTop(),key;
+        $.each(main_showlists,function(i,v){
+           var main_showlist= $(this).offset().top;
+            if(now_scroll+150>=main_showlist)key=i;
+        });
+        left_menu_li.removeClass('lt-hover');
+        left_menu_li.eq(key).addClass('lt-hover');
+        //设置顶部隐藏
+        if($(window).scrollTop()<200){
+            left_menu.hide();
+        }else{
+            left_menu.show();
+        }
+        hidden_menu();
+    } );
+    //设置点击左边导航，跳转到对应内容
+    left_menu_li.click(function(){
+        left_menu_li.removeClass('lt-hover');
+        $(this).addClass('lt-hover');
+        var key=$(this).index();
+        var dis= main_showlists.eq(key).offset().top-100;//目标main模块的滚动条对应的高度
+        var cur= $(window).scrollTop();//目标main模块的滚动条对应的高度
+        roll_fn(cur,dis,function(i){
+            $(window).scrollTop(i);
+        },20,100)
+    });
+
+    /*设置黑色广告的关闭按钮旋转*/
+    var ad_box=$('#ad_box');
+    var btn=$('#ad_box .ad_close');
+    btn.click(function(){
+        ad_box.animate({width:0,opacity:0},300)
+    });
+    //设置旋转
+    btn.hover(
+        function(){
+            roll_fn(0,180,function(i){
+                btn.css('transform','rotate('+i+'deg)')
+            },10,10)
+        },
+        function(){
+            roll_fn(180,0,function(i){
+                btn.css('transform','rotate('+i+'deg)')
+            },10,10)
+        }
+    );
+
+
     /**
      * 设置转动箭头，
      * @param obj 为操作的对象
@@ -214,6 +344,7 @@ $(function(){
             obj.css('transform','rotate('+i+'deg)')
         },10,10)
     }
+
 
 
     /**
