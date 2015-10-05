@@ -9,6 +9,7 @@ a:hover {color: orangered}
 .index_icon{  background: url("../images/index_icon.png");  }
 .slide_icon{  background: url("../images/next.png");  }
 .credit{  background: url("../images/credit.png");  }
+.menu_right_icon{  background: url("../images/rc_icon_all.png");  }
 .fa{  color: #b9b9b9;  }
 .more{color:#999;font-size: 12px;float: right;font-weight: 100}
 #top-ad{
@@ -1479,8 +1480,77 @@ a:hover {color: orangered}
 #left_menu ul li{font-size:14px; height:50px;line-height:20px;padding:2px;padding-top: 18px;width:36px;background: #f3f3f3;margin: 5px;cursor: pointer;text-align: center;  font-weight: 100;}
 #left_menu .lt-hover{background: orange;color: #ffffff}
 
-#menu_right{
+#right_menu{
+    position: fixed;
+    top:0px;
+    right:0px;
+    height:100%;
+    background: #333;
+    z-index: 999;
+}
+#right_menu .rm-top{
+    width:40px;
+    height:212px;
 
 }
+#right_menu .rm-top .rm-ad{
+    height:170px;
+    border-bottom:1px solid #3e3e3e ;
+}
+#right_menu .rm-top .rm-app{
+    height:40px;
+    line-height:40px;
+    border-bottom:1px solid #3e3e3e ;
+}
+#right_menu .rm-top .rm-app .icon_app{
+    background-position: 5px 14px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+#right_menu .rm-top .rm-app .icon_app:hover{
+    background-position: -62px 14px;
+
+}
+#right_menu .rm-center{
+    width:40px;
+    height:300px;
+}
+#right_menu .rm-center .my_tuniu{
+    border-bottom:1px solid #3e3e3e ;
+    height:170px;
+}
+#right_menu .rm-center .heart,#right_menu .rm-center .order,#right_menu .rm-center .quan,#right_menu .rm-center .message{
+    border-bottom:1px solid #3e3e3e ;
+    width: 40px;
+    height: 40px;
+}
+#right_menu .rm-center span,#right_menu .rm-bottom span{
+    display: block;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+#right_menu .rm-center .icon_tuniu{    background-position:0px -36px  }
+#right_menu .rm-center .icon_tuniu:hover{    background-position:-64px -36px }
+#right_menu .rm-center .icon_heart{    background-position:6px -97px;  }
+#right_menu .rm-center .icon_heart:hover{    background-position:-61px -97px;  }
+#right_menu .rm-center .icon_order{    background-position: 8px -224px;  }
+#right_menu .rm-center .icon_order:hover{    background-position:-61px -224px;  }
+#right_menu .rm-center .icon_quan{    background-position:10px -288px;  }
+#right_menu .rm-center .icon_quan:hover{    background-position: -59px -288px;  }
+#right_menu .rm-center .icon_message{    background-position: 8px -785px  }
+#right_menu .rm-center .icon_message:hover{    background-position: -60px -785px  }
+#right_menu .rm-bottom{
+    width:40px;
+    position: absolute;
+    bottom:20px;
+}
+#right_menu .rm-bottom .icon_editor{ background-position:9px -544px }
+#right_menu .rm-bottom .icon_editor:hover{ background-position: -60px -544px }
+#right_menu .rm-bottom .icon_top{ background-position:10px -600px }
+#right_menu .rm-bottom .icon_top:hover{ background-position: -59px -600px }
+
 #ad_box{  width:100%;  position: fixed;  bottom:0;  z-index: 1000;  height: 150px; margin: auto;  background: rgba(0,0,0,0.5) bottom;  }
 #ad_box .ad_close{  background: url("../images/ad_close.png") no-repeat;  width:39px;  height:39px;  margin-left: 100px;  transform:rotate(-0deg);  cursor: pointer;  }
