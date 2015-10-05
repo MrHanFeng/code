@@ -360,6 +360,7 @@ a:hover {color: orangered}
     width:330px;
     height: 33px;
     line-height: 33px;
+    padding:0;
     padding-left: 2px;
     outline:none;
     border: none;
