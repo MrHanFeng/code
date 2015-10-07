@@ -1,7 +1,6 @@
 body,html{padding:0px; margin:0px; color:#333333; font-family:"Microsoft YaHei",Arial,Lucida,Verdana,Helvetica,sans-serif; font-size:12px; line-height:110%;}
 h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd,form,img,p,label,a{margin:0; padding:0; border:none; list-style-type:none;text-decoration:none;}
 .clear{ clear: both}
-a{color:black}
 a:hover {color: orangered}
 .header_icon{  background: url("../images/header_v3.png");    }
 .menu_icon{  background: url("../images/menu_icon.png");      }
@@ -11,7 +10,7 @@ a:hover {color: orangered}
 .credit{  background: url("../images/credit.png");  }
 .menu_right_icon{  background: url("../images/rc_icon_all.png");  }
 .fa{  color: #b9b9b9;  }
-.more{color:#999;font-size: 12px;float: right;font-weight: 100}
+.more{color:#999;font-size: 12px;float: right;font-weight: 100;}
 #top-ad{
     width: 100%;
     height: 60px;
@@ -79,12 +78,20 @@ a:hover {color: orangered}
     height: 20px;
     padding-top: 2px;
 }
-#header .hd-top .top-right .nav_item_one .dropdown-db{
-    display:none;
-}
+
 #header .hd-top .top-right .nav_item_one{
     padding-left:22px;
+    padding-right:5px;
     background: url("../images/oneyuan.gif") no-repeat ;
+    position:relative;
+    border: 1px solid #f8f8f8;
+}
+#header .hd-top .top-right .nav_item_one .dropdown-db{
+    display:none;
+    z-index: 500;
+    position: absolute;
+    top:29px;
+    background: #ffffff;
 
 }
 #header .hd-top .top-right .nav_item_one i,#header .hd-top .top-right .nav_item_two i,#header .hd-middle .md-local i,#header .hd-middle .md-search  .high_sh i,#header .hd-menu .menu_box .mb_right .mn-li i{
@@ -1547,9 +1554,9 @@ a:hover {color: orangered}
     position: absolute;
     bottom:20px;
 }
-#right_menu .rm-bottom .icon_editor{ background-position:9px -544px }
+#right_menu .rm-bottom .icon_editor{ background-position:9px -544px ;border-bottom:1px solid #3e3e3e ;}
 #right_menu .rm-bottom .icon_editor:hover{ background-position: -60px -544px }
-#right_menu .rm-bottom .icon_top{ background-position:10px -600px }
+#right_menu .rm-bottom .icon_top{ background-position:10px -600px;border-bottom:1px solid #3e3e3e ; }
 #right_menu .rm-bottom .icon_top:hover{ background-position: -59px -600px }
 
 #ad_box{  width:100%;  position: fixed;  bottom:0;  z-index: 1000;  height: 150px; margin: auto;  background: rgba(0,0,0,0.5) bottom;  }

@@ -11,7 +11,7 @@ $(function(){
     nav_item_one.hover(
         function(){
             nav_item_one.find('.dropdown-db').css('display','block');
-            nav_item_one.css({'border':'1px solid #f3f3f3','border-top':'none'});
+            nav_item_one.css({'border':'1px solid #f3f3f3'});
             turn_jt(nav_item_one.find('.header_icon'),1)
         },
         function(){
