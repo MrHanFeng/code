@@ -1,12 +1,13 @@
 body,html{padding:0px; margin:0px; color:#333333; font-family:"Microsoft YaHei",Arial,Lucida,Verdana,Helvetica,sans-serif; font-size:12px; line-height:110%;}
 h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd,form,img,p,label,a{margin:0; padding:0; border:none; list-style-type:none;text-decoration:none;}
 .clear{ clear: both}
+a{color:black}
 a:hover {color: orangered}
 .header_icon{  background: url("../images/header_v3.png");    }
 .menu_icon{  background: url("../images/menu_icon.png");      }
 .cate_icon{  background: url("../images/index_icon_v2.png");  }
 .index_icon{  background: url("../images/index_icon.png");  }
-.slide_icon{  background: url("../images/next.png");  }
+.slide_icon{  background: url("../images/next.png");  opacity: 0;}
 .credit{  background: url("../images/credit.png");  }
 .menu_right_icon{  background: url("../images/rc_icon_all.png");  }
 .fa{  color: #b9b9b9;  }
@@ -1559,5 +1560,5 @@ a:hover {color: orangered}
 #right_menu .rm-bottom .icon_top{ background-position:10px -600px;border-bottom:1px solid #3e3e3e ; }
 #right_menu .rm-bottom .icon_top:hover{ background-position: -59px -600px }
 
-#ad_box{  width:100%;  position: fixed;  bottom:0;  z-index: 1000;  height: 150px; margin: auto;  background: rgba(0,0,0,0.5) bottom;  }
+#ad_box{  display:none;width:100%;  position: fixed;  bottom:0;  z-index: 1000;  height: 150px; margin: auto;  background: rgba(0,0,0,0.5) bottom;  }
 #ad_box .ad_close{  background: url("../images/ad_close.png") no-repeat;  width:39px;  height:39px;  margin-left: 100px;  transform:rotate(-0deg);  cursor: pointer;  }

@@ -80,6 +80,10 @@ $(function(){
             turn_jt(high_sh.find('.header_icon'),0);
         }
     );
+    //high_sh.blur(function(){
+    //    high_sh.find('.more_info').css('display','none');
+    //    turn_jt(high_sh.find('.header_icon'),0);
+    //});
     /*横向菜单*/
     var menu=$('.hd-menu .mn-li');
     menu.hover(
@@ -129,6 +133,7 @@ $(function(){
         }, function(){}
     );
     //自动切换，左右点击切换
+    var slide_icon =ad_big_imgs.find('.slide_icon');
     var icon_pre=ad_big_imgs.find('.icon_pre');
     var icon_next=ad_big_imgs.find('.icon_next');
     roll();
@@ -139,6 +144,7 @@ $(function(){
         ad_big_imgs.hover(
             function(){
                 clearInterval(auto_tran);
+                slide_icon.animate({opacity:0.6});
                 icon_pre.click(function(){
                     if(i==0)i=6;
                     i-=1;
@@ -151,6 +157,7 @@ $(function(){
                 });
             },
             function(){
+                slide_icon.animate({opacity:0});
                 roll();
             }
         );
@@ -172,16 +179,15 @@ $(function(){
 
     /*中间高高滚图下边的图片*/
     var ad_small_img=$('#main .ad_small_imgs img');
+    var ad_small_li=$('#main .ad_small_imgs li');
     ad_small_img.hover(
         function(){
+            ad_small_li.animate({width:100},'fast');
+            //ad_small_li.css({width:100});
+            var li =$(this).parent().parent();
+            li.animate({width:136},'fast');
             $(this).animate({left:-100},'fast');
-            var li =$(this).parent().parent();
-            li.css('width','135px');
-        },function(){
-            $(this).animate({left:0},'fast');
-            var li =$(this).parent().parent();
-            li.css('width','100px');
-        }
+        },function(){}
     );
 
 
@@ -206,7 +212,7 @@ $(function(){
             /*切换导航与对应内容*/
             var showlt_tit=$(this).find('.showlt_tit li');
             var showlt_con=$(this).find('.showlt_con .st-cn-right ');
-            showlt_tit.click(function(){
+            showlt_tit.hover(function(){
                 showlt_tit.removeClass('st-li-hover');
                 $(this).addClass('st-li-hover');
                 var key=$(this).index();
