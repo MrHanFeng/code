@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实例5.JQuery与HTML,CSS操作</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+        .contain{
+            width: 1200px;
+            height: 800px;
+            background: green;
+            margin: 0 auto;
+        }
+        .div1, .div2, .div3, .div4{
+            width: 350px;
+            height: 200px;
+            background: #ffffff;
+            float: left;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contain" test="test">
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4"></div>
+        <div style="clear: both;"></div>
+    </div>
+</body>
+<script>
+   $(function(){
+       var div_fn = $('.div');
+       div_fn.click(function(){
+
+
+            //    查看属性
+           var a = $(this).attr('class');
+           alert(a);
+           //     设置属性
+           $(this).attr('class','');
+
+
+//           $(this).removeAttr('test','');
+       })
+   })
+</script>
+</html>

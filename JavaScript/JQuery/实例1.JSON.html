@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON练习/JQuery实例</title>
+    <style>
+        a{
+            text-decoration:none ;
+            color:red;
+            background: greenyellow;
+        }
+        p{
+            font-size: 12px;
+
+        }
+        .contain{
+            font-family: 'Microsoft YaHei';
+            width:1200px;
+            margin: 0 auto;
+            background:  #ffffff;
+            padding: 10px;;
+        }
+        .div{
+            width: 440px;
+            height:250px;
+            background:#f3f3f3;
+            float:left;
+            margin-left: 65px;
+            margin-top: 20px;
+            padding: 30px;;
+        }
+        button {border: 0; float:left; margin: 10px; background: #00993f; cursor: pointer; outline: none; width:120px; height:40px; }
+        button:hover{background: #007537; }
+    </style>
+</head>
+<body>
+    <div class="contain">
+        <div class="div">
+            <h3>测试1：JSON数值类型转换</h3>
+            <p>
+                var json_str ="{'山西':{'太原':['小店区','尖草坪区'], '大同':['南郊区','大同县'] }}";<br><br>
+                //    alert(typeof json_str);//string<br><br>
+                var new_json_str = <font title="//数值转换->注意要加（）括号括起来，否则报语法错误"><a href="" onclick="tranform()">eval("("+json_str+")")</a></font>;<br><br><br>
+                //    alert(typeof new_json_str);//string<br>
+            </p>
+            <button onclick="tranform()">转换</button>
+        </div>
+        <div class="div">
+            <h3> 测试2：遍历方法</h3>
+            <h5> 知识点：对象遍历方法(for in) ;数组for循环;</h5>
+            <button onclick="xunhuan()">循环输出省市区</button>
+        </div>
+        <div class="div">
+            <h3> 测试3：length属性</h3>
+            <h4> 知识点：对象无length属性 数组有length属性</h4><br><br>
+            <p>
+                var json_data={
+                '山西':{
+                '太原':<font color="red">['小店区','尖草坪区']</font>,
+                '大同':['南郊区','大同县']
+                },
+                '安徽':{
+                '合肥':['包河区','新站区'],
+                '芜湖':['三山区','镜湖区']
+                }
+                };
+            </p>
+            <button onclick="test(0)">点输出数组.length</button>
+            <button onclick="test(1)">循环输出对象.length</button>
+        </div>
+        <div class="div">
+            <h3>
+                测试4....
+            </h3>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+</body>
+<script>
+    /**
+     *  JSON {}包括的是对象  []包括的是数组
+     *  注意逐层嵌套问题
+     *  对象用for in 遍历
+     *  数组用for(;;)循环即可
+     *  @important JSON数值类型的转换
+     */
+
+//    JSON数据库
+    var json_data={
+        山西:{
+            '太原':['小店区','尖草坪区'],
+            '大同':['南郊区','大同县']
+        },
+        '安徽':{
+            '合肥':['包河区','新站区'],
+            '芜湖':['三山区','镜湖区']
+        }
+    };
+    //      测试一：JSON数值类型转换
+    function tranform(){
+        var json_str ="{'山西':{'太原':['小店区','尖草坪区'], '大同':['南郊区','大同县'] }}";
+        alert("转换前的数据类型："+typeof json_str);//string
+        var new_json_str = eval("("+json_str+")");//数值转换->注意要加（）括号括起来，否则报语法错误
+        alert("转换后的数据类型："+typeof new_json_str);//string
+    }
+
+
+
+    //    测试二：对象遍历方法用for in ;数组用for(;;)循环即可
+    function xunhuan(){
+        for(var i in json_data){
+            alert('===='+i+"省下的======");//'山西','安徽'
+            for(var j in json_data[i]){
+                alert('----'+j+'市有：-------');//输出所有市
+                for(var k=0;k<json_data[i][j].length;k++){
+                    alert(json_data[i][j][k]);//输出所有区
+                }
+            }
+        }
+    }
+
+        //    测试三：对象不可以输出.length 数组可以
+    function test(a){
+        if(a){
+            alert('对象->json_data.length的结果是：   '+json_data.length);
+        }else{
+            alert('数组->json_data[山西][太原].length的结果是：   '+json_data['山西']['太原'].length);
+        }
+    }
+
+</script>
+</html>

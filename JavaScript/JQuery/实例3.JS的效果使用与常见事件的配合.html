@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!--
+    知识点：
+       1.
+        $(this). :JQuery用于表示指向本对象
+        this. :在JS中表示指向本对象
+
+
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery效果函数与常见事件</title>
+    <script src="js/jquery-1.8.0min.js"></script>
+    <style>
+        .contain{
+            width: 1200px;
+            /*height: 600px;*/
+            margin:0 auto;
+            background: #f3f3f3;
+        }
+        .div1, #div2, .div3, .div4{
+            width: 500px;
+            height: 250px;
+            background: green;
+            margin: 30px;
+            float: left;
+            text-align: center;
+        }
+        input{
+            margin:5px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="contain">
+    <div class="div1">
+        <h3>效果一：hide()</h3>
+        <p>
+            注：隐藏显示的元素
+            参数:<br>
+            speed:三种预定速度之一的字符串("slow","normal", or "fast")或表示动画时长的毫秒数值(如：1000)<br>
+            easing:(Optional) 用来指定切换效果，默认是"swing"，可用参数"linear"<br>
+            fn:在动画完成时执行的函数，每个元素执行一次。
+
+        </p>
+        <input type="submit" value="双击隐藏此块（dblclick）" class="div1_ip">
+    </div>
+    <div id="div2">
+        <h3>效果二:show()</h3>
+        <p>
+            注：显示隐藏的匹配元素。
+            参数:<br>
+            speed:三种预定速度之一的字符串("slow","normal", or "fast")或表示动画时长的毫秒数值(如：1000)<br>
+            easing:(Optional) 用来指定切换效果，默认是"swing"，可用参数"linear"<br>
+            fn:在动画完成时执行的函数，每个元素执行一次。
+        </p>
+
+        <input type="submit" value="失去焦点时显示第一块隐藏的内容（blur）" class="div2_ip">
+
+    </div>
+    <div class="div3" style="height: 300px;">
+       <font color="#ffbc67"> <h3>效果三:自定义animate()</h3></font>
+        <p>
+            注：用于创建自定义动画的函数。<br>
+            参数:<br>
+            <font color="#00008b"> params:一组包含作为动画属性和终值的样式属性和及其值的集合<br></font>
+            speed:三种预定速度之一的字符串("slow","normal", or "fast")或表示动画时长的毫秒数值(如：1000)<br>
+            easing:要使用的擦除效果的名称(需要插件支持).默认jQuery提供"linear" 和 "swing".<br>
+            fn:在动画完成时执行的函数，每个元素执行一次。<br>
+        </p>
+        <input type="submit" value="点击执行自定义效果（click）" class="div3_ip" title="这里设置的是改变第一块DIV的大小然后回归">
+    </div>
+
+    <div class="div4"  style="height: 300px;">
+        <h3>效果四：淡入淡出:toggle()</h3>
+
+        <p>
+            1.toggle()事件-- <font color="#00008b">单击切换事件</font> (toggle(fn1,fn2,fn3,....),每次单击后依次调用函数<br>
+            2.toggle()效果<font color="#00008b">转换函数控制层的显示和隐藏</font>.toggle(false):隐藏设置,toggle(true):显示设置
+        </p>
+        <input type="submit" value="(toggle事件)" title="toggle(fn, fn2, [fn3, fn4, ...])" class="div4_ip1" >
+        <input type="submit" value="(toggle效果)点击触发隐藏修改" title='toggle([speed],[easing],[fn])' class="div4_ip3" >
+        <input type="submit" value="(slideTogglee效果)点击触发隐藏效果" class="div4_ip4" >
+        <input type="submit" value="鼠标停触发func1，离开c触发func2(hover事件)" class="div4_ip2">
+
+    </div>
+    <div style="clear: both"></div>
+</div>
+</body>
+<script>
+    $(function(){
+        /*效果一 hide*/
+        var div1=$('.div1');
+        var div1_ip=$('.div1_ip');//获取第一个input
+        div1_ip.dblclick(function(){
+//        div1.hide();//立刻消失，无动画
+        div1.hide(300,'swing');//默认的消失效果【摇摆】
+//            div1.hide(500,'linear');//在左上角消失【直线】
+        });
+
+        /*效果二 show*/
+        var div2_ip=$('.div2_ip');//获取第二个input
+        div2_ip.blur(function(){
+//        div1.show();//立刻显示，无动画
+//        div1.show(500);//默认的消失效果【摇摆】
+            div1.show(800,'linear');//在左上角消失【直线】
+        });
+
+        /*效果三 animate*/
+        var div3_ip=$('.div3_ip')//获取第三个input
+        div3_ip.click(function(){
+            div1.animate(
+                    {width:1000,height:500,opacity:0},//参数1
+                    1000,//参数2
+                    'swing',//参数3
+                    function(){div1.animate({width:500,height:250,opacity:1})}//参数4
+            );
+        });
+        /*效果四 toggle*/
+        var div4=$('.div4');//获取第四个div
+        var div4_ip1=$('.div4_ip1');//获取第一个input
+        var div4_ip3=$('.div4_ip3');//获取第一个input
+        var div4_ip4=$('.div4_ip4');//获取第一个input
+        var div4_ip2=$('.div4_ip2');//获取第二个input
+        div4_ip1.toggle(
+            function(){
+                alert(1);
+                $(this).addClass("selected");
+            },function(){
+                alert(2);
+                $(this).removeClass("selected");
+            }
+//            ,function(){
+//                alert(3)
+//            }
+        );
+        div4_ip2.hover(
+                //参数一 on
+                function(){
+                    $(this).addClass("hover");
+                },
+                //参数二 out
+                function(){
+                    $(this).removeClass("hover");
+                }
+        );
+        div4_ip3.click(function(){
+            div1.toggle('slow','linear')
+        });
+
+        div4_ip4.click(function(){
+            div1.slideToggle()
+        });
+
+    }); /*end $()*/
+
+</script>
+</html>

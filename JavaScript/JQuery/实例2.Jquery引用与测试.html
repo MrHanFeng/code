@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--
+    一.引用JQuery方法：
+        方法1：网络引用
+            <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+        方法2：本地引用
+            <script src="js/jquery-2.1.4.min.js"></script>
+
+    二.JQuery的各个节点获取方式【见下边实例】
+        ID:
+        Class:
+        tag:
+
+    三.拓展知识点
+        1.JQuery默认在【  $(functon(){}) 】中执行
+        2.JQuery的
+          $(function(){})  默认实在脚本加载结束后才执行，类似于JS中 windows.onload()
+        3. innerHTML()/innerText()：在纯JS下获取内容；
+           html()/text()：为在JQuery下的获取方式，并且加入了设置功能
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery引用与选择器测试</title>
+    <!--<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>-->
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+        .contain{
+            width: 1200px;
+            /*height: 600px;*/
+            margin:0 auto;
+            background: #f3f3f3;
+        }
+        .div1, #div2, .div3, .div4{
+            width: 500px;
+            height: 200px;
+            background: green;
+            margin: 30px;
+            float: left;
+            text-align: center;
+        }
+        input{
+            margin:5px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="contain">
+    <div class="div1">
+        <h4>1.CLASS的节点获取</h4>
+        <input type="submit" value="JS原生方法获取节点" onclick="div1_fn()">
+        <input type="submit" value="JQuery方法获取节点" class="div1_ck">
+    </div>
+
+    <div id="div2">
+        <h4>2.ID的节点获取</h4>
+        <input type="submit" value="JS原生方法获取节点" onclick="div2_fn()">
+        <input type="submit" value="JQuery方法获取节点" id="div2_ck">
+    </div>
+
+    <div class="div3">
+            <h4>3.tag的节点获取，获取元素选择器</h4>
+        <p>
+            jQuery 元素选择器<br>
+            注：jQuery 使用 CSS 选择器来选取 HTML 元素。<br>
+            例：$("div") 选取 div 元素。<br>
+             $('div.input')选择div元素下的input元素
+        </p>
+        <input type="submit" value="测试">
+    </div>
+
+    <div class="div4">
+        <h4>4.获取属性选择器</h4>
+    <p>
+        jQuery 属性选择器<br>
+        注：jQuery 使用 Html属性来选择带有给定属性的元素。<br>
+        例：$('input[name="sex"]');选择input元素下属性名为:name;属性值为:sex的<br>
+        <input type="text" value="我是input里的内容" name="test"><br>
+    </p>
+    </div>
+
+    <div style="clear: both;"></div>
+</div>
+
+</body>
+<script>
+    /*测试是否引入JQuery成功*/
+    $(function(){
+//        alert('引入JQuery成功')
+    });
+
+/*一。CLASS获取节点*/
+    //纯JS方法
+    function div1_fn(){
+        var div1=document.getElementsByClassName('div1')[0];
+        alert('这里用的是原生JS获取节点的方法：'+div1.innerHTML);
+    }
+
+    //JQUERY方法
+    $(function(){
+        var div1_ck = $('.div1_ck');
+        div1_ck.click(function(){
+           alert('这里用的是JQuery获取节点的方法：'+$('.div1').html());
+            $('.div1').html('这是重新设置的值，运用了html()');
+            alert('我用了html()重新设置了值后：');
+            alert('这里用的是JQuery获取节点的方法：'+$('.div1').html());
+        });
+//        alert(div1_ck.html())
+    })
+
+
+/*二。ID获取节点*/
+    //纯JS方法
+    function div2_fn(){
+        var div2=document.getElementById('div2');
+        alert('这里用的是原生JS获取节点的方法：'+div2.innerText);
+    }
+    //JQUERY方法
+    $(function(){
+        var div2_ck = $('#div2_ck');
+        div2_ck.click(function(){
+            alert('这里用的是JQuery获取节点的方法：'+$('#div2').text());
+        });
+//        alert(div1_ck.html())
+    })
+
+/*三。获取元素选择器 tag*/
+   var at = $(".div3 input");
+    at.click(function(){
+        alert('这里是第三块的内容'+at.html());
+    })
+
+/*四。获取属性选择器 */
+    var st =  $("input[name='test']")
+    st.click(function(){
+        alert('这里是第四块：TEST的内容'+st.html());
+    })
+
+</script>
+</html>

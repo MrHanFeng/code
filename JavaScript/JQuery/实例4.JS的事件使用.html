@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <style>
+        .contain{
+            width: 1200px;
+            /*height: 600px;*/
+            margin:0 auto;
+            background: #f3f3f3;
+        }
+        .div1, .div2, .div3,.div4{
+            width: 500px;
+            height: 250px;
+            background: green;
+            margin: 30px;
+            float: left;
+            text-align: center;
+        }
+        input{
+            margin:5px;
+        }
+        .div{
+            width: 100px;
+            height:400px;
+            position: fixed;
+            background: green;
+            top:50px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="contain" >
+    <div class="div1">
+        <h3>on事件</h3>
+        <p>
+            在选择元素上绑定一个或多个事件的事件处理函数。<br>
+            events:一个或多个用空格分隔的事件类型和可选的命名空间，如"click"或"keydown.myPlugin" 。<br>
+            selector:一个选择器字符串用于过滤器的触发事件的选择器元素的后代<br>
+            data:当一个事件被触发时要传递event.data给事件处理函数。<br>
+            fn:该事件被触发时执行的函数。
+        </p>
+        <input type="submit" class="ip1" value="执行on事件">
+    </div>
+    <div class="div2">
+        <h3>resize事件</h3>
+        <p>
+            在每一个匹配元素的resize事件中绑定一个处理函数。<br><br>
+            改变页面窗口的大小时触发<br>
+        </p>
+    </div>
+    <div class="div3">
+        <h3>bind/unbind事件</h3>
+    </div>
+    <div class="div4">
+        <h3>select事件</h3>
+        <!--<p>-->
+            <!--触发每一个匹配元素的select事件-->
+        <!--</p>-->
+    </div>
+    <div class="div">
+        <h3>scroll事件</h3>
+        <p>在每一个匹配元素的scroll事件中绑定一个处理函数。<br><br>
+            在滚动浏览器时触发
+        </p>
+        <div class="con"></div>
+    </div>
+    <div style="clear: both;"></div>
+    <div style="height: 500px;border: 1px solid black"></div>
+</div>
+</body>
+<script>
+    $(function(){
+        var div1=$('.div1');
+        div1.find('.ip1').on('click',{name:'hanfeng'},function(e){
+            alert('我是函数要执行输出的数据：'+e.data.name)
+        })
+
+
+            var div=$('.div');
+            $(window).scroll(function(){
+                var scroll=$(window).scrollTop();
+                div.find('.con').text('scroll滚动了的距离为：'+scroll);
+            });
+        $(window).resize(function(){
+            alert('触发了resize事件，请不要改变浏览器宽度')
+        })
+
+
+
+    });
+
+
+</script>
+</html>
