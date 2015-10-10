@@ -1,0 +1,51 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+ul,li {
+    list-style-type: none;
+}
+.reg-box {
+    padding: 10px;
+    border:1px solid #ddd;
+    display: block;width: 400px;
+}
+.reg-box .r-list {
+    margin-bottom: 10px;
+}
+.form-cls {
+    width: 240px;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+.reg-box .title {
+    width: 60px;
+    display: inline-block;
+    padding-right: 10px;
+    text-align: right;
+}
+.but-cls {
+    width: 80px;
+    text-align: center;
+    color: #fff;
+    background: orangered;
+    border:none;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+}
+#table-id {
+    width: 600px;
+    border-spacing: 0;
+    border-collapse: collapse;
+    empty-cells: show;
+    margin-top: 20px;
+}
+#table-id td {
+    border: 1px solid #cccccc;
+    padding: 5px;
+}
+#table-id thead td {
+    text-align: center;
+    font-weight: bold;
+}

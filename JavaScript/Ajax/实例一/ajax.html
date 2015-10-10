@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax实例</title>
+    <script src="js/jquery.mini.js" type="text/javascript"></script>
+    <script>
+        $(function(){
+            $('#sub-id').click(function(){
+                $.get('index.php',{id:2},function(msg){
+                    if(typeof(msg) !='object'){
+                        msg=eval('('+msg+')');
+                    }
+                    alert(msg[0]['authority'])
+                });
+            });
+        })
+    </script>
+</head>
+<body>
+<input type="button" id="sub-id" value="点我提交">
+</body>
+</html>

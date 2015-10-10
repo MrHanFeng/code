@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax实例</title>
+    <script src="js/jquery.mini.js" type="text/javascript"></script>
+    <script>
+        $(function(){
+            $('#sub-id').click(function(){
+                /*$.get('index.php',{id:2},function(data){
+                    if(typeof(data)!='object'){
+                        data=eval('('+data+')');
+                    }
+                    alert(data[2]['info'])
+                });*/
+                /*$.post('index.php',{id:2,name:'名字',sex:12},function(data){
+                    if(typeof(data)!='object'){
+                        data=eval('('+data+')');
+                    }
+                    alert(data[3]['info'])
+                });*/
+                $.ajax({
+                    type:'POST',
+                    url:'index.php',
+                    data:{id:2,name:'名字'},
+                    success:function(data){
+                        alert(data[3]['info'])
+                    },
+                    error:function(data){
+                        alert('操作失败')
+                    },
+                    dataType:'json'
+                });
+            });
+        })
+    </script>
+</head>
+<body>
+<input type="button" value="点我一下" id="sub-id">
+</body>
+</html>
