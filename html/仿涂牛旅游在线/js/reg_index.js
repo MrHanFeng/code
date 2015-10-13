@@ -2,9 +2,6 @@
  * Created by hanfeng on 2015/10/12.
  */
     $(function(){
-
-
-
         var nickname=$('.nickname');
         var username=$('.username');
         var password=$('.password');
@@ -29,33 +26,38 @@
             username.val('')
         });
         username.blur(function(){
+
             $.ajax({
                url:'php/register.php?action=1',
                type:'POST',
                 data:{user_username:username.val()},
-               success:function(){
+               success:function(f){
+                   if(f>=1){
+                       tip_fn('user_mes',0,'帐号存在');return;
+                   }
                    if(username.val().length<6 || username.val().length>18) {
                        tip_fn('user_mes',0,'非6-18之间');
                        return;
                    };
-                   tip_fn('user_mes',1,'帐号可用');
+                   tip_fn('user_mes',1,'正确');
                },
                error:function(){
                    tip_fn('user_mes',0,'程序错误');
                }
             });
-            username.val('')
         });
 
+
         /*密码操作*/
+        var last_pwd;
+
         password.keyup(function(){
-            var last_pwd="'"+password.val()+"'";
             var pwd_len=password.val().length;
             var pwd_mes=$('.pwd_mes');
             var pwd_strong=$('.pwd_strong');
             if(pwd_len<6){
                 tip_fn('pwd_mes',0,'密码过短');
-                pwd_strong.css('display','inline-block')
+                pwd_strong.css('display','inline-block');
                 pwd_strong.find('.li_one').css('background','red');
             }else if(pwd_len<10 ){
                 pwd_strong.find('.li_two').css('background','yellow');
@@ -64,25 +66,37 @@
             }else if(pwd_len<16) {
                 pwd_strong.find('.li_three').css('background', 'green');
                 tip_fn('pwd_mes',1,'强度高');
-            }else{
+            }
+            if(pwd_len>16){
                 pwd_strong.find('.li_one').css('background','none');
                 pwd_strong.find('.li_two').css('background','none');
                 pwd_strong.find('.li_three').css('background','none');
-                password.val('');
-                tip_fn('pwd_mes',0,'密码17内');
+                password.val(last_pwd);
+            }
+            last_pwd=password.val();
+        });
+        password.blur(function(){
+            var pwd_len=password.val().length;
+            if(pwd_len>6){
+                tip_fn('pwd_mes',1,'正确');
+            }else{
+                tip_fn('pwd_mes',0,'长度不对');
             }
         });
 
         /*确认密码操作*/
 
         password_two.blur(function(){
-            if(password_two.empty()){
+            if(password_two.val().length==0){
                 tip_fn('pwd2_mes',0,'密码为空');
             }
         });
-        password_two.keydown(function(){
+        password_two.keyup(function(){
+            //alert(password.val()+'|||'+password_two.val());
             if(password_two.val()!=password.val()){
                 tip_fn('pwd2_mes',0,'密码不一致');
+            }else{
+                tip_fn('pwd2_mes',1,'正确');
             }
         });
 
@@ -197,22 +211,114 @@
         });
 
 
-
         /*确认同意条款*/
-        accept.toggle(
+        accept.click(function(){
+            var is_this=$(this);
+            if(is_this.attr('checked')=='checked'){
+                next.css({'background':'orangered','cursor':'pointer'});
+                is_this.removeAttr("checked", true);
+            }else{
+                next.css({'background':'#999999','cursor':'auto'});
+            }
+        });
+        /*accept.toggle(
             function(){
-                next.css({'background':'orange','cursor':'pointer'})
-                accept.prop("checked", true);
+                next.css({'background':'orangered','cursor':'pointer'});
+                var is_this=$(this);
+                /!*setTimeout(function(){
+                    is_this.attr("checked", true);
+                },500);*!/
+                $(this).removeAttr("checked");
+                alert(1111)
+                //is_this.attr("checked", true);
             },
             function(){
-                next.css({'background':'#999999','cursor':'none'})
+                next.css({'background':'#999999','cursor':'auto'});
+                var is_this=$(this);
+                is_this.attr("checked", true);
+                //$(this).removeAttr("checked");
             }
-        );
+        );*/
 
+        //accept.click(
+        //    function(){
+        //        if(accept.val()==1){
+        //            accept.val('0');
+        //            accept.removeAttr("checked");
+        //            next.css({'background':'#999999','cursor':'auto'});
+        //        }else{
+        //            accept.val('1');
+        //            accept.attr("checked", true);
+        //            next.css({'background':'orangered','cursor':'pointer'});
+        //        }
+        //    }
+        //);
+        //accept.click(
+        //function(){
+        //    next.css({'background':'orangered','cursor':'pointer'});
+        //    accept.attr("checked", true);
+        //},
+        //function(){
+        //    next.css({'background':'#999999','cursor':'auto'})
+        //});
+
+
+        /*点击下一步，验证并提交信息*/
+        next.click(function(){
+            //alert(r_e('user_mes'));
+            if(accept.val()==0){
+                return;
+            }
+            if(r_e('nick_mes')&&r_e('user_mes')&&r_e('pwd_mes')&&r_e('pwd2_mes')&&r_e('tel_mes')&&r_e('id_mes')&&r_e('city_mes')){
+                transform_data()
+            }else{
+                alert('请输入正确信息');
+            }
+        });
+
+
+        /* 传输数据给后台*/
         function transform_data(){
+            /*获取爱好*/
+            var hobby=$('input[name=hobby]');
+            var hobby_data='';//存放爱好的值
+            for(var i=0;i<hobby.length;i++){
+                //alert(hobby[i].checked);//on
+                //alert(hobby.eq(i).val());//值
+                //alert(hobby.eq(i).text());//undefined
+                if(hobby[i].checked){
+                    hobby_data +=hobby.eq(i).val()+',';
+                }
+            }
+            /*获取性别*/
+            var sex=$('input[name=sex]:checked').val();
+            var city=$('.sheng').val()+','+$('.shi').val()+','+$('.qu').val();
+            var tran_data= {
+                'user_nickname' :rt_tip_mes('nickname'),
+                'user_username' : rt_tip_mes('username') ,
+                'user_password': rt_tip_mes('password') ,
+                'user_password2': rt_tip_mes('password2') ,
+                'user_sex'      : sex ,
+                'user_hobby'    : hobby_data ,
+                'user_mobile'   : rt_tip_mes('tel_num') ,
+                'user_id_card'  : rt_tip_mes('id_num') ,
+                'user_city'     : city
+            };
 
+            $.ajax({
+                url:'php/register.php?action=3',
+                type:'POST',
+                data:tran_data,
+                success:function(re){
+                    if(re){
+                        alert('注册成功');
+                    }else{
+                        alert('注册失败');
+                    }
+                },
+                error:function(){}
+            })
         }
-
 
 
 
@@ -230,6 +336,23 @@
             }else{
                 cls.css('color','red');
             }
+        }
+
+        /**
+         * 获取不同name的input的节点
+         * @param name  input的name值
+         * @returns {*}
+         */
+        function rt_tip_mes(name){
+            var cls=$('input[name='+name+']');
+            return cls.val();
+        }
+
+        /*判断每个提示框里的内容是否正确*/
+        function r_e(cls){
+            var cls=$('.'+cls);
+            if(cls.html()=='正确')return true;
+            return false;
         }
 
     });/*end jq*/

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>注册页面</title>
-    <script src="../js/jquery-1.8.0min.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/jquery-1.8.0min.js"></script>
+    <script src="js/reg_index.js"></script>
     <style>
         body{padding:0px; margin:0px; color:#333333; font-family: 'Microsoft YaHei'; font-size:14px; line-height:150%;}
         h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd,form,img,p,label,a{margin:0; padding:0; border:none; list-style-type:none;text-decoration:none;}
@@ -34,7 +34,7 @@
         .form .form_contain .form_left form .pwd_mes{float: right;width:62px;}
         .form .form_contain .form_left form .pwd_strong{float: right;width:45px;}
         .form .form_contain .form_left form .pwd_strong{display:none;text-align: center;height: 20px;line-height: 20px;vertical-align: top;}
-        .form .form_contain .form_left form .pwd_strong li{width:15px;height: 20px;float: left;margin: 0}
+        .form .form_contain .form_left form .pwd_strong li{width:15px;height: 20px;float: left;margin: 0;}
         /*.pwd_strong .li_one{background: red}*/
         /*.pwd_strong .li_two{background: yellow}*/
         /*.pwd_strong .li_three{background: green}*/
@@ -88,12 +88,12 @@
                         </li>
                         <li>
                             <span>性别：</span>
-                            <input type="radio" name="sex">男
-                            <input type="radio" name="sex" checked>女</li>
+                            <input type="radio" name="sex" value="男">男
+                            <input type="radio" name="sex" checked value="女">女</li>
                         <li><span>爱好：</span>
-                            <label><input type="checkbox" name="hobby[]" checked>看书</label>
-                            <label><input type="checkbox" name="hobby[]">跑步</label>
-                            <label><input type="checkbox" name="hobby[]">音乐</label>
+                            <label><input type="checkbox" name="hobby"  value="看书" checked>看书</label>
+                            <label><input type="checkbox" name="hobby" value="跑步">跑步</label>
+                            <label><input type="checkbox" name="hobby" value="音乐">音乐</label>
                             <label><input type="radio" name="select_hb" class="hb_one">全选</label>
                             <label><input type="radio" name="select_hb" class="hb_two">全不选</label>
                             <label><input type="radio" name="select_hb" class="hb_three">反选</label>
@@ -118,7 +118,7 @@
                             <span class="city_mes"></span>
                         </li>
                         <li>
-                            <span style="margin-left:70px;color:black;width:200px;"><label><input type="radio" name="accept" value="0"  >愿意接受旅游咨询免费信息</label></span>
+                            <span style="margin-left:70px;color:black;width:200px;"><label><input type="radio" name="accept" value="0" >愿意接受旅游咨询免费信息</label></span>
                         </li>
                         <li>
                             <input type="button" value="下一步" class="next" name="next" >
