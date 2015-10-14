@@ -310,7 +310,7 @@ $(function(){
         var cur= $(window).scrollTop();//目标main模块的滚动条对应的高度
         roll_fn(cur,dis,function(i){
             $(window).scrollTop(i);
-        },20,100)
+        },1,50)
     });
 
     /*设置黑色广告的关闭按钮旋转*/
@@ -365,13 +365,13 @@ $(function(){
         var ff=org;
         var test = setInterval(function(){
             if(org<aim){
-                if(ff>=aim){
+                if(ff>aim){
                     clearInterval(test);
                     return;
                 }
                 ff+=size;
             }else{
-                if(ff<=aim){
+                if(ff<aim){
                     clearInterval(test);
                     return;
                 }

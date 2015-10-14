@@ -11,6 +11,22 @@
         var accept=$('input[name=accept]');
         var next=$('input[name=next]');
 
+
+        /*登录注册的界面切换*/
+        var lo_re_tit=$('.form_top span');
+        var lo_re_con=$('.form_left form');
+        lo_re_tit.click(function(){
+            var key;
+            lo_re_tit.removeClass('t-hover');
+            $(this).addClass('t-hover')
+            key=$(this).index();
+            lo_re_con.removeClass('fm-hover')
+            lo_re_con.eq(key).addClass('fm-hover');
+        });
+
+
+
+
         /*昵称操作*/
         nickname.blur(function(){
             //alert(nickname.val().length);
@@ -212,55 +228,56 @@
 
 
         /*确认同意条款*/
-        accept.click(function(){
-            var is_this=$(this);
-            if(is_this.attr('checked')=='checked'){
-                next.css({'background':'orangered','cursor':'pointer'});
-                is_this.removeAttr("checked", true);
-            }else{
-                next.css({'background':'#999999','cursor':'auto'});
-            }
-        });
-        /*accept.toggle(
+        //accept.click(function(){
+        //    var is_this=$(this);
+        //    if(is_this.attr('checked')=='checked'){
+        //        next.css({'background':'orangered','cursor':'pointer'});
+        //        is_this.removeAttr("checked", true);
+        //    }else{
+        //        next.css({'background':'#999999','cursor':'auto'});
+        //    }
+        //});
+       /* accept.toggle(
             function(){
                 next.css({'background':'orangered','cursor':'pointer'});
                 var is_this=$(this);
-                /!*setTimeout(function(){
+                //设置一个超时器来设置，本来点击到了，防止它迅速清除，这是事件和选择框执行的先后顺序问题
+                setTimeout(function(){
                     is_this.attr("checked", true);
-                },500);*!/
+                },100);
                 $(this).removeAttr("checked");
-                alert(1111)
                 //is_this.attr("checked", true);
             },
             function(){
                 next.css({'background':'#999999','cursor':'auto'});
                 var is_this=$(this);
-                is_this.attr("checked", true);
-                //$(this).removeAttr("checked");
+                setTimeout(function(){
+                    $(this).removeAttr("checked");
+                },100);
             }
         );*/
 
-        //accept.click(
-        //    function(){
-        //        if(accept.val()==1){
-        //            accept.val('0');
-        //            accept.removeAttr("checked");
-        //            next.css({'background':'#999999','cursor':'auto'});
-        //        }else{
-        //            accept.val('1');
-        //            accept.attr("checked", true);
-        //            next.css({'background':'orangered','cursor':'pointer'});
-        //        }
-        //    }
-        //);
-        //accept.click(
-        //function(){
-        //    next.css({'background':'orangered','cursor':'pointer'});
-        //    accept.attr("checked", true);
-        //},
-        //function(){
-        //    next.css({'background':'#999999','cursor':'auto'})
-        //});
+        accept.click(
+            function(){
+                if(accept.val()==1){
+                    accept.val('0');
+                    accept.removeAttr("checked");
+                    next.css({'background':'#999999','cursor':'auto'});
+                }else{
+                    accept.val('1');
+                    accept.attr("checked", true);
+                    next.css({'background':'orangered','cursor':'pointer'});
+                }
+            }
+        );
+       /* accept.click(
+        function(){
+            next.css({'background':'orangered','cursor':'pointer'});
+            accept.attr("checked", true);
+        },
+        function(){
+            next.css({'background':'#999999','cursor':'auto'})
+        });*/
 
 
         /*点击下一步，验证并提交信息*/
@@ -269,6 +286,7 @@
             if(accept.val()==0){
                 return;
             }
+
             if(r_e('nick_mes')&&r_e('user_mes')&&r_e('pwd_mes')&&r_e('pwd2_mes')&&r_e('tel_mes')&&r_e('id_mes')&&r_e('city_mes')){
                 transform_data()
             }else{
@@ -304,14 +322,14 @@
                 'user_id_card'  : rt_tip_mes('id_num') ,
                 'user_city'     : city
             };
-
             $.ajax({
                 url:'php/register.php?action=3',
                 type:'POST',
                 data:tran_data,
                 success:function(re){
                     if(re){
-                        alert('注册成功');
+                        alert('注册成功,请登录');
+                        location.href=('register.html');
                     }else{
                         alert('注册失败');
                     }
