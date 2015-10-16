@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3基础属性</title>
+
+    <style>
+        body {
+            background: #f3f3f3;
+        }
+        .contain{
+            width:1200px;
+            margin:auto;
+            background: white;
+        }
+        .id_common_one{width:120px;height:120px;background: red;float:left;margin-left:30px;}
+        #id1, #id2, #id3, #id4, #id5,#id6,#id7,#id8,#id9,#id10,#id11{width:490px;height:200px;background: green;float:left;margin:15px;padding:0  40px;}
+        #id1 .id1_one{  width:120px;height:100px;margin: auto;background: red;  border-radius:50%; float:left }
+        #id1 .id1_two{  width:120px;height:100px;margin: auto;background: red;  box-shadow:20px 20px 10px #000000; float: left;margin-left:50px ; }
+        #id1 .id1_three{width:120px;height:100px;float:right;/*background:blue;*/
+        -webkit-border-image: url('images/border.png');
+            -moz-border-image: url('images/border.png');
+            -o-border-image: url('images/border.png');
+            border-image: url('images/whiteButton.png') 0 10 stretch stretch;
+        }
+
+        #id2 .id2_one{margin-left: 20px;width:120px; height:100px; background: url("images/bg.jpg") no-repeat;float: left;
+            background-size:120px 100px;  }
+        #id2 .id2_two{margin-left: 20px;width:120px; height:100px; /*background: url("images/bg.jpg") no-repeat;*/ float: left; border:10px dotted #000; ;
+            /*background-position: 0px 0px;*/
+            /*background-size:40px 40px;*/
+            /*background-origin:border-box;*/
+            /*background-origin:padding-box;*/
+            /*background-origin:content-box;*/
+        }
+        #id2 .id2_three{margin-left: 20px;width:40px; height:40px; background: url("images/bg.jpg") no-repeat; float: left; border:10px dotted black;  padding: 20px;
+            background-size:40px 40px;
+
+            /*background-position: 3px 3px;*/
+
+            /*background-origin绘制区域 padding是默认值*/
+            background-origin:border-box;
+           /* background-origin:padding-box;*/
+            /*background-origin:content-box;*/
+
+            /*background-clip 显示区域  padding是默认值*/
+            /*background-clip:border-box;*/
+           /* background-clip:padding-box;*/
+            background-clip:content-box;
+        }
+
+        #id7{
+            transition:width 1s ease  0.5s;
+        }
+        #id7:hover{
+            width:100px;
+        }
+
+        
+        @keyframes change_id10 {
+            0%{background: red}
+            50%{background: blue;width:100px;}
+            100%{background: yellow}
+        }
+        
+        #id10{
+            animation: change_id10 1s linear 1s infinite alternate;
+                        /*动画名, 时间, 方式, 延迟, 次数,    状态*/
+        }
+    </style>
+</head>
+<body>
+    <center><h1>CSS3基础属性</h1></center>
+    <div class="contain">
+        <center><h2>border边框,background背景</h2></center>
+        <div id="id1">
+            <h2>border-radius,box-shadow，border-image</h2>
+            <div class="id1_one"></div>
+            <div class="id1_two"></div>
+            <div class="id1_three"></div>
+
+        </div>
+        <div id="id2">
+            <h2>background-size,-origin,-clip</h2>
+            <div class="id2_one"></div>
+            <div class="id2_two">
+                记住clip大于origin就可以   clip小于origin会出现有部分被覆盖不显示
+            </div>
+            <div class="id2_three"></div>
+        </div>
+
+
+        <center><h2>transform转换</h2></center>
+        <div id="id3">
+            <h2>translate(x,y)，移动</h2>
+            <div class="id_common_one">原样，未添加CSS</div>
+            <div class="id_common_one" style="transform:translate(50px);">和左边红块的距离为80px,<br>其中左外边距30PX，CSS控制移动了50PX</div>
+        </div>
+        <div id="id4">
+            <h2>scale(x,y)，缩放</h2>
+            <div class="id_common_one">原样，未添加CSS</div>
+            <div class="id_common_one" style="transform: scale(0.9,0.9)">缩放为原来的0.8倍</div>
+            <div class="id_common_one" style="transform: scale(0.8,0.6)">X缩放为原来的0.8倍<br>Y缩放为原来的0.6倍</div>
+
+        </div>
+        <div id="id5">
+            <h2>rotate(angle)，角度旋转</h2>
+            <div class="id_common_one">原样，未添加CSS</div>
+            <div class="id_common_one" style="transform: rotate(10deg);">旋转了10度</div>
+            <div class="id_common_one" style="transform: rotate(50deg);">旋转了50度</div>
+
+        </div>
+        <div id="id6">
+            <h2>skew(x-angle,y-angle)，【倾斜】旋转</h2>
+            <div class="id_common_one">原样，未添加CSS</div>
+            <div class="id_common_one" style="transform: skew(10deg,10deg)">X旋转10度，Y旋转10度</div>
+            <div class="id_common_one" style="transform: skew(170deg,170deg)">X旋转170度，Y旋转170度</div>
+        </div>
+
+        <center><h2>transition,过渡 ；@keyframes，创建动画</h2></center>
+        <div id="id7">
+            鼠标悬停实现对width的过渡操作<br>transition: width (方式)1s(时间) linear(时间曲线) 2s开始时间 ;
+        </div>
+        <div id="id8">
+            注：@keyframes 规则用于创建动画。在 @keyframes 中规定某项 CSS 样式，就能创建由当前样式逐渐改为新样式的动画效果。<br>
+                <br>
+            <p>
+                @keyframes  动画名称{<br>
+                0%   {top:0px; background:red; width:100px;}<br>
+                100% {top:200px; background:yellow; width:300px;}<br>
+            }
+            </p>
+        </div>
+
+        <center><h2>animation执行动画</h2></center>
+        <div id="id9">
+            <p>
+                div{<br>
+                animation: myfirst 5s linear 2s infinite alternate;<br>
+                动画名,时间,方式,延迟,次数,状态<br>
+                }
+            </p>
+        </div>
+        <div id="id10">
+
+        </div>
+        <div style="clear:both"></div>
+</body>
+</html>
