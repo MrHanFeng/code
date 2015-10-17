@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS实例应用</title>
+    <style>
+        *{list-style-type: none;padding: 0;margin:0;}
+        a{    text-decoration: none;}
+        .contain{
+            width:1200px;
+            margin:auto;
+        }
+        #id1{
+            width:1000px;
+            height:300px;
+            margin:auto;
+            border:1px dotted black;
+            padding: 0 99px;
+        }
+        #id1 .menu li{
+            float:left;
+            width:100px;
+            height:50px;
+            /*background: red;*/
+            margin-left: 2px;
+            text-align: center;
+            perspective: 4000px;
+        }
+        #id1  a{
+            display: block;
+            width: 120px;
+            height: 50px;
+            color: #ffffff;
+            text-decoration: none;
+            font: 16px 'Microsoft YaHei';
+            /* 加入渐变动画效果 */
+            transition: all 0.5s;
+            transform-style: preserve-3d;
+        }
+        #id1 .item{
+            display:block;
+            width:100px;
+            height:50px;
+            line-height:50px;
+            float: left;
+            margin-left:2px;
+            transition: all 0.5s;
+        }
+        #id1 .chinese{
+            background: #4c79ff;
+            /* Z轴移动25px */
+            transform: translateZ(25px);
+        }
+        #id1 .english{
+            background: red;
+            transform: translateZ(25px) rotateX(-90deg);
+            margin-top:-25px;
+        }
+        #id1 a:hover {
+            /* 实现整个向后倒 */
+            transform: rotateX(90deg);
+        }
+
+        #id1 a:hover .english{
+            margin-top:0;
+            transform: translateZ(0px) rotateX(-90deg);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="contain">
+        <div id="id1">
+            <center><h2>3D导航</h2></center>
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a href="">
+                            <span class="chinese item">首页</span>
+                            <span class="english item">home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="chinese item">首页</span>
+                            <span class="english item">home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="chinese item">首页</span>
+                            <span class="english item">home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="chinese item">首页</span>
+                            <span class="english item">home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="chinese item">首页</span>
+                            <span class="english item">home</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div id="id2"></div>
+        <div id="id3"></div>
+        <div id="id4"></div>
+        <div id="id5"></div>
+        <div id="id6"></div>
+        <div id="id7"></div>
+        <div id="id8"></div>
+    </div>
+</body>
+</html>
