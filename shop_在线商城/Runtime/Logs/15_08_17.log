@@ -1,0 +1,30 @@
+[ 2015-08-17T08:57:40+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/admin
+ERR: 无法加载控制器:Index
+
+[ 2015-08-17T08:57:46+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/admin/login
+ERR: 无法加载控制器:login
+
+[ 2015-08-17T08:57:53+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/admin/manger/login
+ERR: 无法加载控制器:manger
+
+[ 2015-08-17T08:58:10+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/admin/manager/login
+ERR: 无法加载控制器:manager
+
+[ 2015-08-17T08:58:23+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/admin/Manager/login
+ERR: 无法加载控制器:Manager
+
+[ 2015-08-17T09:23:55+08:00 ] 127.0.0.1 /buy_tp/shop/
+ERR: Syntax Error in template "E:/xampp/htdocs/buy_tp/shop/Home/View\Index\index.html"  on line 100 "{section name=v}" missing "loop" attribute
+
+[ 2015-08-17T09:24:06+08:00 ] 127.0.0.1 /buy_tp/shop/
+ERR: Syntax Error in template "E:/xampp/htdocs/buy_tp/shop/Home/View\Index\index.html"  on line 100 "{section name=v loop=$}"  - Unexpected "}", expected one of: "{" , "identifier"
+
+[ 2015-08-17T10:12:24+08:00 ] 127.0.0.1 /buy_tp/shop/
+ERR: Syntax Error in template "E:/xampp/htdocs/buy_tp/shop/Home/View\Index\index.html"  on line 100 "{section  loop=$s}" missing "name" attribute
+
+[ 2015-08-17T10:24:47+08:00 ] 127.0.0.1 /buy_tp/shop/
+ERR: Syntax Error in template "E:/xampp/htdocs/buy_tp/shop/Home/View\Index\index.html"  on line 102 "&lt;a href=&quot;{$smarty.const.__MODULE__}/Goods/detail/goods_id/{$v.goods_id}&quot;&gt;&lt;img src=&quot;{$smarty.const.IMG_UPLOAD}{$$goods_hot[v].goods_small_img}&quot; alt=&quot;{$v.goods_name}&quot; class=&quot;goodsimg&quot;&gt;&lt;/a&gt;&lt;br /&gt;"  - Unexpected "$", expected one of: "{" , "identifier"
+
+[ 2015-08-17T10:28:53+08:00 ] 127.0.0.1 /buy_tp/shop/
+ERR: Syntax Error in template "E:/xampp/htdocs/buy_tp/shop/Home/View\Index\index.html"  on line 100 "{section name=v loop=$goods_hot &lt;!-- max=3 step=2 start=0 show=false --&gt;}"  - Unexpected "--"
+

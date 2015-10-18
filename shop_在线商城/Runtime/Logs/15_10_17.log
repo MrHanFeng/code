@@ -1,0 +1,21 @@
+[ 2015-10-17T21:08:40+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Home/Goods/detail/
+ERR: 参数错误或者未定义:goods_id
+
+[ 2015-10-17T21:51:16+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Home/Ucenter/index
+ERR: 模板不存在:E:/xampp/htdocs/buy_tp/shop/Home/View/Ucenter/index.html
+
+[ 2015-10-17T22:04:33+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Home/Ucenter/ucenter1
+ERR: Syntax Error in template "E:/xampp/htdocs/buy_tp/shop/Home/View\Ucenter\ucenter1.html"  on line 19 "&lt;a href=&quot;{$smarty.const.__CONTROLLER__/}ucenter3&quot;&gt;&lt;img src=&quot;{$smarty.const.IMG_URL}u3.gif&quot; /&gt; 我的订单&lt;/a&gt;"  - Unexpected "}"
+
+[ 2015-10-17T22:04:34+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Home/Ucenter/ucenter1
+ERR: Syntax Error in template "E:/xampp/htdocs/buy_tp/shop/Home/View\Ucenter\ucenter1.html"  on line 19 "&lt;a href=&quot;{$smarty.const.__CONTROLLER__/}ucenter3&quot;&gt;&lt;img src=&quot;{$smarty.const.IMG_URL}u3.gif&quot; /&gt; 我的订单&lt;/a&gt;"  - Unexpected "}"
+
+[ 2015-10-17T22:04:34+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Home/Ucenter/ucenter1
+ERR: Syntax Error in template "E:/xampp/htdocs/buy_tp/shop/Home/View\Ucenter\ucenter1.html"  on line 19 "&lt;a href=&quot;{$smarty.const.__CONTROLLER__/}ucenter3&quot;&gt;&lt;img src=&quot;{$smarty.const.IMG_URL}u3.gif&quot; /&gt; 我的订单&lt;/a&gt;"  - Unexpected "}"
+
+[ 2015-10-17T22:04:34+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Home/Ucenter/ucenter1
+ERR: Syntax Error in template "E:/xampp/htdocs/buy_tp/shop/Home/View\Ucenter\ucenter1.html"  on line 19 "&lt;a href=&quot;{$smarty.const.__CONTROLLER__/}ucenter3&quot;&gt;&lt;img src=&quot;{$smarty.const.IMG_URL}u3.gif&quot; /&gt; 我的订单&lt;/a&gt;"  - Unexpected "}"
+
+[ 2015-10-17T22:04:48+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Home/Ucenter/ucenter1
+ERR: Syntax Error in template "E:/xampp/htdocs/buy_tp/shop/Home/View\Ucenter\ucenter1.html"  on line 19 "&lt;a href=&quot;{$smarty.const.__CONTROLLER__/}ucenter3&quot;&gt;&lt;img src=&quot;{$smarty.const.IMG_URL}u3.gif&quot; /&gt; 我的订单&lt;/a&gt;"  - Unexpected "}"
+

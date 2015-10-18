@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+        <title>权限列表</title>
+
+        <link href="{$smarty.const.ADMIN_CSS_URL}mine.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <style>
+            {literal}
+            .tr_color{background-color: #9F88FF}
+            {/literal}
+        </style>
+        <div class="div_head">
+            <span>
+                <span style="float: left;">当前位置是：权限管理-》管理员列表</span>
+                <span style="float: right; margin-right: 8px; font-weight: bold;">
+                    <a style="text-decoration: none;" href="{$smarty.const.__MODULE__}/Auth/add_manager">【添加管理员】</a>
+                </span>
+            </span>
+        </div>
+        <div></div>
+        
+
+        <div style="font-size: 13px; margin: 10px 5px;">
+            <table class="table_a" border="1" width="100%">
+                <tbody><tr style="font-weight: bold;">
+                        <td>序号</td>
+                        <td>管理员账户名</td>
+                        <td>密码</td>
+                        <td>上次登录时间</td>
+                        <td>角色</td>
+                        <td>操作</td>
+                    </tr>
+                    {foreach $manager_info as $k => $v}
+                    <tr id="product1">
+                        <td>{$v@iteration}</td>
+                        <td>{$v.mg_name}</td>
+                        <td>{$v.mg_pwd}</td>
+                        <td>{$v.mg_time|date_format:"%Y-%m-%d %H:%M:%S "}</td>
+                        <td>{$role_info[$v.mg_role_id]}</td>
+                        <td>
+                            <a href="{$smarty.const.__MODULE__}/Auth/update_manager/mg_id/{$v.mg_id}">修改</a>
+                            <a href="{$smarty.const.__MODULE__}/Auth/del_manager/mg_id/{$v.mg_id}" onclick="return confirm('确定要删除？');">删除</a>
+                        </td>
+                    </tr>
+                    {/foreach}
+                    <tr>
+                        <td colspan="20" style="text-align: center;">
+                            {$pagelist}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
