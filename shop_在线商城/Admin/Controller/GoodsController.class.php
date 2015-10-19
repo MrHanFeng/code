@@ -6,7 +6,45 @@
 
 		// 商品展示
 		function showlist(){
-			$arr=$this->pager('goods',6,'goods_brand_id',$_GET['brand_s']);
+			if(!empty($_GET['brand_s'])){
+				$where=" where goods_brand_id ={$_GET['brand_s']} and goods_status!='del'";
+			}else{
+				$where=" where goods_status!='del'";
+			}
+			$arr=$this->pager('goods',6,$where);
+
+			$this->assign('pagelist',$arr['pagelist']);
+			$this->assign('info',$arr['info']);
+			// 使用数据Model模型
+			// 实例化model对象
+			// $goods = new \Model\GoodsModel();
+			// show_debug($goods);
+			// $info = $goods->field()->table('sw_goods')->where("goods_price > 200")->group()->limit()->order('goods_price')->select();
+			// echo $goods->where('goods_price>1000')->min('goods_price');
+
+			/*品牌查询*/
+			$brand_info = D('brand')->select();
+			$brand_arr = array();
+			foreach ($brand_info as $k => $v) {
+//				$info['goods_id'];
+				$brand_arr[$v['brand_id']] = $v['brand_name'] ;//下标为ID，POST传过来的值也为ID
+			}
+			$this->assign('brand_info',$brand_arr);
+
+			/*分类查询*/
+			$cate_info = D('category')->select();
+			$cate_arr =array();
+			foreach ($cate_info as $k => $v) {
+				$cate_arr[$v['cat_id']] = $v['cat_name'];
+			}
+			$this->assign('cate_info',$cate_arr);
+			$this->display();
+		}
+
+		/*商品回收站*/
+		function showlist_del(){
+//			$arr=$this->pager('goods',6,'goods_brand_id',$_GET['brand_s']);
+			$arr=$this->pager('goods',6,"where goods_status ='del'");
 
 			$this->assign('pagelist',$arr['pagelist']);
 			$this->assign('info',$arr['info']);
@@ -134,13 +172,12 @@
 			}
 		}
 
-		// 删除商品
+		// 删除商品列表的商品
 		function delete(){
 			$goods = D('Goods');
 			$id = $_GET['goods_id'];
-			$re = $goods->delete($id);
-//			$re = $goods->delete(1,2,3);
-			// $re = $goods->where("goods_id>60")->delete();
+			$data=array('goods_status'=>'del');
+			$re=$goods->where('goods_id='.$id)->data($data)->save();
 			if($re){
 //				echo "succeful";
 				 $this->success('删除成功',U('Goods/showlist'));
@@ -149,7 +186,20 @@
 				$this->success('删除失败',U('Goods/showlist'));
 			}
 		}
-
+		//恢复回收站的商品
+		function goods_renew(){
+			$goods = D('Goods');
+			$id = $_GET['goods_id'];
+			$data=array('goods_status'=>'checked');
+			$re=$goods->where('goods_id='.$id)->data($data)->save();
+			if($re){
+//				echo "succeful";
+				$this->success('恢复成功',U('Goods/showlist_del'));
+			}else{
+//				echo "error";
+				$this->success('恢复失败',U('Goods/showlist_del'));
+			}
+		}
 
 		// 添加商品分类
 		function add_cate(){
@@ -275,7 +325,7 @@
 		 * @param $img_name $_FILES['name] 前台input[file]的name值
 		 * @return array 返回大小图片的地址
 		 */
-		private function upload_img($img_name){
+		 function upload_img($img_name){
 				if(!empty($_FILES)){
 					// 参数配置
 					$config = array(
@@ -337,33 +387,39 @@
 		 * 分页显示集成函数
 		 * @param $table_name  查询的表名
 		 * @param $num 每页条数
-		 * @param $find_col 查找的字段
-		 * @param $get_value 查找字段的ID或其他标记信息
+		 * @param $where 条件判断
 		 * @return array 返回值
 		 * 		array['info']存放查询的分页信息
 		 * 		array['pagelist']存放分页的HTML代码
-		 * 注意 修改表前缀
+		 * 注意 修改表前缀，本函数用的必须为QUERY查询的方式,因为分页类用到->limit的效果是QUERY查询的
 		 */
-		  function pager($table_name,$num=10,$find_col='',$get_value=''){
+		  function pager($table_name,$num=10,$where=''){
 			/*分页显示*/
 			$$table_name = D($table_name);
-			//1.获得当前记录总条数
-			$total = $$table_name -> count();
-			$per = $num;	//每页条数
-			//2.实例化分页对象
-			$page = new \Component\Page($total,$per);//实例化分页类
-			// 3.写SQL语句
-			$sql = "select * from sw_{$table_name}";
-			if(!empty($get_value)){//解决查询问题
-				$sql .= " where {$find_col} = ".$get_value;
-			}
-			$sql .= " ".$page->limit;
-//			echo $sql;
-			$info = $$table_name ->query($sql);
-			// 4.获得页码列表
-			$pagelist = $page->fpage();
-//			  show($info);
-			return array('info'=>$info,'pagelist'=>$pagelist);
+
+			//1.获得要查询数据的总条数
+			  	$sql = "select count(*) as affect_num from sw_{$table_name}";
+			  	if(!empty($where)){//解决查询问题
+				  $sql .= " ".$where;
+			  	}
+			  	$total = $$table_name -> query($sql);
+				$per = $num;	//每页条数
+			//2.实例化分页对象，把本次查询总条数，每页条数，传入
+				$page = new \Component\Page($total[0]['affect_num'],$per);//实例化分页类
+		    // 3.写有分页效果的SQL语句
+				$sql = "select * from sw_{$table_name}";
+				if(!empty($where)){//解决查询问题
+					$sql .= " ".$where;
+				}
+				$sql .= " ".$page->limit;
+				//	echo $sql;
+		    //4.查询出有分页效果的数据
+				$info = $$table_name ->query($sql);
+			  // 5.获得页码列表
+				$pagelist = $page->fpage();
+				  $return =array('info'=>$info,'pagelist'=>$pagelist);
+				//	show($return);
+				return $return;
 		}
 
 	}

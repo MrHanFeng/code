@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.6, created on 2015-10-19 11:04:56
+<?php /* Smarty version Smarty-3.1.6, created on 2015-10-19 15:35:56
          compiled from "E:/xampp/htdocs/buy_tp/shop/Admin/View\User\comment_detail.html" */ ?>
 <?php /*%%SmartyHeaderCode:113295623aa6be1e370-14825419%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a3f7411fbedc1cede6a74383ca746af8b87d367f' => 
     array (
       0 => 'E:/xampp/htdocs/buy_tp/shop/Admin/View\\User\\comment_detail.html',
-      1 => 1445223886,
+      1 => 1445239968,
       2 => 'file',
     ),
   ),
@@ -98,7 +98,7 @@ $_smarty_tpl->tpl_vars['v']->_loop = true;
 /commend_change/flag/1/cm_id/<?php echo $_smarty_tpl->tpl_vars['v']->value['cm_id'];?>
 /goods_id/<?php echo $_GET['goods_id'];?>
 ">通过审核</a></td>
-                        <?php }?>
+                         <?php }?>
 
 
                     </tr>

@@ -1,0 +1,15 @@
+[ 2015-10-19T20:14:20+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/Goods/showlist_del
+ERR: Syntax Error in template "E:/xampp/htdocs/buy_tp/shop/Admin/View\Goods\showlist_del.html"  on line 80 "{end if}" unknown tag "end"
+
+[ 2015-10-19T22:19:47+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/Advert/add_ad
+ERR: Think\Controller:upload_img方法不存在！
+
+[ 2015-10-19T22:20:12+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/Advert/add_ad
+ERR: Think\Controller:upload_img方法不存在！
+
+[ 2015-10-19T22:24:21+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/Advert/showlist
+ERR: Syntax Error in template "E:/xampp/htdocs/buy_tp/shop/Admin/View\Advert\showlist.html"  on line 44 "&lt;td&gt;{$smarty.$v.ad_px}&lt;/td&gt;" $smarty.$_smarty_tpl->tpl_vars['v']->value is invalid
+
+[ 2015-10-19T22:24:30+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/Advert/showlist
+ERR: Syntax Error in template "E:/xampp/htdocs/buy_tp/shop/Admin/View\Advert\showlist.html"  on line 44 "&lt;td&gt;{$smarty.$v.ad_px}&lt;/td&gt;" $smarty.$_smarty_tpl->tpl_vars['v']->value is invalid
+

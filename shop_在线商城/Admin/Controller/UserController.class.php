@@ -11,7 +11,11 @@ class UserController extends AdminController{
         /*0.评论查询*/
         /*跨控制器调用。方法一*/
         $goods=A('Goods');
-        $arr= $goods->pager('goods',6,'goods_brand_id',$_GET['brand_s']);
+        if(!empty($_GET['brand_s'])){
+            $arr= $goods->pager('goods',6," where goods_brand_id ={$_GET['brand_s']}");
+        }else{
+            $arr= $goods->pager('goods',6);
+        }
         /*跨控制器调用。方法二*/
 //        $arr=R("Goods/pager",array('goods',6,'goods_brand_id',$_GET['brand_s']));
 
