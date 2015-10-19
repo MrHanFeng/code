@@ -10,17 +10,22 @@
 	define("APP_DEBUG",true);
 
 	// 定义CSS,JS,IMG路径常量
-	define("SITE_URL","http://localhost/buy_tp/");
+	define("SITE_URL","http://localhost/buy_tp/shop/");
 
-	define("CSS_URL",SITE_URL."shop/Public/Home/css/"); //css
-	define("IMG_URL",SITE_URL."shop/Public/Home/images/"); //img
-	define("JS_URL",SITE_URL."shop/Public/Home/js/"); //js
+	define('UPLOAD',$_SERVER['DOCUMENT_ROOT'].'/buy_tp/shop/Public/');//上传图片的根目录,物理路径，用于对文件的操作
+	define("IMG_UPLOAD",SITE_URL."Public/");//上传图片的根目录
 
-	define("ADMIN_CSS_URL",SITE_URL."shop/Public/Admin/css/"); //css
-	define("ADMIN_IMG_URL",SITE_URL."shop/Public/Admin/images/"); //css
-	define("ADMIN_JS_URL",SITE_URL."shop/Public/Admin/js/"); //css
+	define("CSS_URL",SITE_URL."Public/Home/css/"); //css
+	define("IMG_URL",SITE_URL."Public/Home/images/"); //img
+	define("JS_URL",SITE_URL."Public/Home/js/"); //js
 
-	define("IMG_UPLOAD",SITE_URL."shop/Public/");//上传图片的根目录
+	define("ADMIN_CSS_URL",SITE_URL."Public/Admin/css/"); //css
+	define("ADMIN_IMG_URL",SITE_URL."Public/Admin/images/"); //css
+	define("ADMIN_JS_URL",SITE_URL."Public/Admin/js/"); //css
+
+
+
+
 	// 引入框架的核心程序,放在最后！！
 	include "../ThinkPHP/ThinkPHP.php";
 

@@ -60,6 +60,13 @@
                     <td><input type="text" name="goods_price" value="{$info.goods_price}" /></td>
                 </tr>
                 <tr>
+                    <td>图片预览</td>
+                    <td>
+                        <img src="{$smarty.const.IMG_UPLOAD}{$goods_pic}" alt="" height="60" width="60">
+                        <input type="checkbox" name="del_pic">删除
+                    </td>
+                </tr>
+                <tr>
                     <td>商品图片</td>
                     <td><input type="file" name="goods_image" value="{$info.goods_imgage}" /></td>
                 </tr>

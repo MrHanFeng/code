@@ -1,0 +1,60 @@
+[ 2015-10-18T17:27:48+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/Goods/brand_add
+ERR: 没有可以被缩略的图像资源
+
+[ 2015-10-18T17:29:16+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/Goods/brand_add
+ERR: 没有可以被缩略的图像资源
+
+[ 2015-10-18T17:40:45+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/Goods/brand_update/brand_id/1
+ERR: 模板不存在:E:/xampp/htdocs/buy_tp/shop/Admin/View/Goods/brand_update.html
+
+[ 2015-10-18T17:54:16+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/Goods/brand_update/brand_id/3
+ERR: 没有可以被缩略的图像资源
+
+[ 2015-10-18T17:59:37+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/Goods/brand_update/brand_id/1
+ERR: 没有可以被缩略的图像资源
+
+[ 2015-10-18T18:00:15+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/Goods/brand_update/brand_id/3
+ERR: 没有可以被缩略的图像资源
+
+[ 2015-10-18T18:00:26+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/Goods/brand_update/brand_id/3
+ERR: 没有可以被缩略的图像资源
+
+[ 2015-10-18T19:57:25+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/Goods/brand_update/brand_id/1
+ERR: 没有可以被缩略的图像资源
+
+[ 2015-10-18T19:57:37+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/Goods/brand_update/brand_id/1
+ERR: 没有可以被缩略的图像资源
+
+[ 2015-10-18T21:01:40+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/User/comment
+ERR: Think\Controller:pager方法不存在！
+
+[ 2015-10-18T21:08:10+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/User/comment
+ERR: Think\Controller:pager方法不存在！
+
+[ 2015-10-18T21:08:10+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/User/comment
+ERR: Think\Controller:pager方法不存在！
+
+[ 2015-10-18T21:08:11+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/User/comment
+ERR: Think\Controller:pager方法不存在！
+
+[ 2015-10-18T21:10:30+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/User/comment
+ERR: 模板不存在:E:/xampp/htdocs/buy_tp/shop/Admin/View/User/comment.html
+
+[ 2015-10-18T21:10:30+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/User/comment
+ERR: 模板不存在:E:/xampp/htdocs/buy_tp/shop/Admin/View/User/comment.html
+
+[ 2015-10-18T21:10:31+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/User/comment
+ERR: 模板不存在:E:/xampp/htdocs/buy_tp/shop/Admin/View/User/comment.html
+
+[ 2015-10-18T21:10:31+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/User/comment
+ERR: 模板不存在:E:/xampp/htdocs/buy_tp/shop/Admin/View/User/comment.html
+
+[ 2015-10-18T21:12:37+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/User/comment
+ERR: 模板不存在:E:/xampp/htdocs/buy_tp/shop/Admin/View/User/comment.html
+
+[ 2015-10-18T21:12:38+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/User/comment
+ERR: 模板不存在:E:/xampp/htdocs/buy_tp/shop/Admin/View/User/comment.html
+
+[ 2015-10-18T21:48:41+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/User/commend_detail/goods_id/2
+ERR: 模板不存在:E:/xampp/htdocs/buy_tp/shop/Admin/View/User/commend_detail.html
+

@@ -1,12 +1,12 @@
 <?php /* Smarty version Smarty-3.1.6, created on 2015-08-17 08:59:33
-         compiled from "E:/xampp/htdocs/buy_tp/shop/Admin/View\Auth\showlist.html" */ ?>
+         compiled from "E:/xampp/htdocs/buy_tp/shop/Admin/View\Auth\comment_detail.html" */ ?>
 <?php /*%%SmartyHeaderCode:2472955d131f5771701-43665352%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'cacb9375169f837b5f104442fc1f7339cb491f78' => 
     array (
-      0 => 'E:/xampp/htdocs/buy_tp/shop/Admin/View\\Auth\\showlist.html',
+      0 => 'E:/xampp/htdocs/buy_tp/shop/Admin/View\\Auth\\comment_detail.html',
       1 => 1438266583,
       2 => 'file',
     ),

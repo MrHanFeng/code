@@ -1,12 +1,12 @@
 <?php /* Smarty version Smarty-3.1.6, created on 2015-08-17 08:59:32
-         compiled from "E:/xampp/htdocs/buy_tp/shop/Admin/View\Role\showlist.html" */ ?>
+         compiled from "E:/xampp/htdocs/buy_tp/shop/Admin/View\Role\comment_detail.html" */ ?>
 <?php /*%%SmartyHeaderCode:1379255d131f40bb0b0-10679112%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '8b869b6e32dfafed57b697bd19f3c3be8d86f1f5' => 
     array (
-      0 => 'E:/xampp/htdocs/buy_tp/shop/Admin/View\\Role\\showlist.html',
+      0 => 'E:/xampp/htdocs/buy_tp/shop/Admin/View\\Role\\comment_detail.html',
       1 => 1438259661,
       2 => 'file',
     ),

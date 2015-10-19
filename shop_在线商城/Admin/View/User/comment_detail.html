@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+        <title>会员列表</title>
+
+        <link href="{$smarty.const.ADMIN_CSS_URL}mine.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <style>
+            {literal}
+            .tr_color{background-color: #9F88FF}
+            {/literal}
+        </style>
+        <div class="div_head">
+            <span>
+                <span style="float: left;">当前位置是：会员管理-》评论列表</span>
+
+            </span>
+        </div>
+        <div></div>
+
+        <div style="font-size: 13px; margin: 10px 5px;">
+            <table class="table_a" border="1" width="100%">
+                <tbody>
+                    <tr style="font-weight: bold;">
+                        <td>序号</td>
+                        <td>评论者</td>
+                        <td>内容</td>
+                        <td>IP地址</td>
+                        <td>评论时间</td>
+                        <td>审核状态</td>
+                        <td align="center">操作</td>
+                    </tr>
+
+                {foreach $comment_info as $k => $v}
+                    <tr id="product1">
+                        <td>{$v.cm_id}</td>
+                        <td>{$user[$v.cm_user_id]}</td>
+                        <td>{$v.cm_content}</td>
+                        <td>{$v.cm_ip}</td>
+                        <td>{$v.cm_time|date_format:"%Y-%m-%d %H:%M:%S "}</td>
+                        {if $v.cm_status==1}
+                            <td>已审核</td>
+                        {else}
+                            <td>未审核</td>
+                        {/if}
+
+                         {if $v.cm_status==1}
+                             <td><a href="{$smarty.const.__CONTROLLER__}/commend_change/flag/0/cm_id/{$v.cm_id}/goods_id/{$smarty.get.goods_id}">取消审核</a></td>
+                         {else}
+                            <td><a href="{$smarty.const.__CONTROLLER__}/commend_change/flag/1/cm_id/{$v.cm_id}/goods_id/{$smarty.get.goods_id}">通过审核</a></td>
+                        {/if}
+
+
+                    </tr>
+                {/foreach}
+                    <tr>
+                        <td colspan="20" style="text-align: center;">
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+            {$pagelist}
+
+        </div>
+
+    </body>
+</html>

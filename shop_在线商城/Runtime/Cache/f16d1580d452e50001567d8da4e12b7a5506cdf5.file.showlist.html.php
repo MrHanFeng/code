@@ -1,12 +1,12 @@
 <?php /* Smarty version Smarty-3.1.6, created on 2015-08-13 19:13:16
-         compiled from "E:/xampp/htdocs/buy_tp/shop/Home/View\Goods\showlist.html" */ ?>
+         compiled from "E:/xampp/htdocs/buy_tp/shop/Home/View\Goods\comment_detail.html" */ ?>
 <?php /*%%SmartyHeaderCode:950355cc7bcccc4d73-44417918%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'f16d1580d452e50001567d8da4e12b7a5506cdf5' => 
     array (
-      0 => 'E:/xampp/htdocs/buy_tp/shop/Home/View\\Goods\\showlist.html',
+      0 => 'E:/xampp/htdocs/buy_tp/shop/Home/View\\Goods\\comment_detail.html',
       1 => 1438274634,
       2 => 'file',
     ),
