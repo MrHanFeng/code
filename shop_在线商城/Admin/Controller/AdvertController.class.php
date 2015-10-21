@@ -57,17 +57,15 @@ class AdvertController extends AdminController{
                 unlink(UPLOAD.$re['ad_big_img']);
                 unlink(UPLOAD.$re['ad_small_img']);
                 $goods_up_fn=A('Goods');
-                $arr=$goods_up_fn->upload_img($_FILES['brand_img']);
+                $arr=$goods_up_fn->upload_img($_FILES['ad_img']);
                 $_POST['ad_big_img']=$arr['big'];
                 $_POST['ad_small_img']=$arr['small'];
             }
             $ad->create();
-//				$ad->find($_POST['brand_id']);
-
             $re = $ad->save();
-//				echo $ad->getLastSql();
+//            echo $ad->getLastSql();
             if($re){
-                $this->success('修改成功',U('brand_info'));
+                $this->success('修改成功',U('showlist'));
             }else{
                 $this->error('修改失败');
             }

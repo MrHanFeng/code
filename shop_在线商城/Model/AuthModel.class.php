@@ -43,7 +43,6 @@ class AuthModel extends Model{
             $pinfo = $this -> find($auth['auth_pid']); //查询出父级的记录信息
             $p_path = $pinfo['auth_path']; //找到它里边存的对应的父级全路径
             $auth_path = $p_path."-".$new_id;   //组装起来
-
         }
 
         //      把全路径变为数组，计算数组的个数和减去-1，就是level的信息

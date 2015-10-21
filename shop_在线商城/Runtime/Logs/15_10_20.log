@@ -1,0 +1,33 @@
+[ 2015-10-20T17:36:40+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/User/user_add
+ERR: Think\Model:check_hobby方法不存在！
+
+[ 2015-10-20T17:43:52+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/User/user_add
+ERR: Think\Model:check_hobby方法不存在！
+
+[ 2015-10-20T17:44:33+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/User/user_add
+ERR: Think\Model:check_hobby方法不存在！
+
+[ 2015-10-20T17:45:04+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/User/user_add
+ERR: Think\Model:check_hobby方法不存在！
+
+[ 2015-10-20T17:46:14+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/User/user_add
+NOTIC: D方法实例化没找到模型类Home\Model\UserModel
+ERR: Think\Model:check_hobby方法不存在！
+
+[ 2015-10-20T17:47:58+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/User/user_add
+NOTIC: D方法实例化没找到模型类Home\Model\UserModel
+ERR: Think\Model:check_hobby方法不存在！
+
+[ 2015-10-20T17:48:01+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/User/user_add
+NOTIC: D方法实例化没找到模型类Home\Model\UserModel
+ERR: Think\Model:check_hobby方法不存在！
+
+[ 2015-10-20T17:57:41+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/User/user_add
+ERR: Think\Model:check_hobby方法不存在！
+
+[ 2015-10-20T17:58:23+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/User/user_add
+ERR: Think\Model:check_hobby方法不存在！
+
+[ 2015-10-20T17:59:11+08:00 ] 127.0.0.1 /buy_tp/shop/index.php/Admin/User/user_add
+ERR: Think\Model:check_hobby方法不存在！
+

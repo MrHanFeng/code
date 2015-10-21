@@ -55,7 +55,7 @@ class UserController extends AdminController{
      */
     function comment_detail(){
         $goods=A('Goods');
-        $comment_info= $goods->pager('comment',6,"cm_goods_id",$_GET['goods_id']);
+        $comment_info= $goods->pager('comment',6,"where cm_goods_id={$_GET['goods_id']}");
 //        $comment_info=M('comment')->where("cm_goods_id=")->select();
 //        show($comment_info);
         $this->assign('comment_info',$comment_info['info']);
@@ -91,5 +91,52 @@ class UserController extends AdminController{
         }else{
             $this->error('修改失败',U("User/comment_detail?goods_id={$_GET['goods_id']}"));
         }
+    }
+
+
+    /*会员列表*/
+    function user_list(){
+        $user=D('User');
+        $info=$user->user_list_fn();
+        $this->assign('info',$info);
+        $this->display();
+    }
+
+    /*会员添加*/
+    function user_add(){
+        $user=D('User');
+        if(!empty($_POST)){
+            $user->create();
+//            show($user->getError());
+            $re=$user->add();
+            $this->if_re($re,array('添加会员成功','user_list'),array('添加会员失败','user_add'));
+        }else{
+            $this->display();
+        }
+    }
+
+    function user_update(){
+        $user=D('User');
+        $info=$user->user_list_fn($_GET['user_id']);
+        if($_POST){
+            $user->create();
+            $re=$user->save();
+            $this->if_re($re,array('会员修改成功','user_list'),array('会员修改失败',''));
+        }else{
+            $this->assign('user_info',$info);
+
+            $arr=$user->user_identify($_GET['user_id']);
+            $this->assign('all_idy',$arr['all_idy']);
+            $this->assign('cur_idy',$arr['cur_idy']);
+            $this->display();
+        }
+    }
+
+
+    function user_del(){
+        $user=M('User');
+        $re=$user->where("user_id={$_GET['user_id']}")->data("user_status=delete")->save();
+//        echo $user->getLastSql();exit;
+        $this->if_re($re,array('会员删除成功','user_list'),array('会员删除失败','user_list'));
     }
 }

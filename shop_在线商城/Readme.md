@@ -22,4 +22,9 @@ Runtime:临时文件
 		评论
 		品牌
 	4.广告管理
+
+
+小缺陷：
+	0.控制器MODEL的意义
+	1.Goods/pager 的where只能有一个条件，有限制
 	

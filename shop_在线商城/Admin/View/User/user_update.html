@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>添加用户</title>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <link href="{$smarty.const.ADMIN_CSS_URL}mine.css" type="text/css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <div class="div_head">
+            <span>
+                <span style="float:left">当前位置是：商品管理-》更改用户信息</span>
+                <span style="float:right;margin-right: 8px;font-weight: bold">
+                    <a style="text-decoration: none" href="{$smarty.const.__CONTROLLER__}/user_list">【返回】</a>
+                </span>
+            </span>
+        </div>
+        <div></div>
+
+        <div style="font-size: 13px;margin: 10px 5px">
+            {* /shop/index.php/Admin/Goods/add  -->__self__*}
+            <form action="{$smarty.const.__SELF__}" method="post" enctype="multipart/form-data">
+            <table border="1" width="100%" class="table_a">
+                <tr>
+                    <td>用户名称：</td>
+                    <td><input type="text" name="user_name" value="{$user_info.username}"/></td>
+                </tr>
+
+                <tr>
+                    <td>性别：</td>
+                    <td><input type="text" name="user_sex" value="{$user_info.user_sex}"/></td>
+                </tr>
+                <tr>
+                    <td>登陆账号：</td>
+                    <td>
+                        <input type="text" name="user_email" value="{$user_info.user_email}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>激活状态</td>
+                    <td>
+                        <select name="identify" id="">
+                            {html_options options=$all_idy selected=$cur_idy}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>QQ</td>
+                    <td>
+                        <input type="text" name="user_qq" value="{$user_info.user_qq}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>电话</td>
+                    <td>
+                        <input type="text" name="user_tel" value="{$user_info.user_tel}">
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="hidden" name="user_id" value="{$user_info.user_id}" />
+                        <input type="submit" value="修改">
+                    </td>
+                </tr>  
+            </table>
+            </form>
+        </div>
+    </body>
+</html>
