@@ -1,0 +1,57 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+ul,li  {
+    list-style-type: none;
+}
+
+.ov-cls {
+    width: 98%;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #000000;
+}
+.but-cls {
+    width: 98%;
+    max-width: 600px;
+    margin: 10px auto;
+}
+.but-cls .list {
+    float: left;
+    width: 100px;
+    text-align: center;
+    padding: 8px 0;
+    background-color: orangered;
+    color: #ffffff;
+    font: 14px 'Microsoft YaHei';
+    margin-right: 8px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.but-cls .list:hover {
+    background-color: #d43e00;
+}
+
+
+.ms-id {
+    width: 98%;
+    max-width: 600px;
+    margin: 10px auto;
+    border: 1px solid #dddddd;
+}
+.ms-id h2 {
+    padding: 10px;
+    background: #344ee2;
+    font: 20px 'Microsoft YaHei';
+    color: #ffffff;
+}
+.ms-id .ms-list {
+    padding: 8px 4px;
+    margin: 0 10px;
+    border-bottom: 1px dotted #dddddd;
+    cursor: pointer;
+}
+.ms-id .ms-list:hover,.ms-id .ms-list-hover {
+    background-color: #f3f3f3;
+}
