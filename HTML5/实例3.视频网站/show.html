@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视屏网站</title>
+    <meta name="MobileOptimized" content="width">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0" />-->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/icon/css/font-awesome.min.css">
+    <script src="js/jquery-1.8.0min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+<br>
+<div class="contain">
+    <div id="top">
+        <div class="menu">
+            <ul>
+                <li class="mu-logo">
+                    <img src="images/logo.gif" alt="">
+                </li>
+                <li class="mu-search">
+                    <input type="text" name="search" placeholder="请输入">
+                    <a href="">热门</a>
+                    <a href="">热门</a>
+                    <a href="">热门</a>
+                    <a href="">热门</a>
+                </li>
+                <li class="mu-button">
+                    <i class="fa fa-search"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="menu">
+        <ul>
+            <li class="meun_li mu_hover"><a href="index.html">首页</a></li>
+            <li class="meun_li">电视</li>
+            <li class="meun_li">电影</li>
+            <li class="meun_li">综艺</li>
+            <li class="meun_li">音乐</li>
+            <li class="meun_li">动漫</li>
+        </ul>
+    </div>
+    <div class="position">
+        当前播放：<span class="play_now"></span>
+    </div>
+   <div id="play_box">
+       <div class="play_window">
+           <video controls="controls" preload="auto" id="video">
+               <source src="mp4/mtv1.mp4" type="video/mp4">
+           </video>
+       </div>
+       <div class="controll">
+           <ul>
+               <li class="cn-play">
+                   播放
+               </li>
+               <li class="pre">
+                   <i class="fa fa-arrow-left"></i>
+                   上一个
+               </li>
+               <li class="next">
+                   下一个
+                   <i class="fa fa-arrow-right"></i>
+               </li>
+           </ul>
+       </div>
+   </div>
+    <div id="user_info">
+        <div class="us_left"></div>
+        <div class="us_right">
+            <span style="margin-left:10px;">放剧场； 作者：哈哈哈</span>
+        </div>
+    </div>
+    <div id="liuyan">
+        <h2>精华评论</h2>
+        <div class="speak_list">
+            <div class="speak">
+                <div class="sk_left"></div>
+                <div class="sk_right">
+                    <div class="user_name">甘英浩</div>
+                    <div class="user_con">/@圣诞雪中漫步:历史上刘弗陵只活了21岁！十年前他是十岁现在应该有20了吧！也就是说只有一年的寿命了！</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="speak_list">
+            <div class="speak">
+                <div class="sk_left"></div>
+                <div class="sk_right">
+                    <div class="user_name">甘英浩</div>
+                    <div class="user_con">现在编剧不是最喜欢改历史吗，说不定最后他改成皇帝/诈死然后和云歌在塞外双宿双栖/@圣诞雪中漫步:历史上刘弗陵只活了21岁！十年前他是十岁现在应该有20了吧！也就是说只有一年的寿命了！</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="speak_list">
+            <div class="speak">
+                <div class="sk_left"></div>
+                <div class="sk_right">
+                    <div class="user_name">甘英浩</div>
+                    <div class="user_con">十岁现在应该有20了吧！也就是说只有一年的寿命了！</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="bottom">
+        <span>版权所有，仿冒必究</span>
+    </div>
+</div>
+</body>
+</html>

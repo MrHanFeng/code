@@ -1,0 +1,253 @@
+body{padding:0px; margin:0px; color:#333333; font-family: 'Microsoft YaHei'; font-size:14px; line-height:150%;}
+h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd,form,img,p,label,a{margin:0; padding:0; border:none; list-style-type:none;text-decoration:none;}
+.clear{clear:both;}
+
+body{
+    background: #f3f3f3;
+}
+.contain{
+    max-width:480px;
+    margin: 0 auto;
+}
+#top{
+    /*margin-bottom:10px;*/
+    background: #ffffff;
+    /*box-shadow:2px 2px 10px black;*/
+    padding-bottom: 10px;
+}
+#top .menu{
+    width:100%;
+    height: 100%;
+    margin:0 auto;
+    padding-top:10px ;
+}
+#top .menu ul{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+#top .menu .mu-logo{
+    text-align: center;
+    width: 40%;
+
+}
+#top .menu .mu-logo img{
+    width:120px;
+    height: 50px;
+    vertical-align: middle;
+}
+#top .menu .mu-search{
+    width:50%;
+    height:100%;
+    display:inline-block;
+    border-radius: 6px;
+}
+#top .menu .mu-search a{
+    color:gray;
+    font-size: 12px;
+    color:gray;
+}
+#top .menu .mu-search a:hover{
+    color:orangered;
+}
+#top .menu .mu-search input{
+    width:100%;
+    height: 150%;
+    outline: none;
+}
+#top .menu .mu-button{
+    margin-left:15px ;
+    width:10%;
+}
+#menu{
+    width:100%;
+    max-width:480px;
+    /*box-shadow:1px 1px 10px black;*/
+    background: white;
+    border-bottom: 3px solid #e6e6e6;
+}
+#menu ul{
+    display: flex;
+    align-items:center;
+}
+#menu ul li{
+    padding: 0 5px;
+    width:100%;
+    height:40px;
+    max-width:80px;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    box-sizing: border-box;
+    padding-left: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+#menu ul li:hover{
+    color:orangered;
+}
+
+
+#menu ul .mu_hover{
+    border-bottom: 3px solid #06a7e1;
+    color: #3399e0;
+
+    font-family: "Microsoft YaHei", SimHei, helvetica, arial, verdana, tahoma, sans-serif;
+}
+
+#middle{
+    width:100%;
+    margin: 10px 0;
+}
+#middle li{
+    float: left;
+    width:50%;
+    padding: 0 5px 10px 0;
+    box-sizing:border-box;
+}
+#middle .cate{
+    display:none;
+}
+#middle .ct-hover{
+    display:block;
+}
+#middle li .showlists{
+    width:100%;
+    height:100%;
+    margin: 0 auto;
+    background: #ffffff;
+    padding-bottom: 10px;
+    box-shadow:2px 2px 10px #dddddd;
+}
+#middle li .showlists .show{
+    position: relative;
+    display:flex;
+    align-items: center;
+    width: 100%;
+    height: 110px;
+}
+#middle li .showlists .show img{
+    width:90%;
+    height:100%;
+    margin: auto;
+}
+#middle li .showlists .show h3{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width:95%;
+    background: rgba(0,0,0,0.4);
+    vertical-align: bottom;
+    color:white;
+    font:15px "Microsoft YaHei";
+    text-align: center;
+}
+
+
+#play_box{
+    width:100%;
+    max-width:480px;
+    padding: 10px 0;
+    box-sizing: border-box;
+    background: #ffffff ;
+}
+#play_box #video{
+    width:100%;
+    max-width:480px;
+    height:400px;
+    background: black;
+}
+#play_box .controll{
+    width:100%;
+    height:100%;
+    max-width:480px;
+}
+#play_box .controll ul{
+    display:flex;
+    align-items: center;
+}
+#play_box .controll ul li{
+    width:100px;
+    height:40px;
+    line-height:30px;
+    background: #06a7e1;
+    margin-left:5px;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+    font: 15px "Microsoft YaHei";
+    font-weight: 100;
+    cursor: pointer;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    Letter-spacing:3px
+}
+#user_info{
+    height: 80px;
+}
+#user_info,#liuyan{
+    width:100%;
+    max-width: 480px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    padding:10px;
+    background: #ffffff;
+}
+#user_info .us_left{
+    width:60px;
+    height: 60px;
+    float:left;
+    background: url("../images/touxiang.jpg");
+    border-radius: 50%;
+}
+#user_info .us_right{
+    width:78%;
+    height: 60px;
+    line-height: 60px;
+    float:right;
+    font-size: 18px;
+    color: #06a7e1;
+}
+#liuyan h2{
+    color: #06a7e1;
+    padding-bottom: 10px;
+
+}
+#liuyan .speak_list{
+    width:100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+    border-bottom:1px solid #f3f3f3;
+}
+#liuyan .speak_list .speak{
+    margin: 10px 0;
+    width:100%
+}
+#liuyan .speak_list .speak .sk_left{
+    width:60px;
+    height: 60px;
+    float:left;
+    background: url("../images/touxiang.jpg");
+    border-radius: 50%;
+}
+#liuyan .speak_list .speak .sk_right{
+    width:78%;
+    max-height: 300px;
+    overflow: hidden;
+    word-wrap: break-word;
+    float:right;
+    font-size: 12px;
+    color: black;
+}
+
+#bottom{
+    width:100%;
+    height:50px;
+    line-height:50px;
+    margin-top:10px;
+    text-align: center;
+    color: black;
+    background: white;
+}
+
